@@ -271,6 +271,15 @@ form .btn{width:100%;margin-top:6px}
 
 .slots{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:var(--navy);background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:999px;padding:8px 16px;margin-bottom:18px;font-size:.92rem}
 .slots span{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(192,57,43,.15)}
+.stay{padding:0 0 70px}
+.stay-box{display:grid;grid-template-columns:1fr 1.25fr;gap:24px;align-items:center;border:1px solid var(--gold-line);background:var(--gold-soft);border-radius:20px;padding:26px 28px}
+.stay-box b{display:block;font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--navy);margin-bottom:4px}
+.stay-box span{color:var(--muted);font-size:.95rem}
+.stay-f{display:grid;grid-template-columns:1fr 1.2fr auto;gap:10px}
+.stay-f input{background:#fff}
+.stay-f .btn{padding:13px 22px}
+.stay-ok{grid-column:1/-1;color:var(--green);font-weight:700}
+@media (max-width:900px){.stay-box{grid-template-columns:1fr}.stay-f{grid-template-columns:1fr}}
 /* FOOTER */
 footer{background:var(--navy);color:rgba(255,255,255,.65);padding:44px 0 36px;font-size:.92rem}
 .fwrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
@@ -771,6 +780,24 @@ footer a:hover{color:var(--gold-2)}
   </div>
 </section>
 
+<!-- STAY IN TOUCH -->
+<section class="stay">
+  <div class="wrap">
+    <div class="stay-box">
+      <div>
+        <b>Not ready for a call?</b>
+        <span>Stay in touch — leave your email and we'll share occasional field notes on construction contract control. No spam, unsubscribe any time.</span>
+      </div>
+      <form id="stayf" class="stay-f" onsubmit="stayIn(event)">
+        <input id="sn" placeholder="Your name" autocomplete="name" aria-label="Your name">
+        <input id="se" type="email" placeholder="Work email" autocomplete="email" aria-label="Work email" required>
+        <button class="btn btn-navy" id="sbtn">Stay in touch</button>
+      </form>
+      <p class="stay-ok" id="stayok" hidden>Thank you — you're on the list.</p>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="fwrap">
@@ -791,6 +818,9 @@ footer a:hover{color:var(--gold-2)}
 
 <script>
 document.querySelectorAll('a[href="#book"]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();var f=document.querySelector('form[name="ask-contracks"]');f.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(function(){try{document.getElementById('n').focus({preventScroll:true});}catch(e){}f.classList.remove('flash');void f.offsetWidth;f.classList.add('flash');},650);});});
+function stayIn(e){e.preventDefault();var n=document.getElementById('sn').value.trim(),m=document.getElementById('se').value.trim(),b=document.getElementById('sbtn');b.disabled=true;
+var d={'form-name':'ask-contracks',source:'Stay in touch',subject:'New contact — stay in touch — '+(n||m),name:n,email:m};
+fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).catch(function(){}).finally(function(){document.getElementById('stayf').hidden=true;document.getElementById('stayok').hidden=false;});}
 function stash(){try{var c=document.getElementById('c').value,n=document.getElementById('n').value;document.getElementById('fsubj').value='New lead — 45-min call request — '+n+(c?' ('+c+')':'');}catch(e){}try{sessionStorage.setItem('ac',JSON.stringify({n:document.getElementById('n').value,e:document.getElementById('e').value}));}catch(e){}}
 (function(){try{var m={control:'Control — from €1,500/month',dedicated:'Dedicated — from €2,500/month',custom:'Custom — quote'};var k=new URLSearchParams(location.search).get('plan');if(k&&m[k])document.addEventListener('DOMContentLoaded',function(){setPlan(m[k]);});}catch(e){}})();
 function setPlan(v){var s=document.getElementById('p');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].text===v){s.selectedIndex=i;}}}}
