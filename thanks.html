@@ -334,17 +334,10 @@ footer a:hover{color:var(--gold-2)}
     <span class="pill">Request received</span>
     <h1 style="font-size:clamp(2.2rem,5vw,3.4rem);margin:20px 0 16px">Thank you. <em>We'll be in touch.</em></h1>
     <p style="color:var(--muted);font-size:1.1rem;margin-bottom:30px">We've received your details. We'll contact you within one business day by phone or email to book your free 45-minute review call.</p>
-    <div style="border:1px solid var(--line);border-radius:18px;padding:26px;margin-bottom:26px">
-      <b style="display:block;color:var(--navy);font-size:1.1rem;margin-bottom:6px">Prefer to pick a time now?</b>
-      <p style="color:var(--muted);margin-bottom:18px">Choose a slot in our calendar — we'll have your details ready for the call.</p>
-      <a id="cal" href="https://calendly.com/contracks_global" target="_blank" rel="noopener" class="btn btn-gold">Pick a time in the calendar →</a>
-    </div>
+    
     <p style="color:var(--muted);margin-bottom:24px;font-size:.92rem">No documents needed — the review happens on the call.</p>
     <a href="/" class="btn btn-line">Back to Ask Contracks</a>
   </div>
 </section>
-<script>
-try{var d=JSON.parse(sessionStorage.getItem('ac')||'{}');var u='https://calendly.com/contracks_global?utm_source=ask-contracks';if(d.n)u+='&name='+encodeURIComponent(d.n);if(d.e)u+='&email='+encodeURIComponent(d.e);document.getElementById('cal').href=u;}catch(e){}
-</script>
 </body>
 </html>
