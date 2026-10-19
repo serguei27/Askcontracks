@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ask Contracks — Your construction contract team, without the hiring</title>
-<meta name="description" content="Ask Contracks: a named senior construction contract manager, backed by specialist support, helping your team manage notices, variations, payments and claims. From €1,500/month. Free contract review.">
+<meta name="description" content="Ask Contracks: a named senior construction contract manager, backed by specialist support, helping your team manage notices, variations, payments and claims. From €1,500/month. Free 45-minute review call.">
 <meta property="og:title" content="Ask Contracks — Your contract team, without the hiring">
 <meta property="og:description" content="You keep building. We help your team keep the contract under control. From €1,500/month.">
 <meta property="og:url" content="https://askcontracks.com">
@@ -228,6 +228,14 @@ section{padding:92px 0}
 .langs b{display:block;font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:14px}
 .langs .chips{justify-content:center}
 @media (max-width:760px){.trio{grid-template-columns:1fr}}
+.field-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.field-strip figure{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--line)}
+.field-strip img{width:100%;height:100%;object-fit:cover;display:block}
+.strip-cap{text-align:center;color:var(--muted);font-size:.88rem;margin-top:12px}
+.speak{max-width:900px;margin:20px auto 0;border-radius:18px;overflow:hidden;background:var(--line)}
+.speak img{width:100%;aspect-ratio:3/1;object-fit:cover;object-position:50% 60%;display:block}
+.speak figcaption{background:var(--navy);color:rgba(255,255,255,.75);font-size:.85rem;padding:10px 16px}
+@media (max-width:760px){.field-strip{grid-template-columns:1fr 1fr}}
 /* FAQ */
 .faq{max-width:860px;margin:0 auto}
 .faq details{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:14px}
@@ -338,7 +346,7 @@ footer a:hover{color:var(--gold-2)}
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </div>
-    <a href="#book" class="btn btn-navy nav-cta"><span class="lg">Book your free contract review</span><span class="sm">Free review</span></a>
+    <a href="#book" class="btn btn-navy nav-cta"><span class="lg">Book a free 45-min call</span><span class="sm">Free call</span></a>
   </div>
 </nav>
 
@@ -350,11 +358,12 @@ footer a:hover{color:var(--gold-2)}
       <h1>Your contract team, <em>without the hiring.</em></h1>
       <p class="sub"><b style="color:var(--navy)">You keep building. We help your team keep the contract under control.</b> A named senior contract manager, backed by specialist support, helping you manage notices, variations, payments and claims — every week.</p>
       <div class="hero-ctas">
-        <a href="#book" class="btn btn-navy">Book your free contract review →</a>
+        <a href="#book" class="btn btn-navy">Book your free 45-minute review call →</a>
         <a href="#pricing" class="btn btn-text">See pricing</a>
       </div>
       <p class="hero-note">For <b>contractors and subcontractors</b> — and developers, owners or commercial teams needing extra capacity.</p>
       <p class="hero-note"><b>From €1,500/month</b> · Month to month · Scope agreed before we start</p>
+      <p class="hero-note">Not sure which plan fits? <a href="/quiz.html" style="color:var(--navy);font-weight:700">Take the 4-minute Contract Resilience Score →</a></p>
     </div>
     <div class="math-card" aria-label="Cost comparison">
       <div class="tag">The math</div>
@@ -409,8 +418,8 @@ footer a:hover{color:var(--gold-2)}
       <div class="card step">
         <span class="num">01</span>
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div>
-        <h3>Free contract review</h3>
-        <p>A focused 45-minute session on one live contract: where the key deadlines, payment and variation risks are likely to sit, and what to look at first.</p>
+        <h3>Free 45-minute review call</h3>
+        <p>We talk through one live contract with you on the call: where the key deadlines, payment and variation risks are likely to sit, and what to look at first. No documents needed.</p>
       </div>
       <div class="card step">
         <span class="num">02</span>
@@ -481,6 +490,13 @@ footer a:hover{color:var(--gold-2)}
       <div class="card"><span class="pill">Energy · Belgium · €400M EPC</span><h3>Stalled FIDIC negotiation, unlocked</h3><p>Positions had hardened and repeated amendments made the commercial mechanism hard to read. The discussion was reframed around project value — the negotiation unlocked and the relationship was preserved.</p></div>
       <div class="card"><span class="pill">Construction · Equatorial Guinea</span><h3>One-tenth the cost. Half the time. Zero claims.</h3><p>A community-led camp in West Africa, delivered with the contract managed from day one.</p></div>
     </div>
+    <div class="field-strip">
+      <figure><img src="site-cranes.jpeg" alt="Construction site with tower cranes" loading="lazy"></figure>
+      <figure><img src="site-roof.jpeg" alt="Glass dome roof structure under construction" loading="lazy"></figure>
+      <figure><img src="site-interior.jpeg" alt="Completed shopping centre interior with glass dome" loading="lazy"></figure>
+      <figure><img src="site-facade.jpeg" alt="Completed building with triangulated glass façade" loading="lazy"></figure>
+    </div>
+    <p class="strip-cap">From the field — construction, delivery and handover.</p>
     <div class="quote">
       <blockquote>"Contracks brought structure and clarity to a procurement process that had become difficult to manage across suppliers and stakeholders. We improved alignment, reduced unnecessary costs, and kept delivery moving without constant firefighting."</blockquote>
       <cite>Richard I. · CEO · Water project, West Africa</cite>
@@ -542,9 +558,9 @@ footer a:hover{color:var(--gold-2)}
           <li>Live deadline register, kept up to date</li>
           <li>Advice on letters, instructions and priorities</li>
           <li>Monthly priority report</li>
-          <li>Questions between reviews by email or WhatsApp</li>
+          <li>Questions between reviews</li>
         </ul>
-        <a href="#book" class="btn btn-line" onclick="setPlan('Control — from €1,500/month')">Book your free contract review</a>
+        <a href="#book" class="btn btn-line" onclick="setPlan('Control — from €1,500/month')">Book your free 45-min call</a>
       </div>
       <div class="card plan pop">
         <h3>Dedicated</h3>
@@ -559,7 +575,7 @@ footer a:hover{color:var(--gold-2)}
           <li>Payment applications supported and followed up</li>
           <li>Within a defined monthly capacity</li>
         </ul>
-        <a href="#book" class="btn btn-gold" onclick="setPlan('Dedicated — from €2,500/month')">Book your free contract review</a>
+        <a href="#book" class="btn btn-gold" onclick="setPlan('Dedicated — from €2,500/month')">Book your free 45-min call</a>
       </div>
       <div class="card plan">
         <h3>Custom</h3>
@@ -573,7 +589,7 @@ footer a:hover{color:var(--gold-2)}
           <li>Contract drafting and negotiation</li>
           <li>Cross-border projects</li>
         </ul>
-        <a href="#book" class="btn btn-line" onclick="setPlan('Custom — quote')">Book your free contract review</a>
+        <a href="#book" class="btn btn-line" onclick="setPlan('Custom — quote')">Book your free 45-min call</a>
       </div>
     </div>
     <p class="scope">We agree the contracts covered, priority activities and monthly capacity before starting. If your needs grow, we agree additional support and pricing with you first.</p>
@@ -614,6 +630,25 @@ footer a:hover{color:var(--gold-2)}
   </div>
 </section>
 
+<!-- QUIZ -->
+<section class="quiz">
+  <div class="wrap">
+    <div class="quiz-box">
+      <div>
+        <span class="pill">Free · 4 minutes</span>
+        <h2>Not sure which plan fits? <em>Score your contract first.</em></h2>
+        <p>Scored on the 5Cs Framework™ — scope, delay and claims, instructions, payments and deadlines. Your Contract Resilience Score, your two biggest gaps and the plan we'd recommend: Control, Dedicated or Custom.</p>
+        <a href="/quiz.html" class="btn btn-gold">Take the Contract Resilience Score →</a>
+      </div>
+      <ol class="ladder" aria-label="Resilience levels">
+        <li><b>3</b><span>Resilient</span></li>
+        <li><b>2</b><span>Exposed</span></li>
+        <li><b>1</b><span>Fragile</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <!-- 8. FIRST MONTH -->
 <section class="alt">
   <div class="wrap">
@@ -637,10 +672,10 @@ footer a:hover{color:var(--gold-2)}
     <div class="head">
       <span class="pill">Who you work with</span>
       <h2>Named people. <em>Human judgement.</em></h2>
-      <p>Ask Contracks is a service of <a href="https://contracks.global" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600">Contracks Global</a>. You know who's on your contract — and you can call them.</p>
+      <p>Ask Contracks is a service of Contracks Global. You know who's on your contract — and you can call them.</p>
     </div>
     <div class="card team">
-      <img src="https://contracks.global/serguei-portrait.jpeg" alt="Serguei Poppeleer" loading="lazy">
+      <img src="serguei-portrait.jpeg" alt="Serguei Poppeleer" loading="lazy">
       <div>
         <h3>Serguei Poppeleer</h3>
         <div class="role">Founder | Contracts &amp; Commercial</div>
@@ -648,6 +683,7 @@ footer a:hover{color:var(--gold-2)}
         <p class="creds">MCIArb · WorldCC · CIoB · LLM Oil &amp; Gas · MSc Civil Engineering · Executive MBA</p>
       </div>
     </div>
+    <figure class="speak"><img src="serguei-speaking.jpeg" alt="Serguei Poppeleer speaking on a panel at the Global Tourism Forum, Brussels 2025" loading="lazy"><figcaption>Speaking at the Global Tourism Forum · Brussels 2025</figcaption></figure>
     <div class="trio">
       <div><b>A person you can call</b><span>Your named contract manager knows your contract and your counterparty.</span></div>
       <div><b>In the meetings that matter</b><span>With your client, engineer or subcontractors — when it's agreed in scope.</span></div>
@@ -661,27 +697,6 @@ footer a:hover{color:var(--gold-2)}
         <span class="lang">Europe · Africa · Gulf</span>
         <span class="lang">FIDIC · OHADA · bespoke</span>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- QUIZ -->
-<section class="quiz">
-  <div class="wrap">
-    <div class="quiz-box">
-      <div>
-        <span class="pill">Free · 20 questions · 4 minutes</span>
-        <h2>Not ready to talk? <em>Find your level first.</em></h2>
-        <p>The Control Ladder quiz scores your project control from Level 1 to Level 5 and shows where it's most likely to break under pressure. Instant result.</p>
-        <a href="https://contracks.global/control-assessment.html" target="_blank" rel="noopener" class="btn btn-gold">Take the Control Ladder quiz →</a>
-      </div>
-      <ol class="ladder" aria-label="Control Ladder">
-        <li><b>5</b><span>Scalable</span></li>
-        <li><b>4</b><span>Operational</span></li>
-        <li><b>3</b><span>Controlled</span></li>
-        <li><b>2</b><span>Managed</span></li>
-        <li><b>1</b><span>Reactive</span></li>
-      </ol>
     </div>
   </div>
 </section>
@@ -711,23 +726,26 @@ footer a:hover{color:var(--gold-2)}
   <div class="wrap book">
     <div>
       <span class="pill">Get started</span>
-      <h2>Request your free <em>contract review.</em></h2>
-      <p class="slots"><span></span>We take on 4 free reviews per month.</p>
-      <p class="lead">Tell us about you and your project. We read every request and contact you to book a focused 45-minute call on one live construction contract.</p>
+      <h2>Book your free <em>45-minute review call.</em></h2>
+      <p class="slots"><span></span>We take on 4 free review calls per month.</p>
+      <p class="lead">Tell us about you and your project. We read every request and contact you to book your call. The free review happens on the call — 45 minutes on one live construction contract. No documents needed.</p>
+      <p style="margin:-10px 0 22px;color:var(--muted)">Not sure which plan fits? <a href="/quiz.html" style="color:var(--navy);font-weight:700">Take the 4-minute score first →</a></p>
       <b style="color:var(--navy)">What happens after you book</b>
       <ol class="after">
         <li>Send your details<span>Who you are, your project and what's on your mind.</span></li>
-        <li>We contact you within one business day<span>By phone or email, to book your review call at a time that suits you.</span></li>
-        <li>Conflict check and confidentiality<span>We confirm there's no conflict and sign a confidentiality agreement.</span></li>
-        <li>Your review call<span>45 minutes on your contract and your priorities.</span></li>
+        <li>We contact you within one business day<span>We check for conflicts and book your call at a time that suits you.</span></li>
+        <li>Your free 45-minute review call<span>We talk through your contract and priorities. No documents needed.</span></li>
         <li>Scope and fee in writing<span>Contracts covered, capacity and monthly fee — no obligation.</span></li>
+        <li>Confidentiality and secure handover<span>If you go ahead, we sign a confidentiality agreement before any documents are shared.</span></li>
       </ol>
-      <div class="perk"><div class="ico soft"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><a href="mailto:hello@askcontracks.com">hello@askcontracks.com</a></div>
-      <div class="perk"><div class="ico soft"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div><a href="https://wa.me/32466446290" target="_blank" rel="noopener">Chat with us on WhatsApp</a></div>
     </div>
-    <form class="card" name="ask-contracks" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+    <form class="card" name="ask-contracks" onsubmit="stash()" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="ask-contracks">
-      <input type="hidden" name="subject" value="New Ask Contracks review request">
+      <input type="hidden" name="subject" id="fsubj" value="New lead — Ask Contracks 45-min call request">
+      <input type="hidden" name="source" value="Booking form">
+      <input type="hidden" name="score"><input type="hidden" name="level"><input type="hidden" name="recommended-plan">
+      <input type="hidden" name="contain"><input type="hidden" name="command"><input type="hidden" name="close"><input type="hidden" name="confirm"><input type="hidden" name="control">
+      <input type="hidden" name="live-contracts"><input type="hidden" name="dispute"><input type="hidden" name="who-does-the-work"><input type="hidden" name="answers">
       <p class="hp"><label>Don't fill this out: <input name="bot-field"></label></p>
       <div class="fgrid">
         <div class="field"><label for="n">Your name *</label><input id="n" name="name" autocomplete="name" required></div>
@@ -744,8 +762,8 @@ footer a:hover{color:var(--gold-2)}
         <div class="field full"><label for="p">Plan you're interested in</label>
           <select id="p" name="plan"><option>Not sure yet — review first</option><option>Control — from €1,500/month</option><option>Dedicated — from €2,500/month</option><option>Custom — quote</option></select></div>
       </div>
-      <button type="submit" class="btn btn-navy">Request my free contract review →</button>
-      <p class="form-foot">* Required. Please don't send contract documents yet — we agree confidentiality first. We contact you within one business day to book your call.</p>
+      <button type="submit" class="btn btn-navy">Book my free 45-minute call →</button>
+      <p class="form-foot">* Required. No documents needed — the review happens on the call. We contact you within one business day to book it.</p>
     </form>
   </div>
 </section>
@@ -754,21 +772,23 @@ footer a:hover{color:var(--gold-2)}
   <div class="wrap">
     <div class="fwrap">
       <div class="flogo"><b>Ask Contracks<span>.</span></b><br><span>A service of Contracks Global · Better contracts. Better companies. Better communities.</span></div>
-      <div class="fbtns"><a href="/join.html" class="btn btn-gold">Join us →</a><a href="https://contracks.global" class="fullsite" target="_blank" rel="noopener">Visit Contracks Global →</a></div>
+      <div class="fbtns"><a href="#book" class="btn btn-gold">Book your free 45-min call</a></div>
     </div>
     <div class="fwrap copy">
       <span>© 2026 Contracks Global SRL</span>
-      <nav class="fnav"><a href="https://contracks.global/privacy.html" target="_blank" rel="noopener">Privacy</a><a href="mailto:hello@askcontracks.com">hello@askcontracks.com</a></nav>
+      <nav class="fnav"><a href="/join.html">Join us</a><a href="/privacy.html">Privacy</a></nav>
     </div>
   </div>
 </footer>
 
 <div class="sticky">
   <a href="#pricing" class="btn btn-line">Pricing</a>
-  <a href="#book" class="btn btn-navy">Free review</a>
+  <a href="#book" class="btn btn-navy">Free call</a>
 </div>
 
 <script>
+function stash(){try{var c=document.getElementById('c').value,n=document.getElementById('n').value;document.getElementById('fsubj').value='New lead — 45-min call request — '+n+(c?' ('+c+')':'');}catch(e){}try{sessionStorage.setItem('ac',JSON.stringify({n:document.getElementById('n').value,e:document.getElementById('e').value}));}catch(e){}}
+(function(){try{var m={control:'Control — from €1,500/month',dedicated:'Dedicated — from €2,500/month',custom:'Custom — quote'};var k=new URLSearchParams(location.search).get('plan');if(k&&m[k])document.addEventListener('DOMContentLoaded',function(){setPlan(m[k]);});}catch(e){}})();
 function setPlan(v){var s=document.getElementById('p');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].text===v){s.selectedIndex=i;}}}}
 </script>
 </body>
