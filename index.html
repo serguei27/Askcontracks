@@ -22,6 +22,9 @@
   --red:#C0392B;--red-soft:#FDF0EE;
 }
 html{scroll-behavior:smooth;overflow-x:hidden}
+section[id],header[id]{scroll-margin-top:84px}
+@keyframes flash{0%{box-shadow:0 0 0 0 rgba(197,160,80,.9)}100%{box-shadow:0 0 0 18px rgba(197,160,80,0)}}
+form.card.flash{animation:flash 1.1s ease-out 2}
 body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.12;letter-spacing:-.01em;color:var(--navy)}
@@ -252,7 +255,7 @@ section{padding:92px 0}
 .perk{display:flex;gap:16px;align-items:center;margin-bottom:16px;color:var(--ink)}
 .perk .ico{width:46px;height:46px;border-radius:12px}
 .perk a{text-decoration:none}
-form.card{padding:34px;box-shadow:0 20px 50px rgba(10,22,40,.08)}
+form.card{scroll-margin-top:96px;padding:34px;box-shadow:0 20px 50px rgba(10,22,40,.08)}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
 .field.full{grid-column:1/-1}
@@ -787,6 +790,7 @@ footer a:hover{color:var(--gold-2)}
 </div>
 
 <script>
+document.querySelectorAll('a[href="#book"]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();var f=document.querySelector('form[name="ask-contracks"]');f.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(function(){try{document.getElementById('n').focus({preventScroll:true});}catch(e){}f.classList.remove('flash');void f.offsetWidth;f.classList.add('flash');},650);});});
 function stash(){try{var c=document.getElementById('c').value,n=document.getElementById('n').value;document.getElementById('fsubj').value='New lead — 45-min call request — '+n+(c?' ('+c+')':'');}catch(e){}try{sessionStorage.setItem('ac',JSON.stringify({n:document.getElementById('n').value,e:document.getElementById('e').value}));}catch(e){}}
 (function(){try{var m={control:'Control — from €1,500/month',dedicated:'Dedicated — from €2,500/month',custom:'Custom — quote'};var k=new URLSearchParams(location.search).get('plan');if(k&&m[k])document.addEventListener('DOMContentLoaded',function(){setPlan(m[k]);});}catch(e){}})();
 function setPlan(v){var s=document.getElementById('p');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].text===v){s.selectedIndex=i;}}}}
