@@ -80,6 +80,12 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 .math-card .big{white-space:nowrap;font-family:'Playfair Display',serif;font-weight:800;font-size:2rem}
 .math-card .bad{color:#F08A7E;text-decoration:line-through;text-decoration-thickness:2px}
 .math-card .good{color:var(--gold-2)}
+.math-card .tick{color:var(--gold-2);font-weight:800;font-size:1.1rem}
+.math-card .mini{margin-top:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:6px 14px}
+.math-card .mini div{display:flex;justify-content:space-between;gap:10px;padding:8px 0;font-size:.84rem;color:rgba(255,255,255,.85);border-bottom:1px solid rgba(255,255,255,.08)}
+.math-card .mini div:last-child{border:0}
+.math-card .mini em{font-style:normal;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap;height:fit-content}
+.math-card .mini em.r{background:rgba(240,138,126,.18);color:#F4A79E}.math-card .mini em.a{background:rgba(197,160,80,.2);color:var(--gold-2)}
 .math-card .tag{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero{padding:52px 0 50px}}
 
@@ -145,7 +151,7 @@ section{padding:92px 0}
 .line .amt{font-weight:700;white-space:nowrap;text-align:right}
 .total{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:22px}
 .total b{font-size:1.1rem}
-.total .bigred{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.8rem,4vw,2.5rem);color:var(--red)}
+.total .bigred{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.8rem,4vw,2.5rem);color:var(--navy)}
 .total .biggold{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.8rem,4vw,2.5rem);color:var(--gold-2)}
 .fine{margin-top:14px;font-size:.86rem;color:var(--muted)}
 .math .us{background:var(--navy);color:#fff;border:0;position:relative;box-shadow:0 24px 60px rgba(10,22,40,.22)}
@@ -373,16 +379,22 @@ footer a:hover{color:var(--gold-2)}
         <a href="#book" class="btn btn-navy">Book your free 45-minute review call →</a>
         <a href="#pricing" class="btn btn-text">See pricing</a>
       </div>
-      <p class="hero-note">For <b>contractors and subcontractors</b> — and developers, owners or commercial teams needing extra capacity.</p>
+      <p class="hero-note">For <b>contractors and specialist subcontractors</b> managing €500K–€50M contracts without enough senior contract-management capacity. We also support developers and owners needing additional commercial control.</p>
       <p class="hero-note"><b>From €1,500/month</b> · Month to month · Scope agreed before we start</p>
       <p class="hero-note">Not sure which plan fits? <a href="/quiz.html" style="color:var(--navy);font-weight:700">Take the 4-minute Contract Resilience Score →</a></p>
     </div>
-    <div class="math-card" aria-label="Cost comparison">
-      <div class="tag">The math</div>
-      <div class="row"><span class="lbl">Dedicated five-person team in-house*</span><span class="big bad">€45–50K</span></div>
-      <div class="row"><span class="lbl">Ask Contracks — shared specialist support</span><span class="big good">from €1.5K</span></div>
-      <div class="row"><span class="lbl">Recruitment, HR, notice periods</span><span class="big good">None</span></div>
-      <p style="font-size:.76rem;color:rgba(255,255,255,.5);margin-top:10px">*Illustrative Belgian employer-cost model. Different capacity models — see below.</p>
+    <div class="math-card" aria-label="What you receive in the first 30 days">
+      <div class="tag">What you receive in the first 30 days</div>
+      <div class="row"><span class="lbl">A named senior contract manager</span><span class="tick">✓</span></div>
+      <div class="row"><span class="lbl">Your live contract register — deadlines, notices, variations, payments</span><span class="tick">✓</span></div>
+      <div class="row"><span class="lbl">Four weekly reviews with your team</span><span class="tick">✓</span></div>
+      <div class="row"><span class="lbl">A progress report: what's done, what's still exposed, what's next</span><span class="tick">✓</span></div>
+      <div class="mini">
+        <div><span>Notice of delay — late design info</span><em class="r">Draft now</em></div>
+        <div><span>VO-014 Additional drainage</span><em class="a">Pricing</em></div>
+        <div><span>Payment application No. 7</span><em class="a">Follow up</em></div>
+      </div>
+      <p style="font-size:.76rem;color:rgba(255,255,255,.5);margin-top:10px">Illustrative register extract. Within the scope agreed before you start.</p>
     </div>
   </div>
 </header>
@@ -447,13 +459,13 @@ footer a:hover{color:var(--gold-2)}
       </div>
     </div>
     <div class="fivec">
-      <div class="fivec-h"><b>Run on the 5Cs Framework™</b><span>The control method behind the founder's work on capital projects in 30+ countries.</span></div>
+      <div class="fivec-h"><b>Run on the 5Cs Framework™</b><span>The same five controls, applied to your contract.</span></div>
       <ol>
-        <li><i>1</i><b>CONTAIN</b> the Scope</li>
-        <li><i>2</i><b>COMMAND</b> One Plan</li>
-        <li><i>3</i><b>CLOSE</b> Every Decision</li>
-        <li><i>4</i><b>CONFIRM</b> Vendor Dates</li>
-        <li><i>5</i><b>CONTROL</b> Tower Cadence</li>
+        <li><i>1</i><b>CONTAIN</b> Scope &amp; variations</li>
+        <li><i>2</i><b>COMMAND</b> Programme, delay &amp; claims</li>
+        <li><i>3</i><b>CLOSE</b> Instructions &amp; decisions</li>
+        <li><i>4</i><b>CONFIRM</b> Payments &amp; certification</li>
+        <li><i>5</i><b>CONTROL</b> Deadlines &amp; weekly review</li>
       </ol>
     </div>
   </div>
@@ -570,7 +582,7 @@ footer a:hover{color:var(--gold-2)}
           <li>Live deadline register, kept up to date</li>
           <li>Advice on letters, instructions and priorities</li>
           <li>Monthly priority report</li>
-          <li>Questions between reviews</li>
+          <li>Questions between reviews, within agreed monthly capacity</li>
         </ul>
         <a href="#book" class="btn btn-line" onclick="setPlan('Control — from €1,500/month')">Book your free 45-min call</a>
       </div>
@@ -691,7 +703,7 @@ footer a:hover{color:var(--gold-2)}
       <div>
         <h3>Serguei Poppeleer</h3>
         <div class="role">Founder | Contracts &amp; Commercial</div>
-        <p>Civil engineer with 20+ years on construction and EPC contracts, including with BESIX and BAM International. Has sat on both sides of the table: the contractor trying to get paid and the owner trying to control cost.</p>
+        <p>Civil engineer with more than 20 years' experience across major construction and EPC contracts in Europe, Africa and the Gulf. Has sat on both sides of the table: the contractor trying to get paid and the owner trying to control cost.</p>
         <p class="creds">MCIArb · WorldCC · CIoB · LLM Oil &amp; Gas · MSc Civil Engineering · Executive MBA</p>
       </div>
     </div>
@@ -788,9 +800,10 @@ footer a:hover{color:var(--gold-2)}
         <b>Not ready for a call?</b>
         <span>Stay in touch — leave your email and we'll share occasional field notes on construction contract control. No spam, unsubscribe any time.</span>
       </div>
-      <form id="stayf" class="stay-f" onsubmit="stayIn(event)">
-        <input id="sn" placeholder="Your name" autocomplete="name" aria-label="Your name">
-        <input id="se" type="email" placeholder="Work email" autocomplete="email" aria-label="Work email" required>
+      <form id="stayf" class="stay-f" method="POST" action="/thanks.html" onsubmit="stayIn(event)">
+        <input type="hidden" name="form-name" value="ask-contracks"><input type="hidden" name="source" value="Stay in touch">
+        <input id="sn" name="name" placeholder="Your name" autocomplete="name" aria-label="Your name">
+        <input id="se" name="email" type="email" placeholder="Work email" autocomplete="email" aria-label="Work email" required>
         <button class="btn btn-navy" id="sbtn">Stay in touch</button>
       </form>
       <p class="stay-ok" id="stayok" hidden>Thank you — you're on the list.</p>
@@ -805,7 +818,7 @@ footer a:hover{color:var(--gold-2)}
       <div class="fbtns"><a href="#book" class="btn btn-gold">Book your free 45-min call</a></div>
     </div>
     <div class="fwrap copy">
-      <span>© 2026 Contracks Global SRL</span>
+      <span>© 2026 Contracks Global SRL · Company registered in Belgium</span>
       <nav class="fnav"><a href="/join.html">Join us</a><a href="/privacy.html">Privacy</a></nav>
     </div>
   </div>
