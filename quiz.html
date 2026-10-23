@@ -156,7 +156,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
       <h1>If a claim landed tomorrow, <em>would your contract hold?</em></h1>
       <p class="sub">Answer 15 Yes/No questions about your main live contract — scored on the 5Cs Framework™ — and 4 about your situation. Get your Contract Resilience Score, your two biggest gaps and the support plan that fits.</p>
       <button class="btn btn-navy" onclick="start()">Start the score →</button>
-      <p class="land-note">Instant result on screen · No obligation</p>
+      <p class="land-note">Your score on screen straight away · No obligation</p>
     </div>
     <div class="getbox">
       <div class="t">What you get</div>
@@ -180,30 +180,6 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
   </div>
 </div>
 
-<!-- GATE -->
-<div id="screen-gate" class="screen">
-  <div class="inner-sm gate">
-    <div class="srbox"><div class="t">Your score is ready</div><div class="srblur" id="sblur">••</div><div class="u">Enter your details to see your result and recommended plan</div></div>
-    <h2>Your result is one step away.</h2>
-    <p class="p">Your score, your two biggest gaps and your recommended plan — on screen, straight away.</p>
-    <form class="gform" onsubmit="subGate(event)">
-      <p class="hp"><label>Don't fill this out: <input id="gbot"></label></p>
-      <div class="g2">
-        <div><label for="gn">Your name *</label><input id="gn" autocomplete="name" required></div>
-        <div><label for="gc">Company *</label><input id="gc" autocomplete="organization" required></div>
-      </div>
-      <div class="g2">
-        <div><label for="ge">Work email *</label><input id="ge" type="email" autocomplete="email" required></div>
-        <div><label for="gp">Phone *</label><input id="gp" type="tel" autocomplete="tel" placeholder="+32 …" required></div>
-      </div>
-      <div><label for="gl">Location</label><input id="gl" placeholder="City, country"></div>
-      <div><label for="gm">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="gm" placeholder="Contract form, country, a specific issue…"></textarea></div>
-      <button type="submit" class="btn btn-navy" id="gbtn">See my result →</button>
-    </form>
-    <p class="enote">We may contact you once about your result. No newsletters. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
-  </div>
-</div>
-
 <!-- RESULTS -->
 <div id="screen-results" class="screen">
   <div class="inner">
@@ -214,6 +190,28 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
       <p id="rdesc"></p>
       <div class="ladder" id="ladder"></div>
     </div>
+
+    <div id="rgate" class="sec gate">
+      <h3>Get your full <em>breakdown</em></h3>
+      <p class="p">Your two biggest gaps with the first move for each, your score on each of the 5Cs, and the support plan that fits your contract.</p>
+      <form class="gform" onsubmit="subGate(event)">
+        <p class="hp" hidden style="display:none" aria-hidden="true"><label>Leave empty: <input id="gbot" tabindex="-1" autocomplete="off"></label></p>
+        <div class="g2">
+          <div><label for="gn">Your name *</label><input id="gn" autocomplete="name" required></div>
+          <div><label for="gc">Company *</label><input id="gc" autocomplete="organization" required></div>
+        </div>
+        <div class="g2">
+          <div><label for="ge">Work email *</label><input id="ge" type="email" autocomplete="email" required></div>
+          <div><label for="gp">Phone <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="gp" type="tel" autocomplete="tel" placeholder="+971 …"></div>
+        </div>
+        <div><label for="gl">Location</label><input id="gl" placeholder="City, country"></div>
+        <div><label for="gm">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="gm" placeholder="Contract form, country, a specific issue…"></textarea></div>
+        <button type="submit" class="btn btn-navy" id="gbtn">Show my full breakdown →</button>
+      </form>
+      <p class="enote">We may contact you once about your result. No newsletters. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
+    </div>
+
+    <div id="rfull" hidden>
 
     <div class="sec">
       <h3>Your recommended plan</h3>
@@ -231,6 +229,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
     </div>
 
     <details class="bk"><summary>Your answers at a glance <span>+</span></summary><div id="bklist"></div></details>
+    </div>
 
     <div style="text-align:center;margin-top:22px"><button class="btn btn-line" onclick="start()">↺ Retake the score</button></div>
   </div>
@@ -352,7 +351,7 @@ function pickQ(v){ans[i]=v;render();setTimeout(next,250);}
 function pickR(v){rt[i-Q.length]=v;render();setTimeout(next,250);}
 function next(){
   const done=i<Q.length?ans[i]!==null:rt[i-Q.length]!==null;if(!done)return;
-  if(i<N-1){i++;render();}else{document.getElementById('sblur').textContent=score();ss('gate');}
+  if(i<N-1){i++;render();}else{showTop();}
 }
 function prev(){if(i>0){i--;render();}}
 
@@ -367,19 +366,25 @@ function subGate(e){
   data.answers=Q.map((q,k)=>(k+1)+'. '+(ans[k]===1?'Yes':'No')+(ok(k)?'':'  <- GAP')+' — '+q.t).join('\n');
   const b=document.getElementById('gbtn');b.disabled=true;b.textContent='One moment…';
   fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
-   .catch(()=>{}).finally(()=>{b.disabled=false;b.textContent='See my result →';show();});
+   .catch(()=>{}).finally(()=>{b.disabled=false;b.textContent='Show my full breakdown →';showFull();});
 }
 
 function gapsIdx(){return AREAS.map((_,k)=>k).filter(k=>areaS(k)<100).sort((a,b)=>areaS(a)-areaS(b)).slice(0,2);}
 
-function show(){
-  const s=score(),L=level(s),pk=planKey(),P=PLANS[pk];
+function showTop(){
+  const s=score(),L=level(s);
   document.getElementById('rnum').textContent=s;
   document.getElementById('ring').style.background=`conic-gradient(${L.col} 0% ${s}%, rgba(255,255,255,.12) ${s}% 100%)`;
-  const first=(lead.name||'').split(' ')[0];
-  document.getElementById('rhead').textContent=(first?first+' — ':'')+L.h;
+  document.getElementById('rhead').textContent=L.h;
   document.getElementById('rdesc').textContent=L.b;
   document.getElementById('ladder').innerHTML=LEVELS.map((l,k)=>`<div class="rung ${l===L?'on':''}"><b>${k+1}</b>${l.name}</div>`).join('');
+  document.getElementById('rgate').hidden=false;document.getElementById('rfull').hidden=true;
+  ss('results');
+}
+function showFull(){
+  const s=score(),L=level(s),pk=planKey(),P=PLANS[pk];
+  const first=(lead.name||'').split(' ')[0];
+  if(first)document.getElementById('rhead').textContent=first+' — '+L.h;
   const why=planWhy(pk);
   document.getElementById('plan').innerHTML=`<span class="tag">Recommended for you</span>
     <h3>${P.name}</h3><div class="price">${P.price}</div><p class="what">${P.what}</p>
@@ -391,11 +396,11 @@ function show(){
   document.getElementById('gaps').innerHTML=gi.length?gapsIdx().map(a=>`<div class="gap"><b>${AREAS[a].name} · ${AREAS[a].sub} — ${areaS(a)}%: ${AREAS[a].gap}</b><p><b style="display:inline;color:var(--navy)">First move:</b> ${AREAS[a].move}</p></div>`).join(''):`<div class="gap"><b>Every answer is in place.</b><p>The risk now is scale — keep the same discipline on every new contract, new person and new client.</p></div>`;
   document.getElementById('bars').innerHTML=AREAS.map((a,k)=>`<div class="barrow"><div class="h"><span>${a.name} <span style="font-weight:400;color:var(--muted)">· ${a.sub}</span></span><span>${areaS(k)}%</span></div><div class="track"><div style="width:${areaS(k)}%;background:${a.col}"></div></div></div>`).join('');
   document.getElementById('bklist').innerHTML=Q.map((q,k)=>`<div class="bkrow"><div>${q.t}</div><div class="bksc ${ok(k)?'sch':'scl'}">${ok(k)?'✓ In place':'✗ Gap'}</div></div>`).join('');
-  ss('results');
+  document.getElementById('rgate').hidden=true;document.getElementById('rfull').hidden=false;
+  document.getElementById('rfull').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
 
 </script>
 </body>
 </html>
-
