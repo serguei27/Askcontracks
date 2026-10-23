@@ -305,7 +305,7 @@ footer a:hover{color:var(--gold-2)}
     </div>
     <form class="card" name="ask-contracks-join" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
       <input type="hidden" name="form-name" value="ask-contracks-join">
-      <p class="hp"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <p class="hp" hidden style="display:none" aria-hidden="true"><label>Leave empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div class="fgrid">
         <div class="field"><label for="jn">Your name</label><input id="jn" name="name" required></div>
         <div class="field"><label for="je">Email</label><input id="je" name="email" type="email" required></div>
