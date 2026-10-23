@@ -776,14 +776,14 @@ footer a:hover{color:var(--gold-2)}
         <div class="field"><label for="n">Your name *</label><input id="n" name="name" autocomplete="name" required></div>
         <div class="field"><label for="c">Company *</label><input id="c" name="company" autocomplete="organization" required></div>
         <div class="field"><label for="e">Email *</label><input id="e" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="t">Phone *</label><input id="t" name="phone" type="tel" autocomplete="tel" placeholder="+32 …" required></div>
-        <div class="field full"><label for="l">Location *</label><input id="l" name="location" autocomplete="address-level2" placeholder="City, country" required></div>
+        <div class="field"><label for="t">Phone <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="t" name="phone" type="tel" autocomplete="tel" placeholder="If you prefer a call back"></div>
+        <div class="field full"><label for="l">Project location</label><input id="l" name="location" autocomplete="address-level2" placeholder="City, country"></div>
         <div class="field"><label for="r">You are</label>
           <select id="r" name="role"><option value="">Select</option><option>Main contractor</option><option>EPC contractor</option><option>Subcontractor</option><option>Developer / owner</option><option>Owner / operator (industrial, energy, pharma)</option><option>Internal commercial team</option><option>Other</option></select></div>
         <div class="field"><label for="v">Contract value</label>
           <select id="v" name="contract-value"><option value="">Select</option><option>Under €500K</option><option>€500K – €5M</option><option>€5M – €50M</option><option>Over €50M</option></select></div>
         <div class="field full"><label for="pr">About your project *</label><textarea id="pr" name="project" required placeholder="What you're building, where, contract form (FIDIC, bespoke…), stage and duration."></textarea></div>
-        <div class="field full"><label for="m">Comments</label><textarea id="m" name="comments" placeholder="What's on your mind — variations, payments, workload, a claim, questions for us…"></textarea></div>
+        <div class="field full"><label for="m">Comments <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="m" name="comments" placeholder="What's on your mind — variations, payments, workload, a claim, questions for us…"></textarea></div>
         <div class="field full"><label for="p">Plan you're interested in</label>
           <select id="p" name="plan"><option>Not sure yet — review first</option><option>Control — from €1,500/month</option><option>Dedicated — from €2,500/month</option><option>Custom — quote</option></select></div>
       </div>
