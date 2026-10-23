@@ -770,7 +770,7 @@ footer a:hover{color:var(--gold-2)}
       <input type="hidden" name="score"><input type="hidden" name="level"><input type="hidden" name="recommended-plan">
       <input type="hidden" name="contain"><input type="hidden" name="command"><input type="hidden" name="close"><input type="hidden" name="confirm"><input type="hidden" name="control">
       <input type="hidden" name="live-contracts"><input type="hidden" name="dispute"><input type="hidden" name="who-does-the-work"><input type="hidden" name="answers">
-      <p class="hp"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <p class="hp" hidden style="display:none" aria-hidden="true"><label>Leave empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div class="fgrid">
         <div class="field"><label for="n">Your name *</label><input id="n" name="name" autocomplete="name" required></div>
         <div class="field"><label for="c">Company *</label><input id="c" name="company" autocomplete="organization" required></div>
@@ -840,3 +840,4 @@ function setPlan(v){var s=document.getElementById('p');if(s){for(var i=0;i<s.opt
 </script>
 </body>
 </html>
+
