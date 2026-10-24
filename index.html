@@ -236,6 +236,13 @@ section{padding:92px 0}
 .langs{max-width:900px;margin:30px auto 0;text-align:center}
 .langs b{display:block;font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:14px}
 .langs .chips{justify-content:center}
+.langs-cap{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:-4px 0 10px}
+a.lang{text-decoration:none;transition:background .2s,color .2s}
+a.lang.main{background:#fff;color:var(--navy);border-color:var(--navy)}
+a.lang.main:hover{background:var(--gold-soft)}
+a.lang.main.on{background:var(--navy);color:#fff}
+.flang{display:inline-flex;flex-wrap:wrap;gap:12px;margin-right:8px}
+.flang a.on{color:var(--gold-2)}
 @media (max-width:760px){.trio{grid-template-columns:1fr}}
 .field-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
 .field-strip figure{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--line)}
@@ -351,6 +358,7 @@ footer a:hover{color:var(--gold-2)}
 .founder-tag{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:16px}
 .nav-cta .sm{display:none}@media (max-width:480px){.nav-cta .lg{display:none}.nav-cta .sm{display:inline}}
 </style>
+<link rel="alternate" hreflang="en" href="https://askcontracks.com/"><link rel="alternate" hreflang="es" href="https://askcontracks.com/es.html"><link rel="alternate" hreflang="fr" href="https://askcontracks.com/fr.html"><link rel="alternate" hreflang="it" href="https://askcontracks.com/it.html"><link rel="alternate" hreflang="zh" href="https://askcontracks.com/zh.html"><link rel="alternate" hreflang="ar" href="https://askcontracks.com/ar.html"><link rel="alternate" hreflang="el" href="https://askcontracks.com/el.html"><link rel="alternate" hreflang="x-default" href="https://askcontracks.com/">
 </head>
 <body>
 
@@ -716,8 +724,11 @@ footer a:hover{color:var(--gold-2)}
     </div>
     <div class="langs">
       <b>Our common language: contract law and construction.</b>
+      <p class="langs-cap">Read this page in</p>
       <div class="chips">
-        <span class="lang main">English</span><span class="lang main">Français</span><span class="lang main">Italiano</span>
+        <a class="lang main on" href="/" hreflang="en" lang="en" aria-current="page">English</a><a class="lang main" href="/es.html" hreflang="es" lang="es">Español</a><a class="lang main" href="/fr.html" hreflang="fr" lang="fr">Français</a><a class="lang main" href="/it.html" hreflang="it" lang="it">Italiano</a><a class="lang main" href="/zh.html" hreflang="zh" lang="zh">中文</a><a class="lang main" href="/ar.html" hreflang="ar" lang="ar">العربية</a><a class="lang main" href="/el.html" hreflang="el" lang="el">Ελληνικά</a>
+      </div>
+      <div class="chips" style="margin-top:10px">
         <span class="lang">Other languages on request, via partners</span>
         <span class="lang">Europe · Africa · Gulf</span>
         <span class="lang">FIDIC · OHADA · bespoke</span>
@@ -779,13 +790,13 @@ footer a:hover{color:var(--gold-2)}
         <div class="field"><label for="t">Phone <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="t" name="phone" type="tel" autocomplete="tel" placeholder="If you prefer a call back"></div>
         <div class="field full"><label for="l">Project location</label><input id="l" name="location" autocomplete="address-level2" placeholder="City, country"></div>
         <div class="field"><label for="r">You are</label>
-          <select id="r" name="role"><option value="">Select</option><option>Main contractor</option><option>EPC contractor</option><option>Subcontractor</option><option>Developer / owner</option><option>Owner / operator (industrial, energy, pharma)</option><option>Internal commercial team</option><option>Other</option></select></div>
+          <select id="r" name="role"><option value="">Select</option><option value="Main contractor">Main contractor</option><option value="EPC contractor">EPC contractor</option><option value="Subcontractor">Subcontractor</option><option value="Developer / owner">Developer / owner</option><option value="Owner / operator (industrial, energy, pharma)">Owner / operator (industrial, energy, pharma)</option><option value="Internal commercial team">Internal commercial team</option><option value="Other">Other</option></select></div>
         <div class="field"><label for="v">Contract value</label>
-          <select id="v" name="contract-value"><option value="">Select</option><option>Under €500K</option><option>€500K – €5M</option><option>€5M – €50M</option><option>Over €50M</option></select></div>
+          <select id="v" name="contract-value"><option value="">Select</option><option value="Under €500K">Under €500K</option><option value="€500K – €5M">€500K – €5M</option><option value="€5M – €50M">€5M – €50M</option><option value="Over €50M">Over €50M</option></select></div>
         <div class="field full"><label for="pr">About your project *</label><textarea id="pr" name="project" required placeholder="What you're building, where, contract form (FIDIC, bespoke…), stage and duration."></textarea></div>
         <div class="field full"><label for="m">Comments <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="m" name="comments" placeholder="What's on your mind — variations, payments, workload, a claim, questions for us…"></textarea></div>
         <div class="field full"><label for="p">Plan you're interested in</label>
-          <select id="p" name="plan"><option>Not sure yet — review first</option><option>Control — from €1,500/month</option><option>Dedicated — from €2,500/month</option><option>Custom — quote</option></select></div>
+          <select id="p" name="plan"><option value="Not sure yet — review first">Not sure yet — review first</option><option value="Control — from €1,500/month">Control — from €1,500/month</option><option value="Dedicated — from €2,500/month">Dedicated — from €2,500/month</option><option value="Custom — quote">Custom — quote</option></select></div>
       </div>
       <button type="submit" class="btn btn-navy">Book my free 45-minute call →</button>
       <p class="form-foot">* Required. No documents needed — the review happens on the call. We contact you within one business day to book it.</p>
@@ -820,7 +831,7 @@ footer a:hover{color:var(--gold-2)}
     </div>
     <div class="fwrap copy">
       <span>© 2026 Ask Contracks · Europe · Africa · Gulf</span>
-      <nav class="fnav"><a href="/join.html">Join us</a><a href="/privacy.html">Privacy</a></nav>
+      <nav class="fnav"><span class="flang"><a href="/" hreflang="en" lang="en" class="on" aria-current="page">English</a><a href="/es.html" hreflang="es" lang="es">Español</a><a href="/fr.html" hreflang="fr" lang="fr">Français</a><a href="/it.html" hreflang="it" lang="it">Italiano</a><a href="/zh.html" hreflang="zh" lang="zh">中文</a><a href="/ar.html" hreflang="ar" lang="ar">العربية</a><a href="/el.html" hreflang="el" lang="el">Ελληνικά</a></span><a href="/join.html">Join us</a><a href="/privacy.html">Privacy</a></nav>
     </div>
   </div>
 </footer>
@@ -837,7 +848,7 @@ var d={'form-name':'ask-contracks',source:'Stay in touch',subject:'New contact �
 fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).catch(function(){}).finally(function(){document.getElementById('stayf').hidden=true;document.getElementById('stayok').hidden=false;});}
 function stash(){try{var c=document.getElementById('c').value,n=document.getElementById('n').value;document.getElementById('fsubj').value='New lead — 45-min call request — '+n+(c?' ('+c+')':'');}catch(e){}try{sessionStorage.setItem('ac',JSON.stringify({n:document.getElementById('n').value,e:document.getElementById('e').value}));}catch(e){}}
 (function(){try{var m={control:'Control — from €1,500/month',dedicated:'Dedicated — from €2,500/month',custom:'Custom — quote'};var k=new URLSearchParams(location.search).get('plan');if(k&&m[k])document.addEventListener('DOMContentLoaded',function(){setPlan(m[k]);});}catch(e){}})();
-function setPlan(v){var s=document.getElementById('p');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].text===v){s.selectedIndex=i;}}}}
+function setPlan(v){var s=document.getElementById('p');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].value===v||s.options[i].text===v){s.selectedIndex=i;}}}}
 </script>
 </body>
 </html>
