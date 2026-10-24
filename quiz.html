@@ -148,6 +148,8 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 
 
 
+<!-- Netlify form registration for quiz leads -->
+<form name="ask-contracks-quiz" data-netlify="true" netlify-honeypot="bot-field" hidden style="display:none" aria-hidden="true"><input type="hidden" name="source"><input type="hidden" name="subject"><input type="hidden" name="plan"><input type="hidden" name="project"><input type="hidden" name="name"><input type="hidden" name="company"><input type="hidden" name="email"><input type="hidden" name="phone"><input type="hidden" name="location"><input type="hidden" name="comments"><input type="hidden" name="score"><input type="hidden" name="level"><input type="hidden" name="recommended-plan"><input type="hidden" name="contain"><input type="hidden" name="command"><input type="hidden" name="close"><input type="hidden" name="confirm"><input type="hidden" name="control"><input type="hidden" name="contract-value"><input type="hidden" name="live-contracts"><input type="hidden" name="dispute"><input type="hidden" name="who-does-the-work"><input type="hidden" name="answers"><input name="bot-field" tabindex="-1" autocomplete="off"></form>
 <!-- LANDING -->
 <div id="screen-landing" class="screen active">
   <div class="landing">
@@ -359,7 +361,7 @@ function subGate(e){
   e.preventDefault();if(document.getElementById('gbot').value)return;
   lead={name:gn.value.trim(),company:gc.value.trim(),email:ge.value.trim(),phone:gp.value.trim(),location:gl.value.trim(),comments:gm.value.trim()};
   const s=score(),pk=planKey();
-  const data={'form-name':'ask-contracks',source:'Resilience quiz',subject:'New lead — quiz — '+PLANS[pk].name+' plan — '+lead.name+' ('+lead.company+') — '+s+'/100',plan:PLANS[pk].opt,project:'(from quiz) '+R[0].o[rt[0]]+' · '+R[1].o[rt[1]]+' live contract(s)',name:lead.name,company:lead.company,email:lead.email,phone:lead.phone,location:lead.location,comments:lead.comments,
+  const data={'form-name':'ask-contracks-quiz',source:'Resilience quiz',subject:'New lead — quiz — '+PLANS[pk].name+' plan — '+lead.name+' ('+lead.company+') — '+s+'/100',plan:PLANS[pk].opt,project:'(from quiz) '+R[0].o[rt[0]]+' · '+R[1].o[rt[1]]+' live contract(s)',name:lead.name,company:lead.company,email:lead.email,phone:lead.phone,location:lead.location,comments:lead.comments,
    score:s+'/100',level:level(s).name,'recommended-plan':PLANS[pk].name,
    contain:areaS(0)+'%',command:areaS(1)+'%',close:areaS(2)+'%',confirm:areaS(3)+'%',control:areaS(4)+'%'};
   R.forEach((r,k)=>data[r.k]=r.o[rt[k]]);
