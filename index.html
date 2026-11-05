@@ -209,6 +209,60 @@ section{padding:92px 0}
 .lang.main{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:600}
 @media (max-width:900px){.where-grid{grid-template-columns:1fr}}
 /* QUIZ */
+/* CONTRACT RESILIENCE INVITATION */
+section.crs{padding:72px 0}
+.crs-panel{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;border-radius:28px;padding:48px}
+.crs-kicker{display:flex;align-items:center;gap:14px;color:var(--gold-2);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.crs-kicker::after{content:"";flex:1;height:1px;background:rgba(197,160,80,.45)}
+.crs h2{color:#fff;font-size:clamp(2rem,4.4vw,3.1rem);margin:16px 0 14px;max-width:900px}
+.crs h2 em{color:var(--gold-2)}
+.crs-lead{color:rgba(255,255,255,.8);font-size:1.08rem;max-width:760px}
+.crs-risks{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px;margin:18px 0 0}
+.crs-risks li{padding-left:22px;position:relative;font-weight:600;font-size:.96rem}
+.crs-risks li::before{content:"";position:absolute;left:0;top:.72em;width:13px;height:2px;background:var(--gold)}
+.crs-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:end;margin-top:36px}
+.crs-stages h3{color:#fff;font-size:clamp(1.35rem,2.6vw,1.75rem);margin-bottom:18px}
+.crs-line{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end}
+.crs-stage{font:inherit;text-align:left;color:#fff;border:1.5px solid transparent;border-radius:14px;padding:16px 14px;cursor:pointer}
+.crs-stage b{display:block;font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;margin-bottom:6px}
+.crs-stage span{display:block;font-size:.82rem;line-height:1.4;color:rgba(255,255,255,.9)}
+.crs-stage.s1{background:#8F3027;min-height:190px}
+.crs-stage.s2{background:#8A6D2B;min-height:225px}
+.crs-stage.s3{background:#2D6A4F;min-height:260px}
+.crs-stage:hover{border-color:rgba(255,255,255,.55)}
+.crs-stage:focus-visible,.crs-act a:focus-visible{outline:3px solid var(--gold-2);outline-offset:2px}
+.crs-stage[aria-pressed="true"]{border-color:#fff;box-shadow:0 0 0 2px var(--gold-2)}
+.crs-note{color:rgba(255,255,255,.72);font-size:.9rem;margin-top:14px;min-height:2.8em}
+.crs-card{background:rgba(255,255,255,.05);border:1px solid rgba(212,180,112,.45);border-radius:20px;padding:24px}
+.crs-tag{color:var(--gold-2);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.crs-title{font-weight:700;font-size:1.05rem;margin:6px 0 14px}
+.crs-score{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center}
+.crs-bar{display:grid;grid-template-columns:78px minmax(0,1fr) 42px;gap:8px;align-items:center;padding:6px 0;font-size:.78rem;font-weight:600;letter-spacing:.03em}
+.crs-bar i{display:block;height:13px;background:rgba(255,255,255,.12);border-radius:3px;overflow:hidden}
+.crs-bar u{display:block;height:100%;text-decoration:none}
+.crs-bar b{text-align:right}
+.crs-total{border-left:1px solid rgba(255,255,255,.2);padding-left:16px;text-align:center}
+.crs-total small{display:block;font-size:.76rem;color:rgba(255,255,255,.72)}
+.crs-total strong{display:block;font-family:'Playfair Display',Georgia,serif;font-size:2.4rem;line-height:1.1;color:var(--gold-2)}
+.crs-total em{display:block;font-style:normal;font-weight:700;margin-top:6px}
+.crs-weak{border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:12px 14px;margin-top:14px;font-size:.88rem;color:rgba(255,255,255,.82)}
+.crs-weak b{display:block;color:var(--gold-2);margin-bottom:2px}
+.crs-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16)}
+.crs-foot p{font-weight:600;font-size:1.1rem;border-left:3px solid var(--gold);padding-left:14px;max-width:520px}
+.crs-act{text-align:center}
+.crs-act small{display:block;margin-top:10px;font-size:.84rem;color:rgba(255,255,255,.72)}
+@media (max-width:960px){.crs-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){
+  section.crs{padding:48px 0}
+  .crs-panel{padding:26px 20px;border-radius:22px}
+  .crs-line{grid-template-columns:minmax(0,1fr)}
+  .crs-stage.s1,.crs-stage.s2,.crs-stage.s3{min-height:0}
+  .crs-score{grid-template-columns:minmax(0,1fr)}
+  .crs-total{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:12px 0 0;display:flex;gap:8px;align-items:baseline;justify-content:center;flex-wrap:wrap}
+  .crs-total strong{font-size:1.8rem}
+  .crs-total em{margin:0}
+  .crs-act,.crs-act .btn{width:100%}
+}
 .quiz-box{display:grid;grid-template-columns:1.3fr 1fr;gap:44px;align-items:center;background:var(--navy);color:#fff;border-radius:24px;padding:48px}
 .quiz-box h2{color:#fff;font-size:clamp(1.8rem,4vw,2.6rem);margin:16px 0 14px}
 .quiz-box p{color:rgba(255,255,255,.75);margin-bottom:26px}
@@ -439,6 +493,58 @@ footer a:hover{color:var(--gold-2)}
         <h3>Your commercial team is overloaded</h3>
         <p>Your QS or project manager is running the site, the client and the contract at once. Notice periods don't wait for a quiet week.</p>
         <span class="sig">Sign: letters get answered "when there's time".</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2B. CONTRACT RESILIENCE INVITATION -->
+<section class="crs" id="contract-resilience">
+  <div class="wrap">
+    <div class="crs-panel">
+      <div class="crs-kicker"><span>The Contract Resilience Score</span></div>
+      <h2>Your contract is signed. <em>Is your commercial position protected?</em></h2>
+      <p class="crs-lead">Projects don't only lose money through poor execution. They lose it when additional work goes undocumented, notices are missed and entitlements cannot be demonstrated.</p>
+      <ul class="crs-risks">
+        <li>Extra work built, never priced.</li>
+        <li>A notice that went out late, or not at all.</li>
+        <li>A payment cut that nobody challenged in writing.</li>
+      </ul>
+
+      <div class="crs-grid">
+        <div class="crs-stages">
+          <h3>Which position are you really in?</h3>
+          <div class="crs-line" role="group" aria-label="Choose the position that sounds like your team">
+            <button type="button" class="crs-stage s1" aria-pressed="false"><b>Fragile</b><span>Commercial rights depend on individuals, memory and informal communication.</span></button>
+            <button type="button" class="crs-stage s2" aria-pressed="false"><b>Exposed</b><span>Processes exist, but missed steps or inconsistent evidence can weaken entitlement.</span></button>
+            <button type="button" class="crs-stage s3" aria-pressed="false"><b>Resilient</b><span>Contractual actions, notices and evidence are consistently managed and traceable.</span></button>
+          </div>
+          <p class="crs-note" id="crs-note" aria-live="polite">Pick the one that sounds like your team. This is self-reflection, not an assessment result.</p>
+        </div>
+
+        <div class="crs-card" role="img" aria-label="Example scorecard, illustrative only. Score 67 out of 100, Exposed. Contain 67 percent, Command 67 percent, Close 67 percent, Confirm 100 percent, Control 33 percent. Potential weak point: contractual notices.">
+          <div class="crs-tag">Example result — illustrative</div>
+          <div class="crs-title">Your Contract Resilience Scorecard</div>
+          <div class="crs-score">
+            <div class="crs-bars">
+              <div class="crs-bar"><span>CONTAIN</span><i><u style="width:67%;background:var(--gold)"></u></i><b>67%</b></div>
+              <div class="crs-bar"><span>COMMAND</span><i><u style="width:67%;background:var(--gold)"></u></i><b>67%</b></div>
+              <div class="crs-bar"><span>CLOSE</span><i><u style="width:67%;background:var(--gold)"></u></i><b>67%</b></div>
+              <div class="crs-bar"><span>CONFIRM</span><i><u style="width:100%;background:#2D6A4F"></u></i><b>100%</b></div>
+              <div class="crs-bar"><span>CONTROL</span><i><u style="width:33%;background:#C0392B"></u></i><b>33%</b></div>
+            </div>
+            <div class="crs-total"><small>Score</small><strong>67</strong><small>out of 100</small><em>Exposed</em></div>
+          </div>
+          <div class="crs-weak"><b>Potential weak point: contractual notices</b>Answers like these may suggest that notice deadlines or supporting records are not consistently controlled.</div>
+        </div>
+      </div>
+
+      <div class="crs-foot">
+        <p>Five controls. One question: are you protecting what you've earned?</p>
+        <div class="crs-act">
+          <a href="/quiz.html" class="btn btn-gold" data-crs-cta>Check my contract resilience →</a>
+          <small>Free · About 4 minutes · Personalised scorecard</small>
+        </div>
       </div>
     </div>
   </div>
@@ -854,6 +960,19 @@ fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlenco
 function stash(){try{var c=document.getElementById('c').value,n=document.getElementById('n').value;document.getElementById('fsubj').value='New lead — 45-min call request — '+n+(c?' ('+c+')':'');}catch(e){}try{sessionStorage.setItem('ac',JSON.stringify({n:document.getElementById('n').value,e:document.getElementById('e').value}));}catch(e){}}
 (function(){try{var m={control:'Control — from €1,500/month',dedicated:'Dedicated — from €2,500/month',custom:'Custom — quote'};var k=new URLSearchParams(location.search).get('plan');if(k&&m[k])document.addEventListener('DOMContentLoaded',function(){setPlan(m[k]);});}catch(e){}})();
 function setPlan(v){var s=document.getElementById('p');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].value===v||s.options[i].text===v){s.selectedIndex=i;}}}}
+</script>
+<script>
+(function(){
+  var sec=document.getElementById('contract-resilience');if(!sec)return;
+  var t=function(n){window.acTrack&&window.acTrack(n);};
+  var stages=sec.querySelectorAll('.crs-stage'),note=document.getElementById('crs-note');
+  stages.forEach(function(b){b.addEventListener('click',function(){
+    stages.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+    note.textContent='You picked '+b.querySelector('b').textContent+'. That is your own reflection, not an assessment. The score checks it against 15 questions.';
+  });});
+  sec.querySelectorAll('[data-crs-cta]').forEach(function(a){a.addEventListener('click',function(){t('Home score clicked');});});
+  if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){t('Home score seen');o.disconnect();}},{threshold:.3});o.observe(sec);}
+})();
 </script>
 </body>
 </html>
