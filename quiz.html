@@ -7,7 +7,8 @@
 <meta name="description" content="If a claim landed tomorrow, would your contract hold? 15 Yes/No questions on the 5Cs Framework, 4 minutes. Your score, your two biggest gaps and the support plan that fits.">
 <meta property="og:title" content="Contract Resilience Score — Ask Contracks">
 <meta property="og:description" content="If a claim landed tomorrow, would your contract hold? Find out in 4 minutes.">
-<meta property="og:url" content="https://askcontracks.com/quiz.html">
+<link rel="canonical" href="https://askcontracks.com/quiz">
+<meta property="og:url" content="https://askcontracks.com/quiz">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -136,6 +137,8 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-col
 footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;color:var(--muted);font-size:.86rem}
 footer a{text-decoration:none;color:var(--navy);font-weight:600}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Contract Resilience Score", "url": "https://askcontracks.com/quiz", "description": "A free 4-minute self-assessment on the 5Cs Framework for construction and EPC contractors.", "inLanguage": "en", "publisher": {"@type": "Organization", "name": "Ask Contracks", "url": "https://askcontracks.com/"}}</script>
+<script src="/assets/ac-track.js" defer></script>
 </head>
 <body>
 
@@ -328,7 +331,7 @@ function planWhy(k){
   return why;
 }
 
-function start(){i=0;ans=new Array(Q.length).fill(null);rt=new Array(R.length).fill(null);render();ss('quiz');}
+function start(){window.acTrack&&acTrack('Quiz started');i=0;ans=new Array(Q.length).fill(null);rt=new Array(R.length).fill(null);render();ss('quiz');}
 function render(){
   const isQ=i<Q.length,el=document.getElementById('qcon');
   document.getElementById('sec-name').textContent=isQ?(AREAS[Q[i].a].name+' · '+AREAS[Q[i].a].sub):'Your situation';
@@ -359,9 +362,10 @@ function prev(){if(i>0){i--;render();}}
 
 function subGate(e){
   e.preventDefault();if(document.getElementById('gbot').value)return;
+  window.acTrack&&acTrack('Quiz details sent');
   lead={name:gn.value.trim(),company:gc.value.trim(),email:ge.value.trim(),phone:gp.value.trim(),location:gl.value.trim(),comments:gm.value.trim()};
   const s=score(),pk=planKey();
-  const data={'form-name':'ask-contracks-quiz',source:'Resilience quiz',subject:'New lead — quiz — '+PLANS[pk].name+' plan — '+lead.name+' ('+lead.company+') — '+s+'/100',plan:PLANS[pk].opt,project:'(from quiz) '+R[0].o[rt[0]]+' · '+R[1].o[rt[1]]+' live contract(s)',name:lead.name,company:lead.company,email:lead.email,phone:lead.phone,location:lead.location,comments:lead.comments,
+  const data={'form-name':'ask-contracks-quiz',source:'Resilience quiz'+(window.acAttribution?' · '+window.acAttribution:''),subject:'New lead — quiz — '+PLANS[pk].name+' plan — '+lead.name+' ('+lead.company+') — '+s+'/100',plan:PLANS[pk].opt,project:'(from quiz) '+R[0].o[rt[0]]+' · '+R[1].o[rt[1]]+' live contract(s)',name:lead.name,company:lead.company,email:lead.email,phone:lead.phone,location:lead.location,comments:lead.comments,
    score:s+'/100',level:level(s).name,'recommended-plan':PLANS[pk].name,
    contain:areaS(0)+'%',command:areaS(1)+'%',close:areaS(2)+'%',confirm:areaS(3)+'%',control:areaS(4)+'%'};
   R.forEach((r,k)=>data[r.k]=r.o[rt[k]]);
@@ -374,6 +378,7 @@ function subGate(e){
 function gapsIdx(){return AREAS.map((_,k)=>k).filter(k=>areaS(k)<100).sort((a,b)=>areaS(a)-areaS(b)).slice(0,2);}
 
 function showTop(){
+  window.acTrack&&acTrack('Quiz completed');
   const s=score(),L=level(s);
   document.getElementById('rnum').textContent=s;
   document.getElementById('ring').style.background=`conic-gradient(${L.col} 0% ${s}%, rgba(255,255,255,.12) ${s}% 100%)`;
