@@ -458,6 +458,7 @@ function showTop(){
   const gi=gapsIdx();
   document.getElementById('gaps-h').innerHTML=gi.length===2?'Your two principal <em>potential weaknesses</em>':gi.length===1?'Your principal <em>potential weakness</em>':'No <em>gaps</em> in your answers';
   document.getElementById('gaps').innerHTML=gi.length?gi.map(a=>`<div class="gap"><span class="tag">Potential exposure · ${AREAS[a].name} ${areaS(a)}%</span><b>${AREAS[a].exp}</b><p>${AREAS[a].det}</p><p class="why"><b style="display:inline;color:var(--navy)">Why it matters:</b> ${AREAS[a].why}</p></div>`).join(''):`<div class="gap ok"><span class="tag">Every answer in place</span><b>Your answers show no gap on the 5Cs.</b><p>The risk now is scale: keep the same discipline on every new contract, new person and new client.</p></div>`;
+  try{const s0=score();sessionStorage.setItem('acScore',JSON.stringify({score:s0+'/100',level:L.name,'weakest-c':(gi[0]!==undefined?AREAS[gi[0]].name:''),contain:areaS(0)+'%',command:areaS(1)+'%',close:areaS(2)+'%',confirm:areaS(3)+'%',control:areaS(4)+'%','contract-value':R[0].o[rt[0]]||'','live-contracts':R[1].o[rt[1]]||'',dispute:R[2].o[rt[2]]||'','who-does-the-work':R[3].o[rt[3]]||'',answers:Q.map((q,k)=>(k+1)+'. '+(ans[k]===1?'Yes':'No')+(ok(k)?'':'  <- GAP')+' — '+q.t).join('\n')}));}catch(e){}
   document.getElementById('rgate').hidden=false;document.getElementById('rfull').hidden=true;
   document.getElementById('rcall').href='/#book';
   ss('results');
@@ -474,6 +475,7 @@ function showFull(){
     <p class="what"><b style="color:var(--navy)">Why:</b> ${esc(why.join('; '))}.</p>
     <span class="alt">A suggestion, not a professional assessment. We confirm what fits with you on the call, and scope and fee in writing before you start.</span>`;
   document.getElementById('rcall').href='/?plan='+pk+'#book';
+  try{const c0=JSON.parse(sessionStorage.getItem('acScore')||'{}');c0['recommended-plan']=P.name;sessionStorage.setItem('acScore',JSON.stringify(c0));}catch(e){}
   document.getElementById('bars').innerHTML=AREAS.map((a,k)=>`<div class="barrow" role="listitem"><div class="h"><span>${a.name} <span style="font-weight:400;color:var(--muted)">· ${a.sub}</span></span><span>${areaS(k)}%</span></div><div class="track" aria-hidden="true"><div style="width:${areaS(k)}%;background:${barCol(areaS(k))}"></div></div></div>`).join('');
   const acts=priorityActions();
   document.getElementById('acts-h').innerHTML=acts.length===3?'Three <em>priority actions</em>':acts.length?'Your <em>priority action'+(acts.length>1?'s':'')+'</em>':'Your <em>next action</em>';

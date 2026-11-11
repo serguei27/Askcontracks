@@ -346,6 +346,16 @@ a.lang.main.on{background:var(--navy);color:#fff}
 .perk a{text-decoration:none}
 form.card{scroll-margin-top:96px;padding:34px;box-shadow:0 20px 50px rgba(10,22,40,.08)}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ctitle{font-size:1.6rem;margin-bottom:4px}
+.csub{color:var(--muted);margin-bottom:18px}
+.opt{font-weight:400;color:var(--muted)}
+.cmeth{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px 18px}
+.cmeth legend{font-weight:600;font-size:.88rem;color:var(--navy);margin-bottom:8px;padding:0}
+.cmeth label{display:flex;align-items:center;gap:6px;font-weight:500;font-size:.95rem;cursor:pointer}
+.cmeth input{width:auto;accent-color:var(--navy)}
+.cerr{color:var(--red);font-weight:600;margin-top:14px}
+.cok{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;color:var(--navy);line-height:1.4}
+#callform [hidden]{display:none!important}
 .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
 .field.full{grid-column:1/-1}
 label{font-weight:600;font-size:.92rem;color:var(--navy)}
@@ -470,7 +480,7 @@ footer a:hover{color:var(--gold-2)}
       <p class="hero-note">For <b>contractors and specialist subcontractors</b> managing €500K–€50M contracts without enough senior contract-management capacity. We also support developers and owners needing additional commercial control.</p>
       <p class="hero-note">Building, infrastructure, energy, industrial and pharma plants.</p>
       <p class="hero-note"><b>From €1,500/month</b> · Month to month · Scope agreed before we start</p>
-      <p class="hero-note">Not sure where your contract stands? <a href="#book" style="color:var(--navy);font-weight:700">Book a free 45-minute call →</a></p>
+      <p class="hero-note">Not sure where your contract stands? <a href="#book" style="color:var(--navy);font-weight:700">Book a Free 45-Minute Call →</a></p>
     </div>
     <div class="math-card" aria-label="What you receive in the first 30 days">
       <div class="tag">What you receive in the first 30 days</div>
@@ -725,7 +735,7 @@ footer a:hover{color:var(--gold-2)}
           <li>Monthly priority report</li>
           <li>Questions between reviews, within agreed monthly capacity</li>
         </ul>
-        <a href="#book" class="btn btn-line" onclick="setPlan('Control — from €1,500/month')">Book your free 45-min call</a>
+        <a href="#book" class="btn btn-line" onclick="setPlan('Control — from €1,500/month')">Book a Free 45-Minute Call</a>
       </div>
       <div class="card plan pop">
         <h3>Dedicated</h3>
@@ -740,7 +750,7 @@ footer a:hover{color:var(--gold-2)}
           <li>Payment applications supported and followed up</li>
           <li>Within a defined monthly capacity</li>
         </ul>
-        <a href="#book" class="btn btn-gold" onclick="setPlan('Dedicated — from €2,500/month')">Book your free 45-min call</a>
+        <a href="#book" class="btn btn-gold" onclick="setPlan('Dedicated — from €2,500/month')">Book a Free 45-Minute Call</a>
       </div>
       <div class="card plan">
         <h3>Custom</h3>
@@ -754,7 +764,7 @@ footer a:hover{color:var(--gold-2)}
           <li>Contract drafting and negotiation</li>
           <li>Cross-border projects</li>
         </ul>
-        <a href="#book" class="btn btn-line" onclick="setPlan('Custom — quote')">Book your free 45-min call</a>
+        <a href="#book" class="btn btn-line" onclick="setPlan('Custom — quote')">Book a Free 45-Minute Call</a>
       </div>
     </div>
     <p class="scope">We agree the contracts covered, priority activities and monthly capacity before starting. If your needs grow, we agree additional support and pricing with you first.</p>
@@ -917,31 +927,41 @@ footer a:hover{color:var(--gold-2)}
         <li>Confidentiality and secure handover<span>If you go ahead, we sign a confidentiality agreement before any documents are shared.</span></li>
       </ol>
     </div>
-    <form class="card" name="ask-contracks" onsubmit="stash()" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+    <form class="card cform" id="callform" name="ask-contracks" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" novalidate>
       <input type="hidden" name="form-name" value="ask-contracks">
       <input type="hidden" name="subject" id="fsubj" value="New lead — Ask Contracks 45-min call request">
-      <input type="hidden" name="source" value="Booking form">
-      <input type="hidden" name="score"><input type="hidden" name="level"><input type="hidden" name="recommended-plan">
+      <input type="hidden" name="source" id="fsrc" value="Call request form">
+      <input type="hidden" name="plan" id="fplan" value="Not sure yet — review first">
+      <input type="hidden" name="score"><input type="hidden" name="level"><input type="hidden" name="recommended-plan"><input type="hidden" name="weakest-c">
       <input type="hidden" name="contain"><input type="hidden" name="command"><input type="hidden" name="close"><input type="hidden" name="confirm"><input type="hidden" name="control">
       <input type="hidden" name="live-contracts"><input type="hidden" name="dispute"><input type="hidden" name="who-does-the-work"><input type="hidden" name="answers">
+      <input type="hidden" name="role"><input type="hidden" name="contract-value"><input type="hidden" name="project"><input type="hidden" name="comments">
       <p class="hp" hidden style="display:none" aria-hidden="true"><label>Leave empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-      <div class="fgrid">
-        <div class="field"><label for="n">Your name *</label><input id="n" name="name" autocomplete="name" required></div>
-        <div class="field"><label for="c">Company *</label><input id="c" name="company" autocomplete="organization" required></div>
-        <div class="field"><label for="e">Email *</label><input id="e" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="t">Phone <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="t" name="phone" type="tel" autocomplete="tel" placeholder="If you prefer a call back"></div>
-        <div class="field full"><label for="l">Project location</label><input id="l" name="location" autocomplete="address-level2" placeholder="City, country"></div>
-        <div class="field"><label for="r">You are</label>
-          <select id="r" name="role"><option value="">Select</option><option value="Main contractor">Main contractor</option><option value="EPC contractor">EPC contractor</option><option value="Subcontractor">Subcontractor</option><option value="Developer / owner">Developer / owner</option><option value="Owner / operator (industrial, energy, pharma)">Owner / operator (industrial, energy, pharma)</option><option value="Internal commercial team">Internal commercial team</option><option value="Other">Other</option></select></div>
-        <div class="field"><label for="v">Contract value</label>
-          <select id="v" name="contract-value"><option value="">Select</option><option value="Under €500K">Under €500K</option><option value="€500K – €5M">€500K – €5M</option><option value="€5M – €50M">€5M – €50M</option><option value="Over €50M">Over €50M</option></select></div>
-        <div class="field full"><label for="pr">About your project *</label><textarea id="pr" name="project" required placeholder="What you're building, where, contract form (FIDIC, bespoke…), stage and duration."></textarea></div>
-        <div class="field full"><label for="m">Comments <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="m" name="comments" placeholder="What's on your mind — variations, payments, workload, a claim, questions for us…"></textarea></div>
-        <div class="field full"><label for="p">Plan you're interested in</label>
-          <select id="p" name="plan"><option value="Not sure yet — review first">Not sure yet — review first</option><option value="Control — from €1,500/month">Control — from €1,500/month</option><option value="Dedicated — from €2,500/month">Dedicated — from €2,500/month</option><option value="Custom — quote">Custom — quote</option></select></div>
+      <div id="cfields">
+        <h3 class="ctitle">Let's talk.</h3>
+        <p class="csub">Leave your details and we'll get in touch.</p>
+        <div class="fgrid">
+          <div class="field"><label for="n">Your name *</label><input id="n" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="e">Email *</label><input id="e" name="email" type="email" autocomplete="email" required></div>
+          <div class="field full"><label for="c">Company *</label><input id="c" name="company" autocomplete="organization" required></div>
+          <fieldset class="field full cmeth"><legend>How should we contact you? *</legend>
+            <label><input type="radio" name="contact-method" value="WhatsApp" checked> WhatsApp</label>
+            <label><input type="radio" name="contact-method" value="Phone call"> Phone call</label>
+            <label><input type="radio" name="contact-method" value="LinkedIn message"> LinkedIn message</label>
+            <label><input type="radio" name="contact-method" value="Email"> Email</label>
+          </fieldset>
+          <div class="field full" data-for="WhatsApp"><label for="w">WhatsApp number *</label><input id="w" name="whatsapp" type="tel" autocomplete="tel" placeholder="+44 7700 900123" pattern="[0-9\s\(\)\+\-]{7,20}" required></div>
+          <div class="field full" data-for="Phone call" hidden><label for="t">Phone number *</label><input id="t" name="phone" type="tel" autocomplete="tel" placeholder="+44 7700 900123" pattern="[0-9\s\(\)\+\-]{7,20}"></div>
+          <div class="field full" data-for="LinkedIn message" hidden><label for="li">LinkedIn profile URL *</label><input id="li" name="linkedin" type="url" placeholder="https://www.linkedin.com/in/your-name"></div>
+          <div class="field full"><label for="l">Location <span class="opt">(optional)</span></label><input id="l" name="location" autocomplete="address-level2" placeholder="City, country"></div>
+          <div class="field full"><label for="bt">When is the best time to contact you? <span class="opt">(Optional)</span></label><input id="bt" name="best-time" maxlength="200" placeholder="e.g. Tomorrow morning, Thursday after 2 pm, or anytime next week…"></div>
+          <div class="field full"><label for="m" id="mlabel">Tell us briefly about your contract <span class="opt">(Optional)</span></label><textarea id="m" name="message" maxlength="1000"></textarea></div>
+        </div>
+        <p class="cerr" id="cerr" role="alert" hidden></p>
+        <button type="submit" class="btn btn-navy" id="cbtn">Request My Free Call →</button>
+        <p class="form-foot">* Required. No documents needed · No obligation. <a href="/privacy">Privacy</a></p>
       </div>
-      <button type="submit" class="btn btn-navy">Book my free 45-minute call →</button>
-      <p class="form-foot">* Required. No documents needed — the review happens on the call. We contact you within one business day to book it.</p>
+      <p class="cok" id="cok" role="status" hidden>Thank you. We've received your request. We'll contact you using your preferred method to arrange your free 45-minute conversation.</p>
     </form>
   </div>
 </section>
@@ -954,12 +974,13 @@ footer a:hover{color:var(--gold-2)}
         <b>Not ready for a call?</b>
         <span>Stay in touch — leave your email and we'll share occasional field notes on construction and EPC contract control. No spam, unsubscribe any time.</span>
       </div>
-      <form id="stayf" class="stay-f" method="POST" action="/thanks.html" onsubmit="stayIn(event)">
-        <input type="hidden" name="form-name" value="ask-contracks"><input type="hidden" name="source" value="Stay in touch">
+      <form id="stayf" class="stay-f" name="ask-contracks-fieldnotes" method="POST" action="/thanks.html" data-netlify="true" onsubmit="stayIn(event)">
+        <input type="hidden" name="form-name" value="ask-contracks-fieldnotes"><input type="hidden" name="subject"><input type="hidden" name="source" value="Stay in touch">
         <input id="sn" name="name" placeholder="Your name" autocomplete="name" aria-label="Your name">
         <input id="se" name="email" type="email" placeholder="Work email" autocomplete="email" aria-label="Work email" required>
         <button class="btn btn-navy" id="sbtn">Stay in touch</button>
       </form>
+      <p class="cerr" id="stayerr" role="alert" hidden>Sorry, that didn't go through. Please try again.</p>
       <p class="stay-ok" id="stayok" hidden>Thank you — you're on the list.</p>
     </div>
   </div>
@@ -969,7 +990,7 @@ footer a:hover{color:var(--gold-2)}
   <div class="wrap">
     <div class="fwrap">
       <div class="flogo"><b>Ask Contracks<span>.</span></b><br><span>Better contracts. Better companies. Better communities.</span></div>
-      <div class="fbtns"><a href="#book" class="btn btn-gold">Book your free 45-min call</a></div>
+      <div class="fbtns"><a href="#book" class="btn btn-gold">Book a Free 45-Minute Call</a></div>
     </div>
     <div class="fwrap copy">
       <span>© 2026 Ask Contracks · Europe · Africa · Gulf</span>
@@ -980,17 +1001,41 @@ footer a:hover{color:var(--gold-2)}
 
 <div class="sticky">
   <a href="#pricing" class="btn btn-line">Pricing</a>
-  <a href="#book" class="btn btn-navy">Free call</a>
+  <a href="#book" class="btn btn-navy">Free Call</a>
 </div>
 
 <script>
 document.querySelectorAll('a[href="#book"]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();var f=document.querySelector('form[name="ask-contracks"]');f.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(function(){try{document.getElementById('n').focus({preventScroll:true});}catch(e){}f.classList.remove('flash');void f.offsetWidth;f.classList.add('flash');},650);});});
-function stayIn(e){e.preventDefault();var n=document.getElementById('sn').value.trim(),m=document.getElementById('se').value.trim(),b=document.getElementById('sbtn');b.disabled=true;
-var d={'form-name':'ask-contracks',source:'Stay in touch',subject:'New contact — stay in touch — '+(n||m),name:n,email:m};
-fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).catch(function(){}).finally(function(){document.getElementById('stayf').hidden=true;document.getElementById('stayok').hidden=false;});}
-function stash(){try{var c=document.getElementById('c').value,n=document.getElementById('n').value;document.getElementById('fsubj').value='New lead — 45-min call request — '+n+(c?' ('+c+')':'');}catch(e){}try{sessionStorage.setItem('ac',JSON.stringify({n:document.getElementById('n').value,e:document.getElementById('e').value}));}catch(e){}}
-(function(){try{var m={control:'Control — from €1,500/month',dedicated:'Dedicated — from €2,500/month',custom:'Custom — quote'};var k=new URLSearchParams(location.search).get('plan');if(k&&m[k])document.addEventListener('DOMContentLoaded',function(){setPlan(m[k]);});}catch(e){}})();
-function setPlan(v){var s=document.getElementById('p');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].value===v||s.options[i].text===v){s.selectedIndex=i;}}}}
+function stayIn(e){e.preventDefault();var n=document.getElementById('sn').value.trim(),m=document.getElementById('se').value.trim(),b=document.getElementById('sbtn');if(b.disabled)return;b.disabled=true;
+var d={'form-name':'ask-contracks-fieldnotes',source:'Stay in touch',subject:'New field-notes signup — '+(n||m),name:n,email:m};
+var er=document.getElementById('stayerr');if(er)er.hidden=true;
+fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).then(function(r){if(!r.ok)throw 0;document.getElementById('stayf').hidden=true;document.getElementById('stayok').hidden=false;}).catch(function(){b.disabled=false;if(er)er.hidden=false;});}
+// Call request form (v3.5 standard). Plan comes from ?plan=; Contract Score context from this browser tab's session, never the URL.
+(function(){
+  var f=document.getElementById('callform');if(!f)return;
+  var PLANS={control:'Control — from €1,500/month',dedicated:'Dedicated — from €2,500/month',custom:'Custom — quote'};
+  try{var k=new URLSearchParams(location.search).get('plan');if(k&&PLANS[k])document.getElementById('fplan').value=PLANS[k];}catch(e){}
+  var ctx=null;try{ctx=JSON.parse(sessionStorage.getItem('acScore')||'null');}catch(e){}
+  if(ctx){Object.keys(ctx).forEach(function(n){var i=f.querySelector('input[type=hidden][name="'+n+'"]');if(i)i.value=ctx[n];});
+    document.getElementById('fsrc').value='Call request after Contract Score';
+    document.getElementById('mlabel').firstChild.nodeValue='What would you like to discuss? ';}
+  var need={'WhatsApp':'w','Phone call':'t','LinkedIn message':'li'};
+  function method(){var r=f.querySelector('input[name="contact-method"]:checked');return r?r.value:'WhatsApp';}
+  function sync(){var m=method();f.querySelectorAll('[data-for]').forEach(function(d){var on=d.getAttribute('data-for')===m;d.hidden=!on;var i=d.querySelector('input');i.required=on;if(!on)i.value='';});}
+  f.querySelectorAll('input[name="contact-method"]').forEach(function(r){r.addEventListener('change',sync);});sync();
+  var sending=false;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();if(sending)return;
+    var err=document.getElementById('cerr');err.hidden=true;
+    if(!f.checkValidity()){var bad=f.querySelector(':invalid:not([type=hidden])');err.textContent='Please check the highlighted field: '+(bad&&bad.labels&&bad.labels[0]?bad.labels[0].textContent.replace('*','').trim():'required field')+'.';err.hidden=false;if(bad)bad.focus();return;}
+    var n=document.getElementById('n').value.trim(),c=document.getElementById('c').value.trim();
+    document.getElementById('fsubj').value='New lead — 45-min call request — '+n+' ('+c+') — via '+method()+(ctx&&ctx.score?' — Contract Score '+ctx.score:'');
+    var b=document.getElementById('cbtn');sending=true;b.disabled=true;b.textContent='Sending…';
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
+     .then(function(r){if(!r.ok)throw 0;document.getElementById('cfields').hidden=true;var ok=document.getElementById('cok');ok.hidden=false;ok.focus&&ok.setAttribute('tabindex','-1');ok.focus();try{sessionStorage.removeItem('acScore');}catch(x){}window.acTrack&&acTrack('Call requested');})
+     .catch(function(){sending=false;b.disabled=false;b.textContent='Request My Free Call →';err.textContent="Sorry, your request didn't go through. Please try again, or email hello@contracks.global.";err.hidden=false;});
+  });
+})();
 </script>
 <script>
 (function(){
