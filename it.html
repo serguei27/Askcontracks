@@ -180,6 +180,7 @@ section{padding:92px 0}
 
 /* PRICING */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+@media (min-width:961px){.plans .plan{display:grid;grid-template-rows:subgrid;grid-row:span 6;row-gap:0;align-content:start}.plans .plan .for{min-height:0}.plans .plan .chip{justify-self:start;align-self:start}}
 .plan{display:flex;flex-direction:column;padding:34px 30px}
 .plan h3{font-family:'DM Sans',sans-serif;font-size:1.5rem;font-weight:700}
 .plan .for{color:var(--muted);font-size:.97rem;margin-top:6px;min-height:48px}
