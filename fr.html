@@ -55,7 +55,11 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 .burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer;flex-direction:column;justify-content:center;gap:5px;align-items:center}
 .burger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px}
 @media (max-width:1060px){.links{gap:26px}}
-@media (max-width:900px){
+/* Seven menu items: tighter spacing so the centred menu clears the logo and call button */
+.links{width:max-content;gap:30px}
+@media (max-width:1200px){.links{gap:20px}}
+@media (max-width:1080px){.links{gap:14px}.links a{font-size:.92rem}}
+@media (max-width:1000px){
   nav.top .wrap{flex-wrap:wrap;height:auto;padding-top:12px;padding-bottom:0;row-gap:10px}
   .links{position:static;transform:none;order:3;width:100%;gap:0;justify-content:space-between;overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid var(--line);scrollbar-width:none}
   .links::-webkit-scrollbar{display:none}
@@ -63,7 +67,7 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
   .links a:first-child{padding-left:0}.links a:last-child{padding-right:0}
   .nav-cta{padding:10px 16px;font-size:.85rem}
 }
-@media (max-width:480px){.logo small{display:none}.nav-cta{padding:9px 14px;font-size:.8rem}.links a{font-size:.9rem;padding:13px 8px}}
+@media (max-width:480px){.logo small{display:none}.nav-cta{padding:9px 14px;font-size:.8rem}.links a{font-size:.85rem;padding:13px 4px}}
 
 .nav-cta .sm{display:none}@media (max-width:480px){.nav-cta .lg{display:none}.nav-cta .sm{display:inline}}
 /* HERO */
@@ -185,6 +189,7 @@ section{padding:92px 0}
 .plan li{padding:8px 0 8px 28px;position:relative;font-size:.97rem}
 .plan li::before{content:"";position:absolute;left:0;top:13px;width:14px;height:8px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
 .plan .btn{width:100%}
+.plans-cta{text-align:center;margin-top:28px}.plan ul{margin-bottom:0}
 .plan.pop{background:var(--navy);color:#fff;border:0;position:relative;box-shadow:0 24px 60px rgba(10,22,40,.25)}
 .plan.pop h3,.plan.pop .price{color:#fff}
 .plan.pop .for,.plan.pop .price small{color:rgba(255,255,255,.7)}
@@ -220,6 +225,61 @@ section{padding:92px 0}
 .lang.main{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:600}
 @media (max-width:900px){.where-grid{grid-template-columns:1fr}}
 /* QUIZ */
+/* CONTRACT RESILIENCE INVITATION */
+section.crs{padding:72px 0}
+.crs-panel{background-color:var(--navy);background-image:linear-gradient(180deg,rgba(10,22,40,0) 0,rgba(10,22,40,.25) 26%,var(--navy) 60%),linear-gradient(90deg,rgba(10,22,40,.95) 0,rgba(10,22,40,.8) 52%,rgba(10,22,40,.08) 100%),url(site-roof.jpeg);background-size:100% 100%,100% 100%,100% auto;background-position:top center;background-repeat:no-repeat;color:#fff;border-radius:28px;padding:48px}
+.crs-kicker{display:flex;align-items:center;gap:14px;color:var(--gold-2);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.crs-kicker::after{content:"";flex:1;height:1px;background:rgba(197,160,80,.45)}
+.crs h2{color:#fff;font-size:clamp(2rem,4.4vw,3.1rem);margin:16px 0 14px;max-width:900px}
+.crs h2 em{color:var(--gold-2)}
+.crs-lead{color:rgba(255,255,255,.8);font-size:1.08rem;max-width:760px}
+.crs-risks{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px;margin:18px 0 0}
+.crs-risks li{padding-left:22px;position:relative;font-weight:600;font-size:.96rem}
+.crs-risks li::before{content:"";position:absolute;left:0;top:.72em;width:13px;height:2px;background:var(--gold)}
+.crs-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:end;margin-top:36px}
+.crs-stages h3{color:#fff;font-size:clamp(1.35rem,2.6vw,1.75rem);margin-bottom:18px}
+.crs-line{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end}
+.crs-stage{font:inherit;text-align:left;color:#fff;border:1.5px solid transparent;border-radius:14px;padding:16px 14px;cursor:pointer}
+.crs-stage b{display:block;font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;margin-bottom:6px}
+.crs-stage span{display:block;font-size:.82rem;line-height:1.4;color:rgba(255,255,255,.9)}
+.crs-stage.s1{background:#8F3027;min-height:190px}
+.crs-stage.s2{background:#8A6D2B;min-height:225px}
+.crs-stage.s3{background:#2D6A4F;min-height:260px}
+.crs-stage:hover{border-color:rgba(255,255,255,.55)}
+.crs-stage:focus-visible,.crs-act a:focus-visible{outline:3px solid var(--gold-2);outline-offset:2px}
+.crs-stage[aria-pressed="true"]{border-color:#fff;box-shadow:0 0 0 2px var(--gold-2)}
+.crs-note{color:rgba(255,255,255,.72);font-size:.9rem;margin-top:14px;min-height:2.8em}
+.crs-card{background:rgba(255,255,255,.05);border:1px solid rgba(212,180,112,.45);border-radius:20px;padding:24px}
+.crs-tag{color:var(--gold-2);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.crs-title{font-weight:700;font-size:1.05rem;margin:6px 0 14px}
+.crs-score{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center}
+.crs-bar{display:grid;grid-template-columns:78px minmax(0,1fr) 42px;gap:8px;align-items:center;padding:6px 0;font-size:.78rem;font-weight:600;letter-spacing:.03em}
+.crs-bar i{display:block;height:13px;background:rgba(255,255,255,.12);border-radius:3px;overflow:hidden}
+.crs-bar u{display:block;height:100%;text-decoration:none}
+.crs-bar b{text-align:right}
+.crs-total{border-left:1px solid rgba(255,255,255,.2);padding-left:16px;text-align:center}
+.crs-total small{display:block;font-size:.76rem;color:rgba(255,255,255,.72)}
+.crs-total strong{display:block;font-family:'Playfair Display',Georgia,serif;font-size:2.4rem;line-height:1.1;color:var(--gold-2)}
+.crs-total em{display:block;font-style:normal;font-weight:700;margin-top:6px}
+.crs-weak{border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:12px 14px;margin-top:14px;font-size:.88rem;color:rgba(255,255,255,.82)}
+.crs-weak b{display:block;color:var(--gold-2);margin-bottom:2px}
+.crs-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16)}
+.crs-foot p{font-weight:600;font-size:1.1rem;border-left:3px solid var(--gold);padding-left:14px;max-width:520px}
+.crs-act{text-align:center}
+.crs-act small{display:block;margin-top:10px;font-size:.84rem;color:rgba(255,255,255,.72)}
+.free-tag{display:block;margin-top:12px;font-weight:700;font-size:.82rem;letter-spacing:.18em;color:var(--gold)}.crs-act .free-tag+small{margin-top:4px}
+@media (max-width:960px){.crs-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){
+  section.crs{padding:48px 0}
+  .crs-panel{padding:26px 20px;border-radius:22px;background-image:linear-gradient(180deg,rgba(10,22,40,.72) 0,rgba(10,22,40,.88) 300px,var(--navy) 540px),url(site-roof.jpeg);background-size:100% 100%,auto 560px}
+  .crs-line{grid-template-columns:minmax(0,1fr)}
+  .crs-stage.s1,.crs-stage.s2,.crs-stage.s3{min-height:0}
+  .crs-score{grid-template-columns:minmax(0,1fr)}
+  .crs-total{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:12px 0 0;display:flex;gap:8px;align-items:baseline;justify-content:center;flex-wrap:wrap}
+  .crs-total strong{font-size:1.8rem}
+  .crs-total em{margin:0}
+  .crs-act,.crs-act .btn{width:100%}
+}
 .quiz-box{display:grid;grid-template-columns:1.3fr 1fr;gap:44px;align-items:center;background:var(--navy);color:#fff;border-radius:24px;padding:48px}
 .quiz-box h2{color:#fff;font-size:clamp(1.8rem,4vw,2.6rem);margin:16px 0 14px}
 .quiz-box p{color:rgba(255,255,255,.75);margin-bottom:26px}
@@ -256,6 +316,12 @@ a.lang.main.on{background:var(--navy);color:#fff}
 .flang{display:inline-flex;flex-wrap:wrap;gap:12px;margin-right:8px}
 .flang a.on{color:var(--gold-2)}
 @media (max-width:760px){.trio{grid-template-columns:1fr}}
+.affil{margin-top:28px;text-align:center}
+.affil>b{display:block;font-size:1rem;color:var(--navy)}
+.affil-row{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.affil-row li{min-width:120px;padding:12px 18px;border:1px solid var(--line);border-radius:10px;background:#fff;font-weight:700;letter-spacing:.04em;color:var(--navy)}
+.affil-cap{margin:10px 0 0;font-size:.85rem;color:var(--muted)}
+@media (max-width:480px){.affil-row li{flex:1 1 calc(50% - 12px);min-width:0}}
 .field-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
 .field-strip figure{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--line)}
 .field-strip img{width:100%;height:100%;object-fit:cover;display:block}
@@ -282,6 +348,31 @@ a.lang.main.on{background:var(--navy);color:#fff}
 .perk a{text-decoration:none}
 form.card{scroll-margin-top:96px;padding:34px;box-shadow:0 20px 50px rgba(10,22,40,.08)}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ctitle{font-size:1.6rem;margin-bottom:4px}
+.csub{color:var(--muted);margin-bottom:18px}
+.opt{font-weight:400;color:var(--muted)}
+.cmeth{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px 18px}
+.cmeth legend{font-weight:600;font-size:.88rem;color:var(--navy);margin-bottom:8px;padding:0}
+.cmeth label{display:flex;align-items:center;gap:6px;font-weight:500;font-size:.95rem;cursor:pointer}
+.cmeth input{width:auto;accent-color:var(--navy)}
+.cerr{color:var(--red);font-weight:600;margin-top:14px}
+.cok{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;color:var(--navy);line-height:1.4}
+#callform [hidden]{display:none!important}
+.sticky .btn-gold{flex:2;white-space:nowrap;font-size:.84rem;padding:13px 10px}
+.sticky .btn-line{flex:1}
+.crs-head{margin-bottom:28px}
+.crs .crs-head h2{color:var(--navy)}
+.crs .crs-head h2 em{color:var(--gold)}
+@keyframes crspulse{0%,100%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 0 rgba(197,160,80,.75)}60%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 14px rgba(197,160,80,0)}}
+.crs-start{animation:crspulse 2.2s ease-out infinite}
+.ac-pulse{animation:crspulse 2.2s ease-out infinite}.ac-pulse:hover,.ac-pulse:focus-visible{animation:none}
+@media (prefers-reduced-motion:reduce){.ac-pulse{animation:none}}
+.crs-start:hover,.crs-start:focus-visible{animation:none}
+@media (prefers-reduced-motion:reduce){.crs-start{animation:none}}
+@media (max-width:480px){.crs-start{white-space:nowrap;font-size:.92rem;padding:15px 12px}}
+.plans-cta .btn{white-space:nowrap;min-width:320px}
+@media (max-width:480px){.plans-cta .btn{width:100%;min-width:0;font-size:.92rem;padding:15px 12px}}
+@media (max-width:480px){nav.top .wrap{flex-wrap:nowrap;column-gap:10px}nav.top .wrap>.logo{flex:none}nav.top .nav-cta{white-space:nowrap;font-size:.74rem;padding:9px 12px}nav.top #menu{order:3;flex-basis:100%}nav.top .wrap{flex-wrap:wrap}}
 .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
 .field.full{grid-column:1/-1}
 label{font-weight:600;font-size:.92rem;color:var(--navy)}
@@ -397,7 +488,7 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <div class="wrap">
 <a class="logo" href="#"><b>Ask Contracks<span>.</span></b></a>
 <div class="links" id="menu"><a href="#how">Fonctionnement</a><a href="#services">Services</a><a href="#results">Références</a><a href="#pricing">Tarifs</a><a href="#faq">FAQ</a></div>
-<a class="btn btn-navy nav-cta" href="#book"><span class="lg">Appel gratuit</span><span class="sm">Appel gratuit</span></a>
+<a href="/quiz" class="btn btn-navy nav-cta ac-pulse"><span class="lg">Démarrer mon Contract Score</span><span class="sm">Démarrer mon Contract Score</span></a>
 </div>
 </nav>
 <!-- 1. PROMISE -->
@@ -407,11 +498,11 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <span class="pill">Gestion des contrats de construction &amp; EPC · Mensuel</span>
 <h1>Votre équipe contrats, <em>sans recrutement.</em></h1>
 <p class="sub"><b style="color:var(--navy)">Vous construisez. Nous aidons votre équipe à garder le contrat sous contrôle.</b> Un contract manager senior attitré, appuyé par des spécialistes, pour vous aider à gérer notifications, modifications, paiements et réclamations — chaque semaine.</p>
-<div class="hero-ctas"><a class="btn btn-navy" href="#book">Réserver votre appel d’analyse gratuit de 45 minutes →</a><a class="btn btn-text" href="#pricing">Voir les tarifs</a></div>
+<div class="hero-ctas"><a href="#contract-resilience" class="btn btn-navy">Obtenir mon Contract Score — gratuit →</a><a class="btn btn-text" href="#pricing">Voir les tarifs</a></div>
 <p class="hero-note">Pour les <b>entreprises générales et sous-traitants spécialisés</b> qui gèrent des contrats de 500 K€ à 50 M€ sans capacité suffisante en gestion contractuelle senior. Nous accompagnons aussi les promoteurs et maîtres d’ouvrage qui ont besoin d’un contrôle commercial renforcé.</p>
 <p class="hero-note">Bâtiment, infrastructures, énergie, sites industriels et pharmaceutiques.</p>
 <p class="hero-note"><b>À partir de 1 500 €/mois</b> · Sans engagement de durée · Périmètre convenu avant de commencer</p>
-<p class="hero-note">Vous hésitez sur la formule ? <a href="/quiz" style="color:var(--navy);font-weight:700">Faites le Contract Score en 4 minutes →</a></p>
+<p class="hero-note">Vous ne savez pas où en est votre contrat ? <a href="#book" style="color:var(--navy);font-weight:700">Réserver un appel gratuit de 45 minutes →</a></p>
 </div>
 <div aria-label="Ce que vous recevez les 30 premiers jours" class="math-card">
 <div class="tag">Ce que vous recevez les 30 premiers jours</div>
@@ -459,6 +550,62 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 </div>
 </section>
 <!-- 3. HOW IT WORKS -->
+<section class="crs" id="contract-resilience">
+  <div class="wrap">
+    <div class="head crs-head">
+      <span class="pill">Contract Score</span>
+      <h2>Vérifiez si votre position commerciale est bien <em>protégée.</em></h2>
+    </div>
+    <div class="crs-panel">
+      <div class="crs-kicker"><span>Le Contract Score</span></div>
+      <h2>Votre contrat est signé. <em>Votre position commerciale est-elle protégée ?</em></h2>
+      <p class="crs-lead">Les projets ne perdent pas de l’argent uniquement à cause d’une mauvaise exécution. Ils en perdent quand les travaux supplémentaires ne sont pas documentés, que des notifications sont manquées et que les droits ne peuvent pas être démontrés.</p>
+      <ul class="crs-risks">
+        <li>Travaux supplémentaires réalisés, jamais chiffrés.</li>
+        <li>Une notification envoyée trop tard, ou jamais.</li>
+        <li>Une réduction de paiement que personne n’a contestée par écrit.</li>
+      </ul>
+
+      <div class="crs-grid">
+        <div class="crs-stages">
+          <h3>Dans quelle position êtes-vous vraiment ?</h3>
+          <div class="crs-line" role="group" aria-label="Choisissez la position qui ressemble à votre équipe">
+            <button type="button" class="crs-stage s1" aria-pressed="false"><b>Fragile</b><span>Les droits commerciaux reposent sur des personnes, la mémoire et la communication informelle.</span></button>
+            <button type="button" class="crs-stage s2" aria-pressed="false"><b>Exposé</b><span>Des processus existent, mais des étapes manquées ou des preuves incohérentes peuvent affaiblir les droits.</span></button>
+            <button type="button" class="crs-stage s3" aria-pressed="false"><b>Résilient</b><span>Les actions contractuelles, les notifications et les preuves sont gérées de façon systématique et traçable.</span></button>
+          </div>
+          <p class="crs-note" id="crs-note" aria-live="polite">Choisissez celle qui ressemble à votre équipe. C’est une réflexion personnelle, pas un résultat d’évaluation.</p>
+        </div>
+
+        <div class="crs-card" role="img" aria-label="Exemple de résultat — illustratif. Score 67 sur 100, Exposé. CONTAIN 67%, COMMAND 67%, CLOSE 67%, CONFIRM 100%, CONTROL 33%. Point faible potentiel : notifications contractuelles.">
+          <div class="crs-tag">Exemple de résultat — illustratif</div>
+          <div class="crs-title">Votre Contract Score</div>
+          <div class="crs-score">
+            <div class="crs-bars">
+              <div class="crs-bar"><span>CONTAIN</span><i><u style="width:67%;background:var(--gold)"></u></i><b>67%</b></div>
+              <div class="crs-bar"><span>COMMAND</span><i><u style="width:67%;background:var(--gold)"></u></i><b>67%</b></div>
+              <div class="crs-bar"><span>CLOSE</span><i><u style="width:67%;background:var(--gold)"></u></i><b>67%</b></div>
+              <div class="crs-bar"><span>CONFIRM</span><i><u style="width:100%;background:var(--gold)"></u></i><b>100%</b></div>
+              <div class="crs-bar"><span>CONTROL</span><i><u style="width:33%;background:var(--gold)"></u></i><b>33%</b></div>
+            </div>
+            <div class="crs-total"><small>Score</small><strong>67</strong><small>sur 100</small><em>Exposé</em></div>
+          </div>
+          <div class="crs-weak"><b>Point faible potentiel : notifications contractuelles</b>De telles réponses peuvent indiquer que les délais de notification ou les pièces justificatives ne sont pas maîtrisés de façon systématique.</div>
+        </div>
+      </div>
+
+      <div class="crs-foot">
+        <p>Cinq contrôles. Une question : protégez-vous ce que vous avez gagné ?</p>
+        <div class="crs-act">
+          <a href="/quiz" class="btn btn-navy crs-start" data-crs-cta>Démarrer mon Contract Score</a>
+          <span class="free-tag">GRATUIT</span>
+          <small>Environ 4 minutes · Résultat personnalisé · En anglais</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="how">
 <div class="wrap">
 <div class="head">
@@ -608,7 +755,6 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <li>Rapport mensuel des priorités</li>
 <li>Questions entre les revues, dans la capacité mensuelle convenue</li>
 </ul>
-<a class="btn btn-line" href="#book" onclick="setPlan('Control — from €1,500/month')">Réserver votre appel gratuit de 45 min</a>
 </div>
 <div class="card plan pop">
 <h3>Dedicated</h3>
@@ -623,7 +769,6 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <li>Situations de travaux préparées et suivies</li>
 <li>Dans une capacité mensuelle définie</li>
 </ul>
-<a class="btn btn-gold" href="#book" onclick="setPlan('Dedicated — from €2,500/month')">Réserver votre appel gratuit de 45 min</a>
 </div>
 <div class="card plan">
 <h3>Custom</h3>
@@ -637,9 +782,9 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <li>Rédaction et négociation de contrats</li>
 <li>Projets transfrontaliers</li>
 </ul>
-<a class="btn btn-line" href="#book" onclick="setPlan('Custom — quote')">Réserver votre appel gratuit de 45 min</a>
 </div>
 </div>
+<div class="plans-cta"><a href="#contract-resilience" class="btn btn-gold">Obtenir mon Contract Score — gratuit →</a></div>
 <p class="scope">Nous convenons des contrats couverts, des activités prioritaires et de la capacité mensuelle avant de commencer. Si vos besoins augmentent, nous convenons d’abord avec vous de l’appui supplémentaire et de son prix.</p>
 <div class="offer">
 <div class="c1">
@@ -676,14 +821,14 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 </div>
 </section>
 <!-- QUIZ -->
-<section class="quiz">
+<section class="quiz" id="score">
 <div class="wrap">
 <div class="quiz-box">
 <div>
 <span class="pill">Gratuit · 4 minutes</span>
 <h2>Vous hésitez sur la formule ? <em>Évaluez d’abord votre contrat.</em></h2>
 <p>Évalué selon le 5Cs Framework™ — périmètre, retards et réclamations, instructions, paiements et délais. Votre score sur chacun des 5Cs, trois actions prioritaires et la formule qui pourrait vous convenir : Control, Dedicated ou Custom.</p>
-<a class="btn btn-gold" href="/quiz">Faire le Contract Score →</a>
+<a href="#contract-resilience" class="btn btn-gold">Obtenir mon Contract Score — gratuit →</a>
 </div>
 <ol aria-label="Niveaux de résilience" class="ladder">
 <li><b>3</b><span>Résilient</span></li>
@@ -732,6 +877,7 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <div><b>Dans les réunions qui comptent</b><span>Avec votre client, l’ingénieur ou vos sous-traitants — lorsque c’est prévu dans le périmètre.</span></div>
 <div><b>Jugement et négociation</b><span>Savoir quand insister, quand transiger et quand attendre, cela vient de l’expérience.</span></div>
 </div>
+<div class="affil"><b>Expertise professionnelle et affiliations</b><ul class="affil-row" aria-label="Institutions professionnelles"><li>CIArb</li><li>CIOB</li><li>RICS</li><li>WorldCC</li></ul><p class="affil-cap">Les affiliations professionnelles sont détenues à titre individuel par des spécialistes de notre réseau.</p></div>
 <div class="langs">
 <b>Notre langue commune : le droit des contrats et la construction.</b>
 <p class="langs-cap">Lire cette page en</p>
@@ -769,7 +915,7 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <h2>Réservez votre <em>appel d’analyse gratuit de 45 minutes.</em></h2>
 <p class="slots"><span></span>Nous assurons 4 appels d’analyse gratuits par mois.</p>
 <p class="lead">Parlez-nous de vous et de votre projet. Nous lisons chaque demande et vous contactons pour fixer l’appel. L’analyse gratuite a lieu pendant l’appel — 45 minutes sur un contrat de construction ou EPC en cours. Aucun document nécessaire.</p>
-<p style="margin:-10px 0 22px;color:var(--muted)">Vous hésitez sur la formule ? <a href="/quiz" style="color:var(--navy);font-weight:700">Faites d’abord le score en 4 minutes →</a></p>
+<p style="margin:-10px 0 22px;color:var(--muted)">Vous hésitez sur la formule ? <a href="#contract-resilience" style="color:var(--navy);font-weight:700">Obtenir mon Contract Score — gratuit →</a></p>
 <b style="color:var(--navy)">Ce qui se passe après votre demande</b>
 <ol class="after">
 <li>Envoyez vos coordonnées<span>Qui vous êtes, votre projet et ce qui vous préoccupe.</span></li>
@@ -843,6 +989,19 @@ fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlenco
 function stash(){try{var c=document.getElementById('c').value,n=document.getElementById('n').value;document.getElementById('fsubj').value='New lead — 45-min call request — '+n+(c?' ('+c+')':'');}catch(e){}try{sessionStorage.setItem('ac',JSON.stringify({n:document.getElementById('n').value,e:document.getElementById('e').value}));}catch(e){}}
 (function(){try{var m={control:'Control — from €1,500/month',dedicated:'Dedicated — from €2,500/month',custom:'Custom — quote'};var k=new URLSearchParams(location.search).get('plan');if(k&&m[k])document.addEventListener('DOMContentLoaded',function(){setPlan(m[k]);});}catch(e){}})();
 function setPlan(v){var s=document.getElementById('p');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].value===v||s.options[i].text===v){s.selectedIndex=i;}}}}
+</script>
+<script>
+(function(){
+  var sec=document.getElementById('contract-resilience');if(!sec)return;
+  var t=function(n){window.acTrack&&window.acTrack(n);};
+  var stages=sec.querySelectorAll('.crs-stage'),note=document.getElementById('crs-note');
+  stages.forEach(function(b){b.addEventListener('click',function(){
+    stages.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+    var X=b.querySelector('b').textContent;note.textContent='Vous avez choisi '+X+'. C’est votre propre réflexion, pas une évaluation. Le score la vérifie à l’aide de 15 questions.';
+  });});
+  sec.querySelectorAll('[data-crs-cta]').forEach(function(a){a.addEventListener('click',function(){t('Home score clicked');});});
+  if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){t('Home score seen');o.disconnect();}},{threshold:.3});o.observe(sec);}
+})();
 </script>
 </body>
 </html>

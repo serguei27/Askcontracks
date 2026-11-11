@@ -55,7 +55,11 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 .burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer;flex-direction:column;justify-content:center;gap:5px;align-items:center}
 .burger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px}
 @media (max-width:1060px){.links{gap:26px}}
-@media (max-width:900px){
+/* Seven menu items: tighter spacing so the centred menu clears the logo and call button */
+.links{width:max-content;gap:30px}
+@media (max-width:1200px){.links{gap:20px}}
+@media (max-width:1080px){.links{gap:14px}.links a{font-size:.92rem}}
+@media (max-width:1000px){
   nav.top .wrap{flex-wrap:wrap;height:auto;padding-top:12px;padding-bottom:0;row-gap:10px}
   .links{position:static;transform:none;order:3;width:100%;gap:0;justify-content:space-between;overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid var(--line);scrollbar-width:none}
   .links::-webkit-scrollbar{display:none}
@@ -63,7 +67,7 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
   .links a:first-child{padding-left:0}.links a:last-child{padding-right:0}
   .nav-cta{padding:10px 16px;font-size:.85rem}
 }
-@media (max-width:480px){.logo small{display:none}.nav-cta{padding:9px 14px;font-size:.8rem}.links a{font-size:.9rem;padding:13px 8px}}
+@media (max-width:480px){.logo small{display:none}.nav-cta{padding:9px 14px;font-size:.8rem}.links a{font-size:.85rem;padding:13px 4px}}
 
 .nav-cta .sm{display:none}@media (max-width:480px){.nav-cta .lg{display:none}.nav-cta .sm{display:inline}}
 /* HERO */
@@ -185,6 +189,7 @@ section{padding:92px 0}
 .plan li{padding:8px 0 8px 28px;position:relative;font-size:.97rem}
 .plan li::before{content:"";position:absolute;left:0;top:13px;width:14px;height:8px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
 .plan .btn{width:100%}
+.plans-cta{text-align:center;margin-top:28px}.plan ul{margin-bottom:0}
 .plan.pop{background:var(--navy);color:#fff;border:0;position:relative;box-shadow:0 24px 60px rgba(10,22,40,.25)}
 .plan.pop h3,.plan.pop .price{color:#fff}
 .plan.pop .for,.plan.pop .price small{color:rgba(255,255,255,.7)}
@@ -220,6 +225,61 @@ section{padding:92px 0}
 .lang.main{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:600}
 @media (max-width:900px){.where-grid{grid-template-columns:1fr}}
 /* QUIZ */
+/* CONTRACT RESILIENCE INVITATION */
+section.crs{padding:72px 0}
+.crs-panel{background-color:var(--navy);background-image:linear-gradient(180deg,rgba(10,22,40,0) 0,rgba(10,22,40,.25) 26%,var(--navy) 60%),linear-gradient(90deg,rgba(10,22,40,.95) 0,rgba(10,22,40,.8) 52%,rgba(10,22,40,.08) 100%),url(site-roof.jpeg);background-size:100% 100%,100% 100%,100% auto;background-position:top center;background-repeat:no-repeat;color:#fff;border-radius:28px;padding:48px}
+.crs-kicker{display:flex;align-items:center;gap:14px;color:var(--gold-2);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.crs-kicker::after{content:"";flex:1;height:1px;background:rgba(197,160,80,.45)}
+.crs h2{color:#fff;font-size:clamp(2rem,4.4vw,3.1rem);margin:16px 0 14px;max-width:900px}
+.crs h2 em{color:var(--gold-2)}
+.crs-lead{color:rgba(255,255,255,.8);font-size:1.08rem;max-width:760px}
+.crs-risks{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px;margin:18px 0 0}
+.crs-risks li{padding-left:22px;position:relative;font-weight:600;font-size:.96rem}
+.crs-risks li::before{content:"";position:absolute;left:0;top:.72em;width:13px;height:2px;background:var(--gold)}
+.crs-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:end;margin-top:36px}
+.crs-stages h3{color:#fff;font-size:clamp(1.35rem,2.6vw,1.75rem);margin-bottom:18px}
+.crs-line{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end}
+.crs-stage{font:inherit;text-align:left;color:#fff;border:1.5px solid transparent;border-radius:14px;padding:16px 14px;cursor:pointer}
+.crs-stage b{display:block;font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;margin-bottom:6px}
+.crs-stage span{display:block;font-size:.82rem;line-height:1.4;color:rgba(255,255,255,.9)}
+.crs-stage.s1{background:#8F3027;min-height:190px}
+.crs-stage.s2{background:#8A6D2B;min-height:225px}
+.crs-stage.s3{background:#2D6A4F;min-height:260px}
+.crs-stage:hover{border-color:rgba(255,255,255,.55)}
+.crs-stage:focus-visible,.crs-act a:focus-visible{outline:3px solid var(--gold-2);outline-offset:2px}
+.crs-stage[aria-pressed="true"]{border-color:#fff;box-shadow:0 0 0 2px var(--gold-2)}
+.crs-note{color:rgba(255,255,255,.72);font-size:.9rem;margin-top:14px;min-height:2.8em}
+.crs-card{background:rgba(255,255,255,.05);border:1px solid rgba(212,180,112,.45);border-radius:20px;padding:24px}
+.crs-tag{color:var(--gold-2);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.crs-title{font-weight:700;font-size:1.05rem;margin:6px 0 14px}
+.crs-score{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center}
+.crs-bar{display:grid;grid-template-columns:78px minmax(0,1fr) 42px;gap:8px;align-items:center;padding:6px 0;font-size:.78rem;font-weight:600;letter-spacing:.03em}
+.crs-bar i{display:block;height:13px;background:rgba(255,255,255,.12);border-radius:3px;overflow:hidden}
+.crs-bar u{display:block;height:100%;text-decoration:none}
+.crs-bar b{text-align:right}
+.crs-total{border-left:1px solid rgba(255,255,255,.2);padding-left:16px;text-align:center}
+.crs-total small{display:block;font-size:.76rem;color:rgba(255,255,255,.72)}
+.crs-total strong{display:block;font-family:'Playfair Display',Georgia,serif;font-size:2.4rem;line-height:1.1;color:var(--gold-2)}
+.crs-total em{display:block;font-style:normal;font-weight:700;margin-top:6px}
+.crs-weak{border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:12px 14px;margin-top:14px;font-size:.88rem;color:rgba(255,255,255,.82)}
+.crs-weak b{display:block;color:var(--gold-2);margin-bottom:2px}
+.crs-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16)}
+.crs-foot p{font-weight:600;font-size:1.1rem;border-left:3px solid var(--gold);padding-left:14px;max-width:520px}
+.crs-act{text-align:center}
+.crs-act small{display:block;margin-top:10px;font-size:.84rem;color:rgba(255,255,255,.72)}
+.free-tag{display:block;margin-top:12px;font-weight:700;font-size:.82rem;letter-spacing:.18em;color:var(--gold)}.crs-act .free-tag+small{margin-top:4px}
+@media (max-width:960px){.crs-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){
+  section.crs{padding:48px 0}
+  .crs-panel{padding:26px 20px;border-radius:22px;background-image:linear-gradient(180deg,rgba(10,22,40,.72) 0,rgba(10,22,40,.88) 300px,var(--navy) 540px),url(site-roof.jpeg);background-size:100% 100%,auto 560px}
+  .crs-line{grid-template-columns:minmax(0,1fr)}
+  .crs-stage.s1,.crs-stage.s2,.crs-stage.s3{min-height:0}
+  .crs-score{grid-template-columns:minmax(0,1fr)}
+  .crs-total{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:12px 0 0;display:flex;gap:8px;align-items:baseline;justify-content:center;flex-wrap:wrap}
+  .crs-total strong{font-size:1.8rem}
+  .crs-total em{margin:0}
+  .crs-act,.crs-act .btn{width:100%}
+}
 .quiz-box{display:grid;grid-template-columns:1.3fr 1fr;gap:44px;align-items:center;background:var(--navy);color:#fff;border-radius:24px;padding:48px}
 .quiz-box h2{color:#fff;font-size:clamp(1.8rem,4vw,2.6rem);margin:16px 0 14px}
 .quiz-box p{color:rgba(255,255,255,.75);margin-bottom:26px}
@@ -256,6 +316,12 @@ a.lang.main.on{background:var(--navy);color:#fff}
 .flang{display:inline-flex;flex-wrap:wrap;gap:12px;margin-right:8px}
 .flang a.on{color:var(--gold-2)}
 @media (max-width:760px){.trio{grid-template-columns:1fr}}
+.affil{margin-top:28px;text-align:center}
+.affil>b{display:block;font-size:1rem;color:var(--navy)}
+.affil-row{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.affil-row li{min-width:120px;padding:12px 18px;border:1px solid var(--line);border-radius:10px;background:#fff;font-weight:700;letter-spacing:.04em;color:var(--navy)}
+.affil-cap{margin:10px 0 0;font-size:.85rem;color:var(--muted)}
+@media (max-width:480px){.affil-row li{flex:1 1 calc(50% - 12px);min-width:0}}
 .field-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
 .field-strip figure{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--line)}
 .field-strip img{width:100%;height:100%;object-fit:cover;display:block}
@@ -282,6 +348,31 @@ a.lang.main.on{background:var(--navy);color:#fff}
 .perk a{text-decoration:none}
 form.card{scroll-margin-top:96px;padding:34px;box-shadow:0 20px 50px rgba(10,22,40,.08)}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ctitle{font-size:1.6rem;margin-bottom:4px}
+.csub{color:var(--muted);margin-bottom:18px}
+.opt{font-weight:400;color:var(--muted)}
+.cmeth{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px 18px}
+.cmeth legend{font-weight:600;font-size:.88rem;color:var(--navy);margin-bottom:8px;padding:0}
+.cmeth label{display:flex;align-items:center;gap:6px;font-weight:500;font-size:.95rem;cursor:pointer}
+.cmeth input{width:auto;accent-color:var(--navy)}
+.cerr{color:var(--red);font-weight:600;margin-top:14px}
+.cok{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;color:var(--navy);line-height:1.4}
+#callform [hidden]{display:none!important}
+.sticky .btn-gold{flex:2;white-space:nowrap;font-size:.84rem;padding:13px 10px}
+.sticky .btn-line{flex:1}
+.crs-head{margin-bottom:28px}
+.crs .crs-head h2{color:var(--navy)}
+.crs .crs-head h2 em{color:var(--gold)}
+@keyframes crspulse{0%,100%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 0 rgba(197,160,80,.75)}60%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 14px rgba(197,160,80,0)}}
+.crs-start{animation:crspulse 2.2s ease-out infinite}
+.ac-pulse{animation:crspulse 2.2s ease-out infinite}.ac-pulse:hover,.ac-pulse:focus-visible{animation:none}
+@media (prefers-reduced-motion:reduce){.ac-pulse{animation:none}}
+.crs-start:hover,.crs-start:focus-visible{animation:none}
+@media (prefers-reduced-motion:reduce){.crs-start{animation:none}}
+@media (max-width:480px){.crs-start{white-space:nowrap;font-size:.92rem;padding:15px 12px}}
+.plans-cta .btn{white-space:nowrap;min-width:320px}
+@media (max-width:480px){.plans-cta .btn{width:100%;min-width:0;font-size:.92rem;padding:15px 12px}}
+@media (max-width:480px){nav.top .wrap{flex-wrap:nowrap;column-gap:10px}nav.top .wrap>.logo{flex:none}nav.top .nav-cta{white-space:nowrap;font-size:.74rem;padding:9px 12px}nav.top #menu{order:3;flex-basis:100%}nav.top .wrap{flex-wrap:wrap}}
 .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
 .field.full{grid-column:1/-1}
 label{font-weight:600;font-size:.92rem;color:var(--navy)}
@@ -369,6 +460,13 @@ footer a:hover{color:var(--gold-2)}
 .after li span{display:block;color:var(--muted);font-size:.9rem}
 .founder-tag{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:16px}
 .nav-cta .sm{display:none}@media (max-width:480px){.nav-cta .lg{display:none}.nav-cta .sm{display:inline}}
+
+[dir="rtl"] .crs-stage{text-align:right}
+[dir="rtl"] .crs-risks li{padding-left:0;padding-right:22px}[dir="rtl"] .crs-risks li::before{left:auto;right:0}
+[dir="rtl"] .crs-foot p{border-left:0;border-right:3px solid var(--gold);padding-left:0;padding-right:14px}
+[dir="rtl"] .crs-total{border-left:0;border-right:1px solid rgba(255,255,255,.2);padding-left:0;padding-right:16px}
+@media (max-width:640px){[dir="rtl"] .crs-total{border-right:0;padding:12px 0 0}}
+[dir="rtl"] .crs-panel{background-color:var(--navy);background-image:linear-gradient(180deg,rgba(10,22,40,0) 0,rgba(10,22,40,.25) 26%,var(--navy) 60%),linear-gradient(270deg,rgba(10,22,40,.95) 0,rgba(10,22,40,.8) 52%,rgba(10,22,40,.08) 100%),url(site-roof.jpeg);background-size:100% 100%,100% 100%,100% auto;background-position:top center;background-repeat:no-repeat;color:#fff;border-radius:28px;padding:48px}
 </style>
 <link rel="alternate" hreflang="en" href="https://askcontracks.com/"><link rel="alternate" hreflang="es" href="https://askcontracks.com/es.html"><link rel="alternate" hreflang="fr" href="https://askcontracks.com/fr.html"><link rel="alternate" hreflang="it" href="https://askcontracks.com/it.html"><link rel="alternate" hreflang="zh" href="https://askcontracks.com/zh.html"><link rel="alternate" hreflang="ar" href="https://askcontracks.com/ar.html"><link rel="alternate" hreflang="el" href="https://askcontracks.com/el.html"><link rel="alternate" hreflang="x-default" href="https://askcontracks.com/">
 <style>
@@ -398,7 +496,7 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <div class="wrap">
 <a class="logo" href="#"><b>Ask Contracks<span>.</span></b></a>
 <div class="links" id="menu"><a href="#how">آلية العمل</a><a href="#services">الخدمات</a><a href="#results">النتائج</a><a href="#pricing">الأسعار</a><a href="#faq">الأسئلة الشائعة</a></div>
-<a class="btn btn-navy nav-cta" href="#book"><span class="lg">مكالمة مجانية</span><span class="sm">مكالمة مجانية</span></a>
+<a href="/quiz" class="btn btn-navy nav-cta ac-pulse"><span class="lg">ابدأ <bdi>Contract Score</bdi> الخاص بي</span><span class="sm">ابدأ <bdi>Contract Score</bdi> الخاص بي</span></a>
 </div>
 </nav>
 <!-- 1. PROMISE -->
@@ -408,11 +506,11 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <span class="pill">إدارة عقود الإنشاءات و EPC · خدمة شهرية</span>
 <h1>فريق عقودك، <em>دون الحاجة إلى التوظيف.</em></h1>
 <p class="sub"><b style="color:var(--navy)">أنت تواصل البناء، ونحن نساعد فريقك على إبقاء العقد تحت السيطرة.</b> مدير عقود أول مخصّص لك، مدعوم بفريق من المتخصصين، يساعدك على إدارة الإخطارات وأوامر التغيير والمدفوعات والمطالبات — كل أسبوع.</p>
-<div class="hero-ctas"><a class="btn btn-navy" href="#book">احجز مكالمة المراجعة المجانية لمدة 45 دقيقة ←</a><a class="btn btn-text" href="#pricing">اطّلع على الأسعار</a></div>
+<div class="hero-ctas"><a href="#contract-resilience" class="btn btn-navy">احصل على <bdi>Contract Score</bdi> الخاص بي — مجانًا ←</a><a class="btn btn-text" href="#pricing">اطّلع على الأسعار</a></div>
 <p class="hero-note">مخصّص <b>للمقاولين الرئيسيين ومقاولي الباطن المتخصصين</b> الذين يديرون عقودًا تتراوح قيمتها بين 500 ألف و50 مليون يورو دون توفر خبرات متمرّسة كافية في إدارة العقود. كما ندعم المطوّرين والملاك الذين يحتاجون إلى رقابة تجارية إضافية.</p>
 <p class="hero-note">المباني والبنية التحتية والطاقة والمنشآت الصناعية ومصانع الأدوية.</p>
 <p class="hero-note"><b>ابتداءً من 1,500 يورو شهريًا</b> · تجديد شهري · نطاق عمل يُتفق عليه قبل البدء</p>
-<p class="hero-note">لست متأكدًا من الباقة المناسبة؟ <a href="/quiz" style="color:var(--navy);font-weight:700">أجرِ تقييم مرونة العقد <bdi>(Contract Score)</bdi> في 4 دقائق ←</a></p>
+<p class="hero-note">لست متأكدًا من وضع عقدك؟ <a href="#book" style="color:var(--navy);font-weight:700">احجز مكالمة مجانية لمدة 45 دقيقة ←</a></p>
 </div>
 <div aria-label="ما تحصل عليه خلال أول 30 يومًا" class="math-card">
 <div class="tag">ما تحصل عليه خلال أول 30 يومًا</div>
@@ -460,6 +558,62 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 </div>
 </section>
 <!-- 3. HOW IT WORKS -->
+<section class="crs" id="contract-resilience">
+  <div class="wrap">
+    <div class="head crs-head">
+      <span class="pill">Contract Score</span>
+      <h2>تحقّق من مدى <em>حماية موقفك التجاري.</em></h2>
+    </div>
+    <div class="crs-panel">
+      <div class="crs-kicker"><span><bdi>Contract Score</bdi></span></div>
+      <h2>تم توقيع عقدك. <em>هل موقفك التجاري محميّ؟</em></h2>
+      <p class="crs-lead">لا تخسر المشاريع المال بسبب سوء التنفيذ فحسب، بل تخسره أيضًا عندما لا تُوثَّق الأعمال الإضافية، وتفوت الإخطارات، ولا يمكن إثبات الاستحقاقات.</p>
+      <ul class="crs-risks">
+        <li>أعمال إضافية نُفّذت ولم تُسعَّر قط.</li>
+        <li>إخطار أُرسل متأخرًا أو لم يُرسل أصلًا.</li>
+        <li>تخفيض في الدفعة لم يعترض عليه أحد كتابيًا.</li>
+      </ul>
+
+      <div class="crs-grid">
+        <div class="crs-stages">
+          <h3>في أي وضع أنت حقًا؟</h3>
+          <div class="crs-line" role="group" aria-label="اختر الوضع الذي يشبه فريقك">
+            <button type="button" class="crs-stage s1" aria-pressed="false"><b>هشّ</b><span>تعتمد الحقوق التجارية على الأفراد والذاكرة والتواصل غير الرسمي.</span></button>
+            <button type="button" class="crs-stage s2" aria-pressed="false"><b>معرّض للمخاطر</b><span>توجد إجراءات، لكن الخطوات الفائتة أو الأدلة غير المتسقة قد تُضعف الاستحقاق.</span></button>
+            <button type="button" class="crs-stage s3" aria-pressed="false"><b>متين</b><span>تُدار الإجراءات التعاقدية والإخطارات والأدلة باستمرار وبشكل قابل للتتبع.</span></button>
+          </div>
+          <p class="crs-note" id="crs-note" aria-live="polite">اختر ما يشبه فريقك. هذا تأمل ذاتي، وليس نتيجة تقييم.</p>
+        </div>
+
+        <div class="crs-card" role="img" aria-label="مثال على النتيجة — توضيحي. النتيجة 67 من 100, معرّض للمخاطر. CONTAIN 67%, COMMAND 67%, CLOSE 67%, CONFIRM 100%, CONTROL 33%. نقطة ضعف محتملة: الإخطارات التعاقدية.">
+          <div class="crs-tag">مثال على النتيجة — توضيحي</div>
+          <div class="crs-title"><bdi>Contract Score</bdi> الخاص بك</div>
+          <div class="crs-score">
+            <div class="crs-bars">
+              <div class="crs-bar"><span>CONTAIN</span><i><u style="width:67%;background:var(--gold)"></u></i><b>67%</b></div>
+              <div class="crs-bar"><span>COMMAND</span><i><u style="width:67%;background:var(--gold)"></u></i><b>67%</b></div>
+              <div class="crs-bar"><span>CLOSE</span><i><u style="width:67%;background:var(--gold)"></u></i><b>67%</b></div>
+              <div class="crs-bar"><span>CONFIRM</span><i><u style="width:100%;background:var(--gold)"></u></i><b>100%</b></div>
+              <div class="crs-bar"><span>CONTROL</span><i><u style="width:33%;background:var(--gold)"></u></i><b>33%</b></div>
+            </div>
+            <div class="crs-total"><small>النتيجة</small><strong>67</strong><small>من 100</small><em>معرّض للمخاطر</em></div>
+          </div>
+          <div class="crs-weak"><b>نقطة ضعف محتملة: الإخطارات التعاقدية</b>قد تشير إجابات كهذه إلى أن مواعيد الإخطار أو السجلات الداعمة لا تخضع لرقابة منتظمة.</div>
+        </div>
+      </div>
+
+      <div class="crs-foot">
+        <p>خمسة ضوابط. سؤال واحد: هل تحمي ما كسبته؟</p>
+        <div class="crs-act">
+          <a href="/quiz" class="btn btn-navy crs-start" data-crs-cta>ابدأ <bdi>Contract Score</bdi> الخاص بي</a>
+          <span class="free-tag">مجاني</span>
+          <small>نحو 4 دقائق · نتيجة مخصّصة · باللغة الإنجليزية</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="how">
 <div class="wrap">
 <div class="head">
@@ -609,7 +763,6 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <li>تقرير أولويات شهري</li>
 <li>أسئلة بين المراجعات، ضمن القدرة الشهرية المتفق عليها</li>
 </ul>
-<a class="btn btn-line" href="#book" onclick="setPlan('Control — from €1,500/month')">احجز مكالمتك المجانية لمدة 45 دقيقة</a>
 </div>
 <div class="card plan pop">
 <h3>Dedicated</h3>
@@ -624,7 +777,6 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <li>دعم المستخلصات ومتابعتها</li>
 <li>ضمن قدرة شهرية محددة</li>
 </ul>
-<a class="btn btn-gold" href="#book" onclick="setPlan('Dedicated — from €2,500/month')">احجز مكالمتك المجانية لمدة 45 دقيقة</a>
 </div>
 <div class="card plan">
 <h3>Custom</h3>
@@ -638,9 +790,9 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <li>صياغة العقود والتفاوض عليها</li>
 <li>مشاريع عابرة للحدود</li>
 </ul>
-<a class="btn btn-line" href="#book" onclick="setPlan('Custom — quote')">احجز مكالمتك المجانية لمدة 45 دقيقة</a>
 </div>
 </div>
+<div class="plans-cta"><a href="#contract-resilience" class="btn btn-gold">احصل على <bdi>Contract Score</bdi> الخاص بي — مجانًا ←</a></div>
 <p class="scope">نتفق قبل البدء على العقود المشمولة والأنشطة ذات الأولوية والقدرة الشهرية. وإذا زادت احتياجاتك، نتفق معك أولًا على الدعم الإضافي وسعره.</p>
 <div class="offer">
 <div class="c1">
@@ -677,14 +829,14 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 </div>
 </section>
 <!-- QUIZ -->
-<section class="quiz">
+<section class="quiz" id="score">
 <div class="wrap">
 <div class="quiz-box">
 <div>
 <span class="pill">مجاني · 4 دقائق</span>
 <h2>لست متأكدًا من الباقة المناسبة؟ <em>قيّم عقدك أولًا.</em></h2>
 <p>تقييم وفق 5Cs Framework™ — النطاق، والتأخير والمطالبات، والتعليمات، والمدفوعات، والمواعيد النهائية. تحصل على درجتك في كل عنصر من عناصر 5Cs، وثلاثة إجراءات ذات أولوية، والباقة التي قد تناسبك: Control أو Dedicated أو Custom.</p>
-<a class="btn btn-gold" href="/quiz">ابدأ تقييم مرونة العقد ←</a>
+<a href="#contract-resilience" class="btn btn-gold">احصل على <bdi>Contract Score</bdi> الخاص بي — مجانًا ←</a>
 </div>
 <ol aria-label="مستويات المرونة" class="ladder">
 <li><b>3</b><span>متين</span></li>
@@ -733,6 +885,7 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <div><b>في الاجتماعات المهمة</b><span>مع عميلك أو المهندس أو مقاولي الباطن — عندما يُتفق على ذلك ضمن النطاق.</span></div>
 <div><b>الحكمة والتفاوض</b><span>معرفة متى تضغط، ومتى تتوصل إلى تسوية، ومتى تنتظر — تأتي من الخبرة.</span></div>
 </div>
+<div class="affil"><b>الخبرات المهنية والانتماءات</b><ul class="affil-row" aria-label="المؤسسات المهنية"><li>CIArb</li><li>CIOB</li><li>RICS</li><li>WorldCC</li></ul><p class="affil-cap">الانتماءات المهنية يحملها أخصائيون أفراد ضمن شبكتنا.</p></div>
 <div class="langs">
 <b>لغتنا المشتركة: قانون العقود والإنشاءات.</b>
 <p class="langs-cap">اقرأ هذه الصفحة بـ</p>
@@ -770,7 +923,7 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <h2>احجز <em>مكالمة المراجعة المجانية لمدة 45 دقيقة.</em></h2>
 <p class="slots"><span></span>نستقبل 4 مكالمات مراجعة مجانية فقط كل شهر.</p>
 <p class="lead">حدّثنا عنك وعن مشروعك. نقرأ كل طلب ونتواصل معك لتحديد موعد المكالمة. تتم المراجعة المجانية خلال المكالمة — 45 دقيقة على عقد إنشاءات أو EPC قائم. لا حاجة إلى أي مستندات.</p>
-<p style="margin:-10px 0 22px;color:var(--muted)">لست متأكدًا من الباقة المناسبة؟ <a href="/quiz" style="color:var(--navy);font-weight:700">أجرِ التقييم في 4 دقائق أولًا ←</a></p>
+<p style="margin:-10px 0 22px;color:var(--muted)">لست متأكدًا من الباقة المناسبة؟ <a href="#contract-resilience" style="color:var(--navy);font-weight:700">احصل على <bdi>Contract Score</bdi> الخاص بي — مجانًا ←</a></p>
 <b style="color:var(--navy)">ماذا يحدث بعد الحجز</b>
 <ol class="after">
 <li>أرسل بياناتك<span>من أنت، ومشروعك، وما الذي يشغلك.</span></li>
@@ -844,6 +997,19 @@ fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlenco
 function stash(){try{var c=document.getElementById('c').value,n=document.getElementById('n').value;document.getElementById('fsubj').value='New lead — 45-min call request — '+n+(c?' ('+c+')':'');}catch(e){}try{sessionStorage.setItem('ac',JSON.stringify({n:document.getElementById('n').value,e:document.getElementById('e').value}));}catch(e){}}
 (function(){try{var m={control:'Control — from €1,500/month',dedicated:'Dedicated — from €2,500/month',custom:'Custom — quote'};var k=new URLSearchParams(location.search).get('plan');if(k&&m[k])document.addEventListener('DOMContentLoaded',function(){setPlan(m[k]);});}catch(e){}})();
 function setPlan(v){var s=document.getElementById('p');if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].value===v||s.options[i].text===v){s.selectedIndex=i;}}}}
+</script>
+<script>
+(function(){
+  var sec=document.getElementById('contract-resilience');if(!sec)return;
+  var t=function(n){window.acTrack&&window.acTrack(n);};
+  var stages=sec.querySelectorAll('.crs-stage'),note=document.getElementById('crs-note');
+  stages.forEach(function(b){b.addEventListener('click',function(){
+    stages.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+    var X=b.querySelector('b').textContent;note.textContent='اخترت '+X+'. هذا تأملك الخاص، وليس تقييمًا. يتحقق التقييم منه عبر 15 سؤالًا.';
+  });});
+  sec.querySelectorAll('[data-crs-cta]').forEach(function(a){a.addEventListener('click',function(){t('Home score clicked');});});
+  if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){t('Home score seen');o.disconnect();}},{threshold:.3});o.observe(sec);}
+})();
 </script>
 </body>
 </html>
