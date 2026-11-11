@@ -372,6 +372,10 @@ form.card{scroll-margin-top:96px;padding:34px;box-shadow:0 20px 50px rgba(10,22,
 @media (prefers-reduced-motion:reduce){.crs-start{animation:none}}
 @media (max-width:480px){.crs-start{white-space:nowrap;font-size:.92rem;padding:15px 12px}}
 .plans-cta .btn{white-space:nowrap;min-width:320px}
+.plan{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.plan:hover,.plan:focus-within{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 0 0 2px var(--gold),0 22px 50px rgba(10,22,40,.14)}
+.plan.pop:hover,.plan.pop:focus-within{box-shadow:0 0 0 2px var(--gold),0 28px 64px rgba(10,22,40,.32)}
+@media (prefers-reduced-motion:reduce){.plan{transition:none}.plan:hover,.plan:focus-within{transform:none}}
 @media (max-width:480px){.plans-cta .btn{width:100%;min-width:0;font-size:.92rem;padding:15px 12px}}
 @media (max-width:480px){nav.top .wrap{flex-wrap:nowrap;column-gap:10px}nav.top .wrap>.logo{flex:none}nav.top .nav-cta{white-space:nowrap;font-size:.74rem;padding:9px 12px}nav.top #menu{order:3;flex-basis:100%}nav.top .wrap{flex-wrap:wrap}}
 .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
@@ -741,7 +745,7 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <div class="head">
 <span class="pill">Τιμές</span>
 <h2>Εμφανείς τιμές εκκίνησης. <em>Αντικείμενο συμφωνημένο εκ των προτέρων.</em></h2>
-<p>Κάθε πακέτο λειτουργεί ανά μήνα. Η ακριβής αμοιβή σας εξαρτάται από τις συμβάσεις που καλύπτονται, την πολυπλοκότητά τους και τη μηνιαία δυναμικότητα που χρειάζεστε — επιβεβαιώνεται γραπτώς πριν ξεκινήσετε.</p>
+<p>Ξεκινήστε με μια ανασκόπηση και μετά επιλέξτε το επίπεδο υποστήριξης που χρειάζεστε. Κάθε πακέτο λειτουργεί ανά μήνα. Η ακριβής αμοιβή σας εξαρτάται από τη χώρα, το αντικείμενο και τα στάδια που καλύπτονται — επιβεβαιώνεται γραπτώς πριν ξεκινήσετε.</p>
 </div>
 <div class="plans">
 <div class="card plan">
@@ -785,7 +789,7 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 </ul>
 </div>
 </div>
-<div class="plans-cta"><a href="#contract-resilience" class="btn btn-gold">Θέλω το Contract Score μου — δωρεάν →</a></div>
+<div class="plans-cta"><a href="#contract-resilience" class="btn btn-gold ac-pulse">Θέλω το Contract Score μου — δωρεάν →</a></div>
 <p class="scope">Συμφωνούμε τις συμβάσεις που καλύπτονται, τις δραστηριότητες προτεραιότητας και τη μηνιαία δυναμικότητα πριν ξεκινήσουμε. Αν οι ανάγκες σας αυξηθούν, συμφωνούμε πρώτα μαζί σας την πρόσθετη υποστήριξη και την τιμή της.</p>
 <div class="offer">
 <div class="c1">
