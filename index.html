@@ -372,6 +372,10 @@ form.card{scroll-margin-top:96px;padding:34px;box-shadow:0 20px 50px rgba(10,22,
 @media (prefers-reduced-motion:reduce){.crs-start{animation:none}}
 @media (max-width:480px){.crs-start{white-space:nowrap;font-size:.92rem;padding:15px 12px}}
 .plans-cta .btn{white-space:nowrap;min-width:320px}
+.plan{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.plan:hover,.plan:focus-within{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 0 0 2px var(--gold),0 22px 50px rgba(10,22,40,.14)}
+.plan.pop:hover,.plan.pop:focus-within{box-shadow:0 0 0 2px var(--gold),0 28px 64px rgba(10,22,40,.32)}
+@media (prefers-reduced-motion:reduce){.plan{transition:none}.plan:hover,.plan:focus-within{transform:none}}
 @media (max-width:480px){.plans-cta .btn{width:100%;min-width:0;font-size:.92rem;padding:15px 12px}}
 @media (max-width:480px){nav.top .wrap{flex-wrap:nowrap;column-gap:10px}nav.top .wrap>.logo{flex:none}nav.top .nav-cta{white-space:nowrap;font-size:.74rem;padding:9px 12px}nav.top #menu{order:3;flex-basis:100%}nav.top .wrap{flex-wrap:wrap}}
 .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
@@ -743,7 +747,7 @@ footer a:hover{color:var(--gold-2)}
     <div class="head">
       <span class="pill">Pricing</span>
       <h2>Visible starting prices. <em>Scope agreed up front.</em></h2>
-      <p>Every plan runs month to month. Your exact fee depends on the contracts covered, their complexity and the monthly capacity you need — confirmed in writing before you start.</p>
+      <p>Start with a review, then choose the level of support you need. Every plan runs month to month. Your exact fee depends on the country, the scope and the stages covered — confirmed in writing before you start.</p>
     </div>
     <div class="plans">
       <div class="card plan">
@@ -787,7 +791,7 @@ footer a:hover{color:var(--gold-2)}
         </ul>
       </div>
     </div>
-    <div class="plans-cta"><a href="#contract-resilience" class="btn btn-gold">Get my Contract Score — free →</a></div>
+    <div class="plans-cta"><a href="#contract-resilience" class="btn btn-gold ac-pulse">Get my Contract Score — free →</a></div>
     <p class="scope">We agree the contracts covered, priority activities and monthly capacity before starting. If your needs grow, we agree additional support and pricing with you first.</p>
 
     <div class="offer">
