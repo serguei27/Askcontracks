@@ -372,6 +372,10 @@ form.card{scroll-margin-top:96px;padding:34px;box-shadow:0 20px 50px rgba(10,22,
 @media (prefers-reduced-motion:reduce){.crs-start{animation:none}}
 @media (max-width:480px){.crs-start{white-space:nowrap;font-size:.92rem;padding:15px 12px}}
 .plans-cta .btn{white-space:nowrap;min-width:320px}
+.plan{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.plan:hover,.plan:focus-within{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 0 0 2px var(--gold),0 22px 50px rgba(10,22,40,.14)}
+.plan.pop:hover,.plan.pop:focus-within{box-shadow:0 0 0 2px var(--gold),0 28px 64px rgba(10,22,40,.32)}
+@media (prefers-reduced-motion:reduce){.plan{transition:none}.plan:hover,.plan:focus-within{transform:none}}
 @media (max-width:480px){.plans-cta .btn{width:100%;min-width:0;font-size:.92rem;padding:15px 12px}}
 @media (max-width:480px){nav.top .wrap{flex-wrap:nowrap;column-gap:10px}nav.top .wrap>.logo{flex:none}nav.top .nav-cta{white-space:nowrap;font-size:.74rem;padding:9px 12px}nav.top #menu{order:3;flex-basis:100%}nav.top .wrap{flex-wrap:wrap}}
 .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
@@ -741,7 +745,7 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 <div class="head">
 <span class="pill">价格</span>
 <h2>起价透明可见。<em>服务范围事先约定。</em></h2>
-<p>所有方案均按月续约。具体费用取决于所覆盖的合同、其复杂程度以及您所需的每月服务量——开始前以书面形式确认。</p>
+<p>先从一次评估开始，再选择您所需的支持级别。所有方案均按月续约。具体费用取决于所在国家、服务范围以及所覆盖的阶段——开始前以书面形式确认。</p>
 </div>
 <div class="plans">
 <div class="card plan">
@@ -785,7 +789,7 @@ html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .price,
 </ul>
 </div>
 </div>
-<div class="plans-cta"><a href="#contract-resilience" class="btn btn-gold">获取我的 Contract Score — 免费 →</a></div>
+<div class="plans-cta"><a href="#contract-resilience" class="btn btn-gold ac-pulse">获取我的 Contract Score — 免费 →</a></div>
 <p class="scope">开始前，我们会约定所覆盖的合同、优先事项和每月服务量。如需求增加，我们会先与您商定额外支持及其价格。</p>
 <div class="offer">
 <div class="c1">
