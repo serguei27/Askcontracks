@@ -179,7 +179,10 @@ section{padding:92px 0}
 @media (max-width:420px){.math{grid-template-columns:minmax(0,1fr)}.math .card{padding:26px 18px}}
 
 /* PRICING */
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch}
+.plan.start{position:relative;border:2px solid var(--gold)}.plan .notinc{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted)}
+@media (min-width:961px){.plans .plan{padding:34px 24px}.plans .price{font-size:clamp(2rem,2.6vw,2.6rem)}}
+@media (min-width:961px) and (max-width:1179px){.plans{grid-template-columns:repeat(2,1fr)}}
 .plan{display:flex;flex-direction:column;padding:34px 30px}
 .plan h3{font-family:'DM Sans',sans-serif;font-size:1.5rem;font-weight:700}
 .plan .for{color:var(--muted);font-size:.97rem;margin-top:6px;min-height:48px}
@@ -468,7 +471,7 @@ footer a:hover{color:var(--gold-2)}
 </style>
 <link rel="alternate" hreflang="en" href="https://askcontracks.com/"><link rel="alternate" hreflang="es" href="https://askcontracks.com/es.html"><link rel="alternate" hreflang="fr" href="https://askcontracks.com/fr.html"><link rel="alternate" hreflang="it" href="https://askcontracks.com/it.html"><link rel="alternate" hreflang="zh" href="https://askcontracks.com/zh.html"><link rel="alternate" hreflang="ar" href="https://askcontracks.com/ar.html"><link rel="alternate" hreflang="el" href="https://askcontracks.com/el.html"><link rel="alternate" hreflang="x-default" href="https://askcontracks.com/">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "@id": "https://askcontracks.com/#organization", "name": "Ask Contracks", "legalName": "Contracks Global SRL", "url": "https://askcontracks.com/", "email": "hello@contracks.global", "description": "Senior contract management for construction and EPC contractors and specialist subcontractors, on a monthly fee, month to month. Commercial contract management, not legal advice or legal representation.", "knowsLanguage": ["en", "fr", "it"], "areaServed": ["Europe", "Africa", "Gulf"], "founder": {"@type": "Person", "name": "Serguei Poppeleer", "jobTitle": "Founder & Managing Director", "url": "https://www.linkedin.com/in/serguei-poppeleer"}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What exactly is included in my plan?", "acceptedAnswer": {"@type": "Answer", "text": "Before you start, we agree in writing the contracts covered, the priority activities and the monthly capacity — including meetings and document volumes. If your needs grow, we agree additional support and price with you first."}}, {"@type": "Question", "name": "Is there a minimum term?", "acceptedAnswer": {"@type": "Answer", "text": "No. Plans run month to month, with one month's notice."}}, {"@type": "Question", "name": "Do you replace our lawyers?", "acceptedAnswer": {"@type": "Answer", "text": "No. We manage the contract day to day and work alongside your legal counsel. Where formal legal steps are needed, we help prepare a clear record for them."}}, {"@type": "Question", "name": "How is this different from hiring in-house?", "acceptedAnswer": {"@type": "Answer", "text": "No recruitment and no ramp-up. You get a named senior contract manager plus access to QS, engineering and legal specialists when the scope needs them — without employing a full team."}}, {"@type": "Question", "name": "Is this an AI tool?", "acceptedAnswer": {"@type": "Answer", "text": "No. Ask Contracks is people — a named contract manager you can call, who can join your meetings. We use software to keep registers; judgement and drafting are human."}}, {"@type": "Question", "name": "How do you handle confidentiality?", "acceptedAnswer": {"@type": "Answer", "text": "We run a conflict check and sign a confidentiality agreement before receiving any contract documents. Documents are then exchanged through a secure channel."}}, {"@type": "Question", "name": "Where do you work, and in which languages?", "acceptedAnswer": {"@type": "Answer", "text": "Primarily in English, French and Italian, across Europe, Africa and the Gulf. Other languages and regions are possible through partners — we confirm availability before we agree scope."}}, {"@type": "Question", "name": "What determines the exact price?", "acceptedAnswer": {"@type": "Answer", "text": "The number of contracts, their value and complexity, the monthly capacity needed and whether a dispute is already live. You get a fixed monthly fee in writing before starting."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What exactly is included in my plan?", "acceptedAnswer": {"@type": "Answer", "text": "Before you start, we agree in writing the contracts covered, the priority activities and the monthly capacity — including meetings and document volumes. If your needs grow, we agree additional support and price with you first."}}, {"@type": "Question", "name": "Is there a minimum term?", "acceptedAnswer": {"@type": "Answer", "text": "No. Plans run month to month, with one month's notice."}}, {"@type": "Question", "name": "Do you replace our lawyers?", "acceptedAnswer": {"@type": "Answer", "text": "No. We manage the contract day to day and work alongside your legal counsel. Where formal legal steps are needed, we help prepare a clear record for them."}}, {"@type": "Question", "name": "How is this different from hiring in-house?", "acceptedAnswer": {"@type": "Answer", "text": "No recruitment and no ramp-up. You get a named senior contract manager plus access to QS, engineering and legal specialists when the scope needs them — without employing a full team."}}, {"@type": "Question", "name": "Is this an AI tool?", "acceptedAnswer": {"@type": "Answer", "text": "No. Ask Contracks is people — a named contract manager you can call, who can join your meetings. We use software to keep registers; judgement and drafting are human."}}, {"@type": "Question", "name": "How do you handle confidentiality?", "acceptedAnswer": {"@type": "Answer", "text": "We run a conflict check and sign a confidentiality agreement before receiving any contract documents. Documents are then exchanged through a secure channel."}}, {"@type": "Question", "name": "Where do you work, and in which languages?", "acceptedAnswer": {"@type": "Answer", "text": "Primarily in English, French and Italian, across Europe, Africa and the Gulf. Other languages and regions are possible through partners — we confirm availability before we agree scope."}}, {"@type": "Question", "name": "What determines the exact price?", "acceptedAnswer": {"@type": "Answer", "text": "The number of contracts, their value and complexity, the monthly capacity needed and whether a dispute is already live. You get a fixed monthly fee in writing before starting. Not ready for ongoing support? Start with a one-off Contract Position Review, from €500."}}]}</script>
 <script src="/assets/ac-track.js" defer></script>
 </head>
 <body>
@@ -750,6 +753,21 @@ footer a:hover{color:var(--gold-2)}
       <p>Start with a review, then choose the level of support you need. Every plan runs month to month. Your exact fee depends on the country, the scope and the stages covered — confirmed in writing before you start.</p>
     </div>
     <div class="plans">
+      <div class="card plan start">
+        <span class="badge">Start here</span>
+        <h3>Contract Position Review</h3>
+        <p class="for">A snapshot of where one live contract stands.</p>
+        <div class="price">from €500<small> one-off</small></div>
+        <span class="chip">1 live contract · 1 session · written note</span>
+        <ul>
+          <li>One live contract</li>
+          <li>One working session with a senior contract manager</li>
+          <li>A short written note: key deadlines and notices, current exposure, three priorities</li>
+          <li>Leads naturally into Control or Dedicated</li>
+          <li>Scope and fee confirmed in writing before starting</li>
+        </ul>
+        <p class="notinc">Not included: a full contract review, clause-by-clause analysis, claim preparation or ongoing support.</p>
+      </div>
       <div class="card plan">
         <h3>Control</h3>
         <p class="for">Senior review and advice. Your team executes.</p>
@@ -929,7 +947,7 @@ footer a:hover{color:var(--gold-2)}
       <details><summary>Is this an AI tool?</summary><p>No. Ask Contracks is people — a named contract manager you can call, who can join your meetings. We use software to keep registers; judgement and drafting are human.</p></details>
       <details><summary>How do you handle confidentiality?</summary><p>We run a conflict check and sign a confidentiality agreement before receiving any contract documents. Documents are then exchanged through a secure channel.</p></details>
       <details><summary>Where do you work, and in which languages?</summary><p>Primarily in English, French and Italian, across Europe, Africa and the Gulf. Other languages and regions are possible through partners — we confirm availability before we agree scope.</p></details>
-      <details><summary>What determines the exact price?</summary><p>The number of contracts, their value and complexity, the monthly capacity needed and whether a dispute is already live. You get a fixed monthly fee in writing before starting.</p></details>
+      <details><summary>What determines the exact price?</summary><p>The number of contracts, their value and complexity, the monthly capacity needed and whether a dispute is already live. You get a fixed monthly fee in writing before starting. Not ready for ongoing support? Start with a one-off Contract Position Review, from €500.</p></details>
     </div>
   </div>
 </section>
@@ -1040,7 +1058,7 @@ function setPlan(v){var p=document.getElementById('fplan');if(p)p.value=v;}
 // Call request form (v3.5 standard). Plan comes from ?plan=; Contract Score context from this browser tab's session, never the URL.
 (function(){
   var f=document.getElementById('callform');if(!f)return;
-  var PLANS={control:'Control — from €1,500/month',dedicated:'Dedicated — from €2,500/month',custom:'Custom — quote'};
+  var PLANS={review:'Contract Position Review — from €500',control:'Control — from €1,500/month',dedicated:'Dedicated — from €2,500/month',custom:'Custom — quote'};
   try{var k=new URLSearchParams(location.search).get('plan');if(k&&PLANS[k])document.getElementById('fplan').value=PLANS[k];}catch(e){}
   var ctx=null;try{ctx=JSON.parse(sessionStorage.getItem('acScore')||'null');}catch(e){}
   if(ctx){Object.keys(ctx).forEach(function(n){var i=f.querySelector('input[type=hidden][name="'+n+'"]');if(i)i.value=ctx[n];});
