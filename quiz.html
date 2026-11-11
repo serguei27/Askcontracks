@@ -161,6 +161,44 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var
 @media (max-width:480px){nav.top .logo b{font-size:1.08rem}nav.top .btn-sm{white-space:nowrap;font-size:.74rem;padding:9px 12px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media print{nav.top,footer,#rgate,.rtools,.noprint,#rcall,.nextstep .alt{display:none!important}.inner{padding:0}.rtop,.nextstep,.acts li::before{-webkit-print-color-adjust:exact;print-color-adjust:exact}details.bk>*{display:block}}
+.opt{font-weight:400;color:var(--muted)}
+.rail{border:1px solid var(--line);border-radius:16px;padding:6px 18px}
+.rail .seg{padding:11px 0;border-bottom:1px solid var(--line)}.rail .seg:last-child{border:0}
+.rail .h,.ic .h{display:flex;justify-content:space-between;gap:10px;font-weight:600;font-size:.95rem;margin-bottom:6px}
+.rail .sub,.ic .sub{font-weight:400;color:var(--muted)}
+.rail .track{height:8px;background:var(--line);border-radius:2px;overflow:hidden}.rail .track div{height:100%;background:var(--gold)}
+.consent{display:flex;gap:8px;align-items:flex-start;font-size:.92rem;color:var(--ink);font-weight:400!important;cursor:pointer}
+.consent input{width:auto;margin-top:4px;accent-color:var(--navy)}
+.gerr{color:var(--red);font-weight:600}
+.rmeta{font-size:.86rem;color:var(--muted);margin-bottom:18px;border-left:3px solid var(--gold);padding-left:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media (max-width:560px){.two{grid-template-columns:1fr}}
+.plain{list-style:none;display:grid;gap:6px;font-size:.95rem}
+.ic{border-bottom:1px solid var(--line);padding:12px 0}.ic:last-child{border:0}.ic p{color:var(--muted);font-size:.95rem}.ic .pct{margin-left:auto}
+.check{list-style:none;display:grid;gap:10px}.check li{display:flex;gap:10px;font-size:.95rem}.check b{color:var(--navy);margin-right:4px}
+.check .box{flex:none;width:16px;height:16px;border:2px solid var(--navy);border-radius:3px;margin-top:3px}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media (max-width:640px){.options{grid-template-columns:1fr}}
+.opt-card{border:1px solid var(--line);border-radius:18px;padding:20px}.opt-card.sup{border:2px solid var(--gold);background:var(--gold-soft)}
+.opt-card .tag{display:block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.opt-card h3{font-size:1.2rem;margin-bottom:6px}.opt-card p{color:var(--muted);font-size:.95rem;margin-bottom:14px}
+.opt-card .alt{display:block;margin-top:8px;font-size:.84rem;color:var(--muted)}
+.rtools .fine{display:block;margin-top:6px}
+.otherl{display:block;font-weight:600;font-size:.88rem;color:var(--navy);margin:14px 0 5px}
+.print-head,.print-foot{display:none}
+@media print{
+ @page{size:A4;margin:16mm 14mm 20mm}
+ body{font-size:11pt}
+ nav.top,footer,#rgate,#rnext,.rtools,.noprint,.disclaimer~div{display:none!important}
+ .inner{padding:0;max-width:none}
+ .print-head{display:flex!important;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--gold);padding-bottom:8px;margin-bottom:14px}
+ .print-head b{font-family:'Playfair Display',Georgia,serif;font-size:16pt;color:var(--navy)}.print-head b span{color:var(--gold)}
+ .print-foot{display:block!important;position:fixed;bottom:-12mm;left:0;right:0;text-align:center;font-size:8.5pt;color:var(--muted)}
+ .rtop{-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:18px}
+ .ring{width:120px;height:120px}.ring .in{width:94px;height:94px}.ring .num{font-size:2.2rem}
+ .sec,.gap,.ic,.opt-card,.rail .seg{break-inside:avoid}
+ .rail .track div,.check .box,.opt-card.sup,.rlevel{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ details.bk>*{display:block}details.bk summary span{display:none}
+ .options .btn{display:none}.opt-card .purl{display:block!important;font-weight:600;color:var(--navy);margin-top:4px}
+}
 footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;color:var(--muted);font-size:.86rem}
 footer a{text-decoration:none;color:var(--navy);font-weight:600}
 @keyframes acpulse{0%,100%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 0 rgba(197,160,80,.75)}60%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 14px rgba(197,160,80,0)}}
@@ -182,7 +220,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 
 
 <!-- Netlify form registration for quiz leads -->
-<form name="ask-contracks-quiz" data-netlify="true" netlify-honeypot="bot-field" hidden style="display:none" aria-hidden="true"><input type="hidden" name="source"><input type="hidden" name="subject"><input type="hidden" name="plan"><input type="hidden" name="project"><input type="hidden" name="name"><input type="hidden" name="company"><input type="hidden" name="email"><input type="hidden" name="phone"><input type="hidden" name="location"><input type="hidden" name="comments"><input type="hidden" name="score"><input type="hidden" name="level"><input type="hidden" name="recommended-plan"><input type="hidden" name="contain"><input type="hidden" name="command"><input type="hidden" name="close"><input type="hidden" name="confirm"><input type="hidden" name="control"><input type="hidden" name="contract-value"><input type="hidden" name="live-contracts"><input type="hidden" name="dispute"><input type="hidden" name="who-does-the-work"><input type="hidden" name="answers"><input name="bot-field" tabindex="-1" autocomplete="off"></form>
+<form name="ask-contracks-quiz" data-netlify="true" netlify-honeypot="bot-field" hidden style="display:none" aria-hidden="true"><input type="hidden" name="source"><input type="hidden" name="subject"><input type="hidden" name="plan"><input type="hidden" name="project"><input type="hidden" name="name"><input type="hidden" name="company"><input type="hidden" name="email"><input type="hidden" name="phone"><input type="hidden" name="location"><input type="hidden" name="comments"><input type="hidden" name="score"><input type="hidden" name="level"><input type="hidden" name="recommended-plan"><input type="hidden" name="contain"><input type="hidden" name="command"><input type="hidden" name="close"><input type="hidden" name="confirm"><input type="hidden" name="control"><input type="hidden" name="contract-value"><input type="hidden" name="live-contracts"><input type="hidden" name="dispute"><input type="hidden" name="who-does-the-work"><input type="hidden" name="brand"><input type="hidden" name="assessment-object"><input type="hidden" name="engine-version"><input type="hidden" name="config-version"><input type="hidden" name="score-version"><input type="hidden" name="weakest-c"><input type="hidden" name="q17-challenges"><input type="hidden" name="q18-obstacle"><input type="hidden" name="q18-other"><input type="hidden" name="q19-solution"><input type="hidden" name="q20-open"><input type="hidden" name="fit"><input type="hidden" name="review-flag"><input type="hidden" name="consent"><input type="hidden" name="answers"><input name="bot-field" tabindex="-1" autocomplete="off"></form>
 <!-- LANDING -->
 <div id="screen-landing" class="screen active">
   <div class="landing">
@@ -193,7 +231,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
       <div class="start-wrap"><button class="btn btn-navy ac-pulse" onclick="start()">Start my Contract Score</button>
       <span class="free-tag">FREE</span></div>
       <p class="land-note">About 4 minutes · Personalised scorecard</p>
-      <p class="land-note">15 Yes/No questions on the 5Cs Framework™, plus 4 about your situation. Indicative self-assessment. General information, not legal advice.</p>
+      <p class="land-note">15 Yes/No questions on the 5Cs Framework™, plus 5 about your situation. Indicative self-assessment. General information, not legal advice.</p>
     </div>
     <div class="getbox">
       <div class="t">What you get</div>
@@ -220,6 +258,7 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 <!-- RESULTS -->
 <div id="screen-results" class="screen">
   <div class="inner">
+    <div class="print-head" aria-hidden="true"><b>Ask Contracks<span>.</span></b><span>Contract Score report</span></div>
     <div class="rtop">
       <div class="lbl">Your Contract Score</div>
       <p class="rsub">Where your contract-management practices appear strong, and where commercial exposure may remain.</p>
@@ -227,42 +266,60 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
       <div class="rlevel" id="rlevel"></div>
       <h2 id="rhead"></h2>
       <p id="rdesc"></p>
-      <div class="ladder" id="ladder"></div>
+      <div class="ladder" id="ladder" aria-label="Fragile, Exposed or Resilient"></div>
       <p class="powered">Powered by the 5Cs Framework™ — Fragile · Exposed · Resilient.</p>
     </div>
 
     <div class="sec">
-      <h3 id="gaps-h"></h3>
-      <div id="gaps"></div>
+      <h3>Your five <em>controls</em></h3>
+      <div class="rail" id="rail" role="list"></div>
+      <p class="fine">Each control is scored from 3 Yes/No answers. A low score shows where exposure may sit, not what is owed or lost.</p>
     </div>
+
+    <div class="sec" id="weakbox"></div>
 
     <div id="rgate" class="sec gate">
-      <h3>Get your full <em>Contract Resilience Report</em></h3>
-      <p class="p">Your score on each of the 5Cs, three priority actions from your answers, the plan that may fit, and a copy you can save as a PDF. Free, on this page, straight away.</p>
-      <form class="gform" onsubmit="subGate(event)">
+      <h3>Want to see what's <em>behind your score?</em></h3>
+      <p class="p">Enter your email to unlock your complete Contract Score report.</p>
+      <form class="gform" id="gform" novalidate>
         <p class="hp" hidden style="display:none" aria-hidden="true"><label>Leave empty: <input id="gbot" tabindex="-1" autocomplete="off"></label></p>
         <div class="g2">
-          <div><label for="gn">Your name *</label><input id="gn" autocomplete="name" required></div>
           <div><label for="ge">Work email *</label><input id="ge" type="email" autocomplete="email" required></div>
+          <div><label for="gn">Your name <span class="opt">(optional)</span></label><input id="gn" autocomplete="name"></div>
         </div>
-        <div><label for="gc">Company <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="gc" autocomplete="organization"></div>
-        <button type="submit" class="btn btn-navy" id="gbtn">Get my full report →</button>
+        <label class="consent"><input type="checkbox" id="gcons"> Send me occasional field notes from Ask Contracks. <span class="opt">(Optional)</span></label>
+        <p class="gerr" id="gerr" role="alert" hidden></p>
+        <button type="submit" class="btn btn-navy" id="gbtn">Unlock my report →</button>
       </form>
-      <p class="enote">We may contact you once about your result. No newsletters. <a href="/privacy.html" style="color:var(--navy)">Privacy</a></p>
+      <p class="enote">Your email unlocks the report. It doesn't sign you up to anything unless you tick the box. <a href="/privacy" style="color:var(--navy)">Privacy</a></p>
     </div>
 
-    <div id="rfull" hidden>
-      <p class="sendnote" id="sendnote" hidden>Your report is below, but your details didn't reach us. If you'd like to talk, please use the call form.</p>
+    <div id="report" hidden>
+      <p class="rmeta" id="rmeta"></p>
 
-      <div class="sec">
-        <h3>Your <em>exposure profile</em></h3>
-        <div class="bars" id="bars" role="list"></div>
-        <p class="fine">Each control is scored from 3 Yes/No answers. Low scores show where exposure may sit, not what is owed or lost.</p>
+      <div class="sec two">
+        <div><h3>Strengths</h3><ul class="plain" id="strengths"></ul></div>
+        <div><h3>Weaknesses</h3><ul class="plain" id="weaknesses"></ul></div>
       </div>
 
       <div class="sec">
-        <h3 id="acts-h">Three <em>priority actions</em></h3>
+        <h3>Control by <em>control</em></h3>
+        <div id="interp"></div>
+      </div>
+
+      <div class="sec" id="expo-sec">
+        <h3>Key <em>exposure areas</em></h3>
+        <div id="expo"></div>
+      </div>
+
+      <div class="sec">
+        <h3>Three priority <em>actions</em></h3>
         <ol class="acts" id="acts"></ol>
+      </div>
+
+      <div class="sec">
+        <h3>Your five-line <em>checklist</em></h3>
+        <ul class="check" id="check"></ul>
       </div>
 
       <div class="sec">
@@ -270,129 +327,52 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
         <div class="plan" id="plan"></div>
       </div>
 
-      <details class="bk"><summary>Your answers at a glance <span>+</span></summary><div id="bklist"></div></details>
-      <div class="rtools"><button class="btn btn-line btn-sm" onclick="window.print()">Save as PDF or print</button></div>
+      <details class="bk" id="bk"><summary>Your answers at a glance <span>+</span></summary><div id="bklist"></div></details>
+
+      <div class="sec options" id="options"></div>
+
+      <div class="rtools noprint">
+        <button class="btn btn-line btn-sm" id="pdfbtn">Download PDF</button>
+        <span class="fine">Opens your browser's print window. Choose "Save as PDF".</span>
+      </div>
     </div>
 
     <div class="sec nextstep" id="rnext">
       <h3 id="rband"></h3>
-      <a class="btn btn-gold" id="rcall" href="/#book" onclick="window.acTrack&&acTrack('Results call clicked')">Book a Free 45-Minute Call →</a>
+      <a class="btn btn-gold" id="rcall" href="/#book">Book a Free 45-Minute Call →</a>
       <span class="alt">No documents needed · No obligation</span>
     </div>
 
     <p class="fine disclaimer">This is an indicative self-assessment based only on your answers, not a professional assessment of your contract. Consequences depend on the contract, its amendments and the governing law. General information, not legal advice.</p>
 
-    <div style="text-align:center;margin-top:22px" class="noprint"><button class="btn btn-line" onclick="start()">↺ Retake the Contract Score</button></div>
+    <div style="text-align:center;margin-top:22px" class="noprint"><a class="btn btn-line" href="/quiz">↺ Retake the Contract Score</a></div>
+    <p class="print-foot" aria-hidden="true">Powered by the 5Cs Framework™ — Fragile · Exposed · Resilient.</p>
   </div>
 </div>
 
 <footer><a href="/">Ask Contracks</a> · You keep building. We help your team keep the contract under control. · <a href="/privacy.html">Privacy</a></footer>
 
+<script src="/assets/5cs-engine-1.0.0.js"></script>
+<script src="/assets/contract-score-config-1.0.0.js"></script>
 <script>
-// exp/det/why describe the potential exposure for a weak score.
-const AREAS=[
- {name:'CONTAIN',sub:'Scope & variations',exp:'Extra work that may never get paid',det:'Your answers suggest changed work may not always be recorded, priced and submitted on time.',why:'Depending on the contract, a variation that is unrecorded or submitted late can be harder to value and recover.',},
- {name:'COMMAND',sub:'Programme, delay & claims',exp:'Delay without the record behind it',det:'Your answers suggest delay events may not always be recorded and notified as they happen.',why:'Strong extension-of-time and claim positions are built on contemporaneous records. Depending on the contract, late notice may weaken entitlement to time or money.',},
- {name:'CLOSE',sub:'Instructions & decisions',exp:'Instructions you may not be able to substantiate',det:'Your answers suggest instructions and client decisions may not always be confirmed in writing.',why:'An instruction nobody confirmed can be hard to prove later. An open client decision can hold up work with no record of why.',},
- {name:'CONFIRM',sub:'Payments & certification',exp:'Payment that may be reduced or delayed unchallenged',det:'Your answers suggest applications, certificates and reductions may not always be tracked and followed up.',why:'A reduction left unchallenged in writing can tighten cash now and be harder to reopen at final account.',},
- {name:'CONTROL',sub:'Deadlines & weekly review',exp:'Missed contractual notices',det:'Your answers suggest notices may not be consistently identified, issued or evidenced within contractual deadlines.',why:'Depending on the contract and applicable law, late or missing notices may weaken entitlement to additional payment or time.',}];
-// 15 Yes/No questions, 3 per C. neg=true: "No" is the good answer.
-const Q=[
- {a:0,t:'If the client disputed a change tomorrow, could your team produce the instruction, records, value and status from one live register?'},
- {a:0,t:'Is changed or extra work priced and submitted before it starts — or as soon as it does?'},
- {a:0,t:'Do you have variations older than 60 days that are still not submitted or valued?',neg:true},
- {a:1,t:'Is each delay event recorded at the time, with its own records and programme impact?'},
- {a:1,t:'Do you send extension-of-time notices within the contract period, with the programme impact shown?'},
- {a:1,t:'Is there a delay or extra cost on the project that has not yet been notified or claimed?',neg:true},
- {a:2,t:'Is every site instruction confirmed in writing within 48 hours — including verbal and WhatsApp ones?',hint:'48 hours is our recommended discipline, not a contractual deadline.'},
- {a:2,t:'Could you pull together the records and correspondence for any given week within one day?'},
- {a:2,t:'Do decisions or approvals you need from the client stay open for weeks without a written chase?',neg:true},
- {a:3,t:'Are payment applications submitted on the contractual date, with full supporting records?'},
- {a:3,t:'Could you say today how much you have applied for but not yet been paid?'},
- {a:3,t:'Has a recent payment application been reduced without a clear written reason?',neg:true},
- {a:4,t:'Do you have one written register of every notice period and time-bar in your contract?'},
- {a:4,t:'Does a named person review the contract position with the team every week?'},
- {a:4,t:'Would contractual deadlines slip if one key person were away for two weeks?',neg:true}];
-// One priority action per question, in the same order as Q.
-const ACTIONS=['Set up one live variation register, with value, status and owner.',
- 'Price changed work and submit it before it starts, or as soon as it does.',
- 'Go through variations older than 60 days and submit or value them.',
- 'Record each delay event at the time, with its records and programme impact.', "Check your contract's notice periods, then send extension-of-time notices within them, with the programme impact shown.",
- "List every delay or extra cost not yet notified, and check your contract's own clause for each one now.", 'Confirm every instruction in writing, including verbal and WhatsApp ones. We recommend within 48 hours; that is a discipline, not a contractual deadline.',
- 'File correspondence and records so any week can be pulled together within a day.',
- 'Chase every open client decision in writing, with a date.',
- 'Submit payment applications on the contractual date, with full supporting records.',
- 'Track what you have applied for, what is certified and what is paid.',
- 'Challenge every payment reduction in writing, and ask for the reason.',
- 'Put every notice period and time-bar from your contract into one register.',
- 'Name one person to review the contract position with the team every week.',
- 'Make sure a second person knows the deadlines and can act on them.'];
-// 4 routing questions
-const R=[
- {k:'contract-value',t:'What is the value of your main live contract?',o:['Under €500K','€500K – €5M','€5M – €50M','Over €50M']},
- {k:'live-contracts',t:'How many live contracts need support?',o:['One','Two or three','Four or more']},
- {k:'dispute',t:'Is there a dispute or a substantial claim on the table?',o:['No','One is building','Yes — it is live']},
- {k:'who-does-the-work',t:'Who should do the day-to-day contract work?',o:['Our team — we want senior review and advice','You — we need someone to draft and run the paperwork','Not sure yet'],
-  sub:['Weekly review, deadline register, advice on what to send','Notices, letters, variations and payment applications prepared for us','We will decide after the review']}];
-const PLANS={
- control:{name:'Control',price:'from €1,500 / month',opt:'Control — from €1,500/month',
-  what:'Senior review and advice every week. Your team keeps drafting and sending — we make sure it is the right thing, at the right time.',
-  inc:['Weekly contract review with your team','Live register of deadlines, notices, variations and payments','Monthly priority report','Advice between reviews, within agreed monthly capacity']},
- dedicated:{name:'Dedicated',price:'from €2,500 / month',opt:'Dedicated — from €2,500/month',
-  what:'A named senior contract manager running one agreed contract hands-on — within a defined monthly capacity.',
-  inc:['Everything in Control','Correspondence and notices drafted','Variations prepared for submission','Payment applications supported and followed up']},
- custom:{name:'Custom',price:'scoped quote',opt:'Custom — quote',
-  what:'Support shaped around several contracts, a substantial claim or intensive work — agreed in scope before we start.',
-  inc:['Several contracts in parallel','Claims and extension-of-time support','Specialist quantum, delay or legal input via partners','A fixed monthly fee in writing before you start']}};
-// Sentence above the call button, by band (v3.1 §5).
-const BAND_LINE={Fragile:'Your Contract Score shows gaps that could already be costing you entitlement. Let\'s discuss what to secure first.',Exposed:'Your Contract Score highlights where your team may be exposed. Let\'s discuss how to protect your contractual position.',Resilient:'Your Contract Score shows a well-protected position. Let\'s discuss how to hold it through the busy phases.'};
-const LEVELS=[
- {min:0,max:39,name:'Fragile',note:'Rights depend on individuals, memory and informal communication.',col:'#C0392B',h:'Your contract is running on goodwill.',
-  b:'Deadlines, changes and payments depend on memory and good relationships. That works — until a dispute, a demanding client or a key person leaving tests it.'},
- {min:40,max:69,name:'Exposed',note:'Processes exist, but missed steps can weaken entitlement.',col:'#C5A050',h:'It holds day to day. Under pressure, it could crack.',
-  b:'The basics are there but not applied consistently. When pressure arrives — a claim, a payment dispute, a busy month — that is where entitlement and cash can slip.'},
- {min:70,max:100,name:'Resilient',note:'Actions, notices and evidence are managed and traceable.',col:'#2D6A4F',h:'Your controls look strong. Keep them that way.',
-  b:'Your answers suggest deadlines are tracked, changes recorded and payments followed up. The risk now is scale — new contracts, new people, new clients.'}];
+const CFG=window.CONTRACT_SCORE_CONFIG,E=window.FiveCs;
+const Q=CFG.questions,S=CFG.situation,NQ=Q.length,N=NQ+S.length;
+let i=0,ans=[],sit={},res=null,lead={};
 
-const N=Q.length+R.length;
-let i=0,ans=new Array(Q.length).fill(null),rt=new Array(R.length).fill(null),lead={};
-
+function esc(t){return String(t==null?'':t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function ss(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('screen-'+id).classList.add('active');window.scrollTo(0,0);}
-function ok(k){const v=ans[k];if(v===null)return 0;return Q[k].neg?(v===0?1:0):(v===1?1:0);}
-function areaS(a){const ks=Q.map((q,k)=>k).filter(k=>Q[k].a===a);return Math.round(ks.reduce((s,k)=>s+ok(k),0)/ks.length*100);}
-function score(){return Math.round(Q.reduce((s,q,k)=>s+ok(k),0)/Q.length*100);}
-function level(s){return LEVELS.find(l=>s>=l.min&&s<=l.max);}
-function esc(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function props(){return res?{brand:CFG.brand,band:res.band,weakest_c:res.weakest!==null?E.cs[res.weakest]:'none',engine_version:E.version,config_version:CFG.configVersion}:{brand:CFG.brand};}
+function track(n){try{window.acTrack&&acTrack(n,props());}catch(e){}}
+function reset(){ans=new Array(NQ).fill(null);sit={q16:null,q17:[],q18:null,q18other:'',q19:null,q20:''};res=null;lead={};}
+function start(){reset();i=0;ss('quiz');render();track('score_started');}
 
-function planKey(){
-  const v=rt[0],n=rt[1],d=rt[2],w=rt[3];
-  if(n===2||d===2||v===3)return 'custom';
-  if(w===1)return n===1?'custom':(v>=1?'dedicated':'control');
-  if(w===2&&score()<40&&v>=1&&n===0)return 'dedicated';
-  return 'control';
-}
-function planWhy(k){
-  const v=R[0].o[rt[0]],why=[];
-  if(k==='custom'){
-    if(rt[1]===2)why.push('you have four or more live contracts');
-    if(rt[2]===2)why.push('a dispute or substantial claim is live');
-    if(rt[0]===3)why.push('your main contract is over €50M');
-    if(rt[1]===1&&rt[3]===1)why.push('you want hands-on support across more than one contract');
-  }else if(k==='dedicated'){
-    why.push('your main contract is '+v);
-    why.push(rt[3]===1?'you want the paperwork drafted and run for you':'your score suggests your team needs hands-on support, not only advice');
-  }else{
-    why.push(rt[3]===0?'your team wants to keep doing the work, with senior review':'a weekly senior review is the simplest way to start');
-    if(rt[3]===1&&rt[0]===0)why.push('Dedicated is designed for contracts over €500K');
-  }
-  if(rt[2]===1)why.push('a claim is building — raise it in your review call');
-  return why;
-}
-
-function start(){window.acTrack&&acTrack('Quiz started');i=0;ans=new Array(Q.length).fill(null);rt=new Array(R.length).fill(null);ss('quiz');render();}
+function sitDone(k){const q=S[k],v=sit[q.id];
+  if(q.type==='pick2')return v.length===2;
+  if(q.type==='open')return true;
+  return v!==null;}
 function render(){
-  const isQ=i<Q.length,el=document.getElementById('qcon');
-  document.getElementById('sec-name').textContent=isQ?(AREAS[Q[i].a].name+' · '+AREAS[Q[i].a].sub):'Your situation';
+  const el=document.getElementById('qcon'),isQ=i<NQ;
+  document.getElementById('sec-name').textContent=isQ?(E.cs[Q[i].c]+' · '+CFG.cLabels[Q[i].c]):'About your situation';
   document.getElementById('prog-txt').textContent=(i+1)+' of '+N;
   document.getElementById('pbar').style.width=((i+1)/N*100)+'%';
   const pw=document.getElementById('pwrap');pw.setAttribute('aria-valuemax',N);pw.setAttribute('aria-valuenow',i+1);
@@ -400,99 +380,119 @@ function render(){
   const bn=document.getElementById('bnext');
   if(isQ){
     const v=ans[i];
-    el.innerHTML=`<div class="qtext" tabindex="-1">${Q[i].t}</div>${Q[i].hint?`<p class="qhint">${Q[i].hint}</p>`:''}<div class="aopts">
+    el.innerHTML=`<div class="qtext" tabindex="-1">${esc(Q[i].text)}</div>${Q[i].hint?`<p class="qhint">${esc(Q[i].hint)}</p>`:''}<div class="aopts">
       <button class="abtn ${v===1?'sel':''}" aria-pressed="${v===1}" onclick="pickQ(1)">Yes</button>
       <button class="abtn ${v===0?'sel':''}" aria-pressed="${v===0}" onclick="pickQ(0)">No</button></div>`;
     bn.disabled=v===null;
   }else{
-    const r=R[i-Q.length],v=rt[i-Q.length];
-    el.innerHTML=`<div class="qtext" tabindex="-1">${r.t}</div><div class="olist">${r.o.map((o,k)=>`<button class="obtn ${v===k?'sel':''}" aria-pressed="${v===k}" onclick="pickR(${k})">${o}${r.sub?`<small>${r.sub[k]}</small>`:''}</button>`).join('')}</div>`;
-    bn.disabled=v===null;
+    const k=i-NQ,q=S[k],v=sit[q.id];let body='';
+    if(q.type==='open'){
+      body=`<textarea id="q20" maxlength="${q.max}" aria-labelledby="qt" oninput="sit.q20=this.value">${esc(v)}</textarea>`;
+    }else{
+      body=`<div class="olist" role="group" aria-labelledby="qt">${q.options.map((o,j)=>{const on=q.type==='pick2'?v.includes(j):v===j;
+        return `<button class="obtn ${on?'sel':''}" aria-pressed="${on}" onclick="pickS(${j})">${esc(o)}</button>`;}).join('')}</div>`;
+      if(q.type==='single-other'&&v===q.options.length-1)body+=`<label class="otherl" for="q18o">Tell us briefly <span class="opt">(optional)</span></label><input id="q18o" maxlength="200" value="${esc(sit.q18other)}" oninput="sit.q18other=this.value">`;
+    }
+    el.innerHTML=`<div class="qtext" id="qt" tabindex="-1">${esc(q.text)}</div>${q.hint?`<p class="qhint">${esc(q.hint)}${q.type==='pick2'?' <b id="p2n">'+v.length+' of 2</b>':''}</p>`:''}${body}`;
+    bn.disabled=!sitDone(k);
   }
   bn.textContent=i===N-1?'See my score →':'Continue →';
   el.querySelector('.qtext').focus({preventScroll:true});
 }
 function pickQ(v){ans[i]=v;render();setTimeout(next,250);}
-function pickR(v){rt[i-Q.length]=v;render();setTimeout(next,250);}
+function pickS(j){const q=S[i-NQ];
+  if(q.type==='pick2'){const a=sit[q.id],p=a.indexOf(j);if(p>-1)a.splice(p,1);else if(a.length<2)a.push(j);render();return;}
+  sit[q.id]=j;render();
+  if(!(q.type==='single-other'&&j===q.options.length-1))setTimeout(next,250);}
 function next(){
-  const done=i<Q.length?ans[i]!==null:rt[i-Q.length]!==null;if(!done)return;
-  if(i<N-1){i++;if(i===8&&window.acTrack)acTrack('Quiz halfway');render();}else{showTop();}
+  const done=i<NQ?ans[i]!==null:sitDone(i-NQ);if(!done)return;
+  if(i<N-1){i++;render();}else{showTop();}
 }
 function prev(){if(i>0){i--;render();}}
 
-function subGate(e){
-  e.preventDefault();if(document.getElementById('gbot').value)return;
-  window.acTrack&&acTrack('Quiz details sent');
-  lead={name:gn.value.trim(),company:gc.value.trim(),email:ge.value.trim(),phone:'',location:'',comments:''};
-  const s=score(),pk=planKey();
-  const data={'form-name':'ask-contracks-quiz',source:'Resilience quiz'+(window.acAttribution?' · '+window.acAttribution:''),subject:'New lead — quiz — '+PLANS[pk].name+' plan — '+lead.name+(lead.company?' ('+lead.company+')':'')+' — '+s+'/100',plan:PLANS[pk].opt,project:'(from quiz) '+R[0].o[rt[0]]+' · '+R[1].o[rt[1]]+' live contract(s)',name:lead.name,company:lead.company,email:lead.email,phone:lead.phone,location:lead.location,comments:lead.comments,
-   score:s+'/100',level:level(s).name,'recommended-plan':PLANS[pk].name,
-   contain:areaS(0)+'%',command:areaS(1)+'%',close:areaS(2)+'%',confirm:areaS(3)+'%',control:areaS(4)+'%'};
-  R.forEach((r,k)=>data[r.k]=r.o[rt[k]]);
-  data.answers=Q.map((q,k)=>(k+1)+'. '+(ans[k]===1?'Yes':'No')+(ok(k)?'':'  <- GAP')+' — '+q.t).join('\n');
-  const b=document.getElementById('gbtn');b.disabled=true;b.textContent='One moment…';
-  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
-   .then(r=>r.ok).catch(()=>false).then(sent=>{b.disabled=false;b.textContent='Get my full report →';document.getElementById('sendnote').hidden=sent;showFull();});
-}
-
-function gapsIdx(){return AREAS.map((_,k)=>k).filter(k=>areaS(k)<100).sort((a,b)=>areaS(a)-areaS(b)).slice(0,2);}
-
-// Three actions from answers actually marked as gaps, taking the weakest controls first.
-function priorityActions(){
-  const order=AREAS.map((_,k)=>k).sort((x,y)=>areaS(x)-areaS(y));
-  const pools=order.map(a=>Q.map((q,k)=>k).filter(k=>Q[k].a===a&&!ok(k)));
-  const out=[];
-  while(out.length<3&&pools.some(p=>p.length))pools.forEach(p=>{if(p.length&&out.length<3)out.push(ACTIONS[p.shift()]);});
-  return out;
-}
-function headline(){const s=score();return s>=70&&AREAS.some((_,k)=>areaS(k)===0)?'Strong overall, with one real gap.':level(s).h;}
-function barCol(v){return v<40?'#C0392B':v<70?'#C5A050':'#2D6A4F';}
+/* Qualifying answers as text, and the fit / review flags (v3.4). */
+function sitText(){const o=k=>S[k].options;
+  return {'contract-value':o(0)[sit.q16]||'','q17-challenges':sit.q17.map(j=>o(1)[j]).join(' | '),'q18-obstacle':o(2)[sit.q18]||'','q18-other':sit.q18other.trim(),'q19-solution':o(3)[sit.q19]||'','q20-open':sit.q20.trim()};}
+function flags(){const t=sitText();
+  const fit=CFG.isBestFit(sit)?'BEST FIT':'standard';
+  const urgent=CFG.urgentQ17.some(u=>t['q17-challenges'].split(' | ').includes(u));
+  return {fit:fit,'review-flag':(urgent||t['q20-open'])?'REVIEW':''};}
+function answersText(){return Q.map((q,k)=>(k+1)+'. '+(ans[k]===1?'Yes':'No')+(E.isGood(CFG,ans,k)?'':'  <- GAP')+' — '+q.text).join('\n');}
+function context(){const pk=CFG.planKey(sit),c={score:res.score+'/100',level:res.band,'weakest-c':res.weakest!==null?E.cs[res.weakest]:'',
+  'recommended-plan':CFG.plans[pk].name+(CFG.plans[pk].live===false?' (not shown yet; page shows '+CFG.plans[CFG.shownPlan(pk)].name+')':''),answers:answersText(),'engine-version':E.version,'config-version':CFG.configVersion,'score-version':CFG.scoreVersion};
+  E.cs.forEach((n,k)=>c[n.toLowerCase()]=res.perC[k].score+'%');return Object.assign(c,sitText(),flags());}
+function head(){return res.score>=70&&res.perC.some(p=>p.score===0)?{h:CFG.holeHead,b:CFG.holeBody}:{h:CFG.bands[res.band].head,b:CFG.bands[res.band].body};}
+function lvl(v){return v===100?'strong':v===67?'partial':'weak';}
 
 function showTop(){
-  window.acTrack&&acTrack('Quiz completed');
-  const s=score(),L=level(s);
-  document.getElementById('rnum').textContent=s;
+  res=E.evaluate(CFG,ans);const B=CFG.bands[res.band],H=head();
+  document.getElementById('rnum').textContent=res.score;
   const ring=document.getElementById('ring');
-  ring.style.background=`conic-gradient(${L.col} 0% ${s}%, rgba(255,255,255,.12) ${s}% 100%)`;
-  ring.setAttribute('aria-label','Your score: '+s+' out of 100, '+L.name);
-  document.getElementById('rlevel').textContent=L.name;
-  document.getElementById('rband').textContent=BAND_LINE[L.name];
-  // A high overall score can hide one control with nothing in place.
-  const hole=headline()!==L.h;
-  document.getElementById('rhead').textContent=headline();
-  document.getElementById('rdesc').textContent=hole?'Most of your controls look strong, but your answers show nothing in place on one of the 5Cs. That is where a strong overall position may still be exposed.':L.b;
-  document.getElementById('ladder').innerHTML=LEVELS.map(l=>`<div class="rung ${l===L?'on':''}">${l.name}<small>${l.note}</small></div>`).join('');
-  const gi=gapsIdx();
-  document.getElementById('gaps-h').innerHTML=gi.length===2?'Your two principal <em>potential weaknesses</em>':gi.length===1?'Your principal <em>potential weakness</em>':'No <em>gaps</em> in your answers';
-  document.getElementById('gaps').innerHTML=gi.length?gi.map(a=>`<div class="gap"><span class="tag">Potential exposure · ${AREAS[a].name} ${areaS(a)}%</span><b>${AREAS[a].exp}</b><p>${AREAS[a].det}</p><p class="why"><b style="display:inline;color:var(--navy)">Why it matters:</b> ${AREAS[a].why}</p></div>`).join(''):`<div class="gap ok"><span class="tag">Every answer in place</span><b>Your answers show no gap on the 5Cs.</b><p>The risk now is scale: keep the same discipline on every new contract, new person and new client.</p></div>`;
-  try{const s0=score();sessionStorage.setItem('acScore',JSON.stringify({score:s0+'/100',level:L.name,'weakest-c':(gi[0]!==undefined?AREAS[gi[0]].name:''),contain:areaS(0)+'%',command:areaS(1)+'%',close:areaS(2)+'%',confirm:areaS(3)+'%',control:areaS(4)+'%','contract-value':R[0].o[rt[0]]||'','live-contracts':R[1].o[rt[1]]||'',dispute:R[2].o[rt[2]]||'','who-does-the-work':R[3].o[rt[3]]||'',answers:Q.map((q,k)=>(k+1)+'. '+(ans[k]===1?'Yes':'No')+(ok(k)?'':'  <- GAP')+' — '+q.t).join('\n')}));}catch(e){}
-  document.getElementById('rgate').hidden=false;document.getElementById('rfull').hidden=true;
+  ring.style.background=`conic-gradient(${B.colour} 0% ${res.score}%, rgba(255,255,255,.12) ${res.score}% 100%)`;
+  ring.setAttribute('aria-label','Your Contract Score: '+res.score+' out of 100, '+res.band);
+  document.getElementById('rlevel').textContent=res.band;
+  document.getElementById('rhead').textContent=H.h;document.getElementById('rdesc').textContent=H.b;
+  document.getElementById('ladder').innerHTML=Object.keys(CFG.bands).map(k=>`<div class="rung ${k===res.band?'on':''}">${k}<small>${esc(CFG.bands[k].note)}</small></div>`).join('');
+  document.getElementById('rail').innerHTML=res.perC.map(p=>`<div class="seg" role="listitem"><div class="h"><span>${p.name} <span class="sub">· ${esc(CFG.cLabels[p.c])}</span></span><b>${p.score}%</b></div><div class="track" aria-hidden="true"><div style="width:${p.score}%"></div></div></div>`).join('');
+  const w=res.weakest;
+  document.getElementById('weakbox').innerHTML=w===null?`<div class="gap ok"><span class="tag">Every answer in place</span><b>Your answers show no gap on the 5Cs.</b><p>The risk now is scale: keep the same discipline on every new contract, new person and new client.</p></div>`
+    :`<h3>Your weakest <em>control</em></h3><div class="gap"><span class="tag">${E.cs[w]} · ${res.perC[w].score}%</span><b>${esc(CFG.exposure[w].title)}</b><p>${esc(CFG.exposure[w].detail)}</p><p class="why"><b style="display:inline;color:var(--navy)">Why it matters:</b> ${esc(CFG.exposure[w].why)}</p></div>`;
+  document.getElementById('rband').textContent=B.cta;
   document.getElementById('rcall').href='/#book';
-  ss('results');
-}
-function showFull(){
-  window.acTrack&&acTrack('Full report shown');
-  const s=score(),L=level(s),pk=planKey(),P=PLANS[pk];
-  const first=(lead.name||'').split(' ')[0];
-  if(first)document.getElementById('rhead').textContent=first+' — '+headline();
-  const why=planWhy(pk);
-  document.getElementById('plan').innerHTML=`<span class="tag">Based on your situation</span>
-    <h3>${P.name}</h3><div class="price">${P.price}</div><p class="what">${P.what}</p>
-    <ul>${P.inc.map(x=>`<li>${x}</li>`).join('')}</ul>
-    <p class="what"><b style="color:var(--navy)">Why:</b> ${esc(why.join('; '))}.</p>
-    <span class="alt">A suggestion, not a professional assessment. We confirm what fits with you on the call, and scope and fee in writing before you start.</span>`;
-  document.getElementById('rcall').href='/?plan='+pk+'#book';
-  try{const c0=JSON.parse(sessionStorage.getItem('acScore')||'{}');c0['recommended-plan']=P.name;sessionStorage.setItem('acScore',JSON.stringify(c0));}catch(e){}
-  document.getElementById('bars').innerHTML=AREAS.map((a,k)=>`<div class="barrow" role="listitem"><div class="h"><span>${a.name} <span style="font-weight:400;color:var(--muted)">· ${a.sub}</span></span><span>${areaS(k)}%</span></div><div class="track" aria-hidden="true"><div style="width:${areaS(k)}%;background:${barCol(areaS(k))}"></div></div></div>`).join('');
-  const acts=priorityActions();
-  document.getElementById('acts-h').innerHTML=acts.length===3?'Three <em>priority actions</em>':acts.length?'Your <em>priority action'+(acts.length>1?'s':'')+'</em>':'Your <em>next action</em>';
-  document.getElementById('acts').innerHTML=(acts.length?acts:['Keep the same controls in place on your next contract, and test them when a new person joins.']).map(x=>`<li>${x}</li>`).join('');
-  document.getElementById('bklist').innerHTML=Q.map((q,k)=>`<div class="bkrow"><div>${q.t}</div><div class="bksc ${ok(k)?'sch':'scl'}">${ans[k]===1?'Yes':'No'} · ${ok(k)?'In place':'Gap'}</div></div>`).join('');
-  document.getElementById('rgate').hidden=true;document.getElementById('rfull').hidden=false;
-  document.getElementById('rfull').scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('rgate').hidden=false;document.getElementById('report').hidden=true;document.getElementById('rnext').hidden=false;
+  document.getElementById('gerr').hidden=true;
+  try{sessionStorage.setItem('acScore',JSON.stringify(context()));}catch(e){}
+  ss('results');track('score_completed');track('results_viewed');
 }
 
+document.getElementById('gform').addEventListener('submit',function(e){
+  e.preventDefault();if(document.getElementById('gbot').value)return;
+  const b=document.getElementById('gbtn'),err=document.getElementById('gerr'),em=document.getElementById('ge');
+  if(b.disabled)return;
+  err.hidden=true;
+  if(!em.checkValidity()){err.textContent='Please enter a valid work email.';err.hidden=false;em.focus();return;}
+  lead={email:em.value.trim(),name:document.getElementById('gn').value.trim(),consent:document.getElementById('gcons').checked?'yes':'no'};
+  const ctx=context(),pk=CFG.planKey(sit),fl=flags();
+  const data=Object.assign({'form-name':'ask-contracks-quiz',source:'Contract Score'+(window.acAttribution?' · '+window.acAttribution:''),
+    subject:'New lead — Contract Score — '+(fl.fit==='BEST FIT'?'BEST FIT — ':'')+(fl['review-flag']?'REVIEW — ':'')+(lead.name||lead.email)+' — '+res.score+'/100 '+res.band,
+    brand:CFG.brand,'assessment-object':CFG.assessmentObject,name:lead.name,email:lead.email,company:'',phone:'',location:'',comments:'',
+    consent:lead.consent,plan:CFG.plans[pk].opt,project:'(from Contract Score) '+(ctx['contract-value']||'')},ctx);
+  b.disabled=true;b.textContent='One moment…';track('email_submitted');
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()})
+   .then(r=>{if(!r.ok)throw 0;showReport();})
+   .catch(()=>{b.disabled=false;b.textContent='Unlock my report →';err.textContent="Sorry, that didn't go through. Your answers are kept, so please try again.";err.hidden=false;track('email_submit_failed');});
+});
 
+function showReport(){
+  const pk=CFG.shownPlan(CFG.planKey(sit)),P=CFG.plans[pk],fl=flags(),B=CFG.bands[res.band];
+  const d=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  document.getElementById('rmeta').textContent=(lead.name?lead.name+' · ':'')+d+' · '+CFG.scoreName+' v'+CFG.scoreVersion+' · Assessed: '+CFG.assessmentLabel;
+  const by=s=>res.perC.filter(p=>s(p.score)).sort((a,b)=>a.score-b.score||a.c-b.c);
+  const li=p=>`<li><b>${p.name}</b> · ${esc(CFG.cLabels[p.c])} · ${p.score}%</li>`;
+  const top=Math.max(...res.perC.map(p=>p.score)),low=Math.min(...res.perC.map(p=>p.score));
+  document.getElementById('strengths').innerHTML=top===0?'<li>None yet: every control scored 0%.</li>':by(v=>v===top).map(li).join('');
+  document.getElementById('weaknesses').innerHTML=low===100?'<li>None: every control scored 100%.</li>':by(v=>v===low).map(li).join('');
+  document.getElementById('interp').innerHTML=res.perC.map(p=>`<div class="ic"><div class="h"><b>${p.name}</b> <span class="sub">· ${esc(CFG.cLabels[p.c])}</span><span class="pct">${p.score}%</span></div><p>${esc(CFG.interpret[p.c][lvl(p.score)])}</p></div>`).join('');
+  const ex=res.order.filter(c=>res.perC[c].score<67);
+  document.getElementById('expo-sec').hidden=!ex.length;
+  document.getElementById('expo').innerHTML=ex.map(c=>`<div class="gap"><span class="tag">${E.cs[c]} · ${res.perC[c].score}%</span><b>${esc(CFG.exposure[c].title)}</b><p class="why"><b style="display:inline;color:var(--navy)">Likely consequence:</b> ${esc(CFG.exposure[c].why)}</p></div>`).join('');
+  document.getElementById('acts').innerHTML=E.actions(CFG,res,3).map(a=>`<li>${esc(a)}</li>`).join('');
+  document.getElementById('check').innerHTML=CFG.checklist.map((t,c)=>`<li><span class="box" aria-hidden="true"></span><b>${E.cs[c]}</b> ${esc(t)}</li>`).join('');
+  document.getElementById('plan').innerHTML=`<span class="tag">Based on your answers</span><h3>${esc(P.name)}</h3><div class="price">${esc(P.price)}</div><p class="what">${esc(P.what)}</p><span class="alt">A suggestion, not a professional assessment. We confirm what fits with you on the call, and scope and fee in writing before you start.</span>`;
+  document.getElementById('bklist').innerHTML=Q.map((q,k)=>{const g=E.isGood(CFG,ans,k);return `<div class="bkrow"><div>${esc(q.text)}</div><div class="bksc ${g?'sch':'scl'}">${ans[k]===1?'Yes':'No'} · ${g?'In place':'Gap'}</div></div>`;}).join('');
+  const callHref='/'+(pk==='control-or-dedicated'?'':'?plan='+pk)+'#book';
+  const diy=`<div class="opt-card"><span class="tag">Option · free</span><h3>${esc(CFG.copy.diyTitle)}</h3><p>${esc(CFG.copy.diy)}</p></div>`;
+  const sup=`<div class="opt-card sup"><span class="tag">Option${fl.fit==='BEST FIT'?' · recommended':''}</span><h3>${esc(CFG.copy.supportTitle)}</h3><p>${esc(B.cta)}</p><a class="btn btn-gold" href="${callHref}" onclick="track('cta_clicked')">${esc(CFG.copy.callButton)}</a><span class="purl" hidden>Book at askcontracks.com</span><span class="alt">${esc(CFG.copy.callSub)}</span></div>`;
+  document.getElementById('options').innerHTML=fl.fit==='BEST FIT'?sup+diy:diy+sup;
+  try{const c=JSON.parse(sessionStorage.getItem('acScore')||'{}');sessionStorage.setItem('acScore',JSON.stringify(Object.assign(c,{'recommended-plan':P.name})));}catch(e){}
+  document.getElementById('rgate').hidden=true;document.getElementById('rnext').hidden=true;document.getElementById('report').hidden=false;
+  document.getElementById('report').scrollIntoView({behavior:'smooth',block:'start'});
+  track('report_unlocked');
+}
+document.getElementById('pdfbtn').addEventListener('click',function(){track('report_downloaded');window.print();});
+window.addEventListener('beforeprint',function(){document.getElementById('bk').open=true;});
+document.getElementById('rcall').addEventListener('click',function(){track('cta_clicked');});
+reset();
 </script>
 </body>
 </html>

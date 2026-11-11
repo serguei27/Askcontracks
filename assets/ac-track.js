@@ -19,8 +19,9 @@
     document.head.appendChild(s);
   }
 
-  window.acTrack = function (name) {
-    try { if (window.plausible) window.plausible(name); } catch (e) {}
+  /* props: brand, band, weakest_c, versions. Never personal data. */
+  window.acTrack = function (name, props) {
+    try { if (window.plausible) window.plausible(name, props ? { props: props } : undefined); } catch (e) {}
   };
   if (script && script.dataset.event) window.acTrack(script.dataset.event);
 
