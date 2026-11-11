@@ -179,11 +179,10 @@ section{padding:92px 0}
 @media (max-width:420px){.math{grid-template-columns:minmax(0,1fr)}.math .card{padding:26px 18px}}
 
 /* PRICING */
-.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
 @media (min-width:961px){.plans .plan{display:grid;grid-template-rows:subgrid;grid-row:span 6;row-gap:0;align-content:start}.plans .plan .for{min-height:0}.plans .plan .chip{justify-self:start;align-self:start}.plans .price small{white-space:nowrap}}
 .plan.start{position:relative;border:2px solid var(--gold)}.plan .notinc{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:.86rem;color:var(--muted)}
 @media (min-width:961px){.plans .plan{padding:34px 24px}.plans .price{font-size:clamp(2rem,2.6vw,2.6rem)}}
-@media (min-width:961px) and (max-width:1179px){.plans{grid-template-columns:repeat(2,1fr)}}
 .plan{display:flex;flex-direction:column;padding:34px 30px}
 .plan h3{font-family:'DM Sans',sans-serif;font-size:1.5rem;font-weight:700}
 .plan .for{color:var(--muted);font-size:.97rem;margin-top:6px;min-height:48px}
@@ -761,21 +760,6 @@ footer a:hover{color:var(--gold-2)}
       <p>Start with a review, then choose the level of support you need. Every plan runs month to month. Your exact fee depends on the country, the scope and the stages covered — confirmed in writing before you start.</p>
     </div>
     <div class="plans">
-      <div class="card plan start">
-        <span class="badge">Start here</span>
-        <h3>Contract Review</h3>
-        <p class="for">A snapshot of where one live contract stands.</p>
-        <div class="price">from €500<small> one-off</small></div>
-        <span class="chip">1 live contract · 1 session · written note</span>
-        <ul>
-          <li>One live contract</li>
-          <li>One working session with a senior contract manager</li>
-          <li>A short written note: key deadlines and notices, current exposure, three priorities</li>
-          <li>Leads naturally into Control or Dedicated</li>
-          <li>Scope and fee confirmed in writing before starting</li>
-        </ul>
-        <p class="notinc">Not included: a full contract review, clause-by-clause analysis, claim preparation or ongoing support.</p>
-      </div>
       <div class="card plan">
         <h3>Control</h3>
         <p class="for">Senior review and advice. Your team executes.</p>
@@ -818,7 +802,7 @@ footer a:hover{color:var(--gold-2)}
       </div>
     </div>
     <div class="plans-cta"><a href="#contract-resilience" class="btn btn-gold ac-pulse">Get my Contract Score — free →</a></div>
-    <p class="scope">We agree the contracts covered, priority activities and monthly capacity before starting. If your needs grow, we agree additional support and pricing with you first.</p>
+    <p class="scope">We agree the contracts covered, priorities and monthly capacity before we start. Not ready for monthly support? Start with a <a href="/?plan=review#book" style="color:inherit">Contract Review</a> — from €500, one-off: one live contract, one session, a short written note.</p>
 
     <div class="offer">
       <div class="c1">
