@@ -109,6 +109,8 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-col
 .rung.on{border-color:var(--gold);background:rgba(197,160,80,.16);color:#fff}
 .sec{margin-bottom:22px}
 .sec h3{font-size:1.35rem;margin-bottom:12px}
+#report .sec{margin-bottom:44px}
+#report .sec>h3{text-align:center;margin-bottom:18px}
 .bars{border:1px solid var(--line);border-radius:16px;padding:8px 20px}
 .barrow{padding:12px 0;border-bottom:1px solid var(--line)}
 .barrow:last-child{border:0}
@@ -174,7 +176,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var
 .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media (max-width:560px){.two{grid-template-columns:1fr}}
 .plain{list-style:none;display:grid;gap:6px;font-size:.95rem}
 .ic{border-bottom:1px solid var(--line);padding:12px 0}.ic:last-child{border:0}.ic p{color:var(--muted);font-size:.95rem}.ic .pct{margin-left:auto}
-.check{list-style:none;display:grid;gap:10px}.check li{display:flex;gap:10px;font-size:.95rem}.check b{color:var(--navy);margin-right:4px}
+.check{list-style:none;display:grid;gap:10px}.check li{display:grid;grid-template-columns:16px 6.6em minmax(0,1fr);column-gap:12px;align-items:start;font-size:.95rem}.check b{color:var(--navy)}
 .check .box{flex:none;width:16px;height:16px;border:2px solid var(--navy);border-radius:3px;margin-top:3px}
 .options{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media (max-width:640px){.options{grid-template-columns:1fr}}
 .opt-card{border:1px solid var(--line);border-radius:18px;padding:20px}.opt-card.sup{border:2px solid var(--gold);background:var(--gold-soft)}
@@ -296,11 +298,6 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
 
     <div id="report" hidden>
       <p class="rmeta" id="rmeta"></p>
-
-      <div class="sec two">
-        <div><h3>Strengths</h3><ul class="plain" id="strengths"></ul></div>
-        <div><h3>Weaknesses</h3><ul class="plain" id="weaknesses"></ul></div>
-      </div>
 
       <div class="sec">
         <h3>Control by <em>control</em></h3>
@@ -467,11 +464,6 @@ function showReport(){
   const pk=CFG.shownPlan(CFG.planKey(sit)),P=CFG.plans[pk],fl=flags(),B=CFG.bands[res.band];
   const d=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
   document.getElementById('rmeta').textContent=(lead.name?lead.name+' · ':'')+d+' · '+CFG.scoreName+' v'+CFG.scoreVersion+' · Assessed: '+CFG.assessmentLabel;
-  const by=s=>res.perC.filter(p=>s(p.score)).sort((a,b)=>a.score-b.score||a.c-b.c);
-  const li=p=>`<li><b>${p.name}</b> · ${esc(CFG.cLabels[p.c])} · ${p.score}%</li>`;
-  const top=Math.max(...res.perC.map(p=>p.score)),low=Math.min(...res.perC.map(p=>p.score));
-  document.getElementById('strengths').innerHTML=top===0?'<li>None yet: every control scored 0%.</li>':by(v=>v===top).map(li).join('');
-  document.getElementById('weaknesses').innerHTML=low===100?'<li>None: every control scored 100%.</li>':by(v=>v===low).map(li).join('');
   document.getElementById('interp').innerHTML=res.perC.map(p=>`<div class="ic"><div class="h"><b>${p.name}</b> <span class="sub">· ${esc(CFG.cLabels[p.c])}</span><span class="pct">${p.score}%</span></div><p>${esc(CFG.interpret[p.c][lvl(p.score)])}</p></div>`).join('');
   const ex=res.order.filter(c=>res.perC[c].score<67);
   document.getElementById('expo-sec').hidden=!ex.length;
