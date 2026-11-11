@@ -54,6 +54,41 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 .getrow b{display:block}
 .getrow span{color:rgba(255,255,255,.7);font-size:.92rem}
 @media (max-width:860px){.landing{grid-template-columns:1fr;padding-top:40px}}
+/* HOW THE SCORE WORKS (landing) */
+.how{max-width:1080px;margin:0 auto;padding:0 20px 88px}
+.how-block{padding:56px 0;border-top:1px solid var(--line)}
+.how-kicker{display:flex;align-items:center;gap:14px;color:#8C6D25;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.how-kicker::after{content:"";flex:1;height:1px;background:var(--line)}
+.how h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin:14px 0 12px;max-width:760px}
+.how .lead{color:var(--muted);font-size:1.05rem;max-width:680px}
+.how-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}
+.how-step{border:1px solid var(--line);border-radius:18px;padding:22px;background:#fff}
+.how-step i{font-style:normal;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:.9rem;margin-bottom:14px}
+.how-step b{display:block;color:var(--navy);margin-bottom:4px}
+.how-step span{color:var(--muted);font-size:.92rem}
+.how-cs{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:28px}
+.how-cs li{border-top:3px solid var(--navy);padding-top:12px}
+.how-cs small{display:block;color:#8C6D25;font-weight:700;font-size:.72rem;letter-spacing:.12em}
+.how-cs b{display:block;font-size:.98rem;letter-spacing:.06em;color:var(--navy);margin:2px 0}
+.how-cs span{color:var(--muted);font-size:.9rem}
+.how-faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 40px;margin-top:28px}
+.how-faq h3{font-size:1.15rem;margin-bottom:6px}
+.how-faq p{color:var(--muted)}
+.how-by{display:grid;grid-template-columns:88px minmax(0,1fr);gap:22px;align-items:center;margin-top:28px}
+.how-by img{width:88px;height:88px;border-radius:50%;object-fit:cover}
+.how-by p{color:var(--muted)}
+.how-by .creds{color:var(--navy);font-weight:600;font-size:.9rem;margin-top:6px}
+.how-quote{border-left:3px solid var(--gold);padding-left:18px;margin-top:28px;max-width:760px}
+.how-quote p{font-size:1.05rem;color:var(--ink)}
+.how-quote cite{display:block;margin-top:8px;font-style:normal;color:var(--muted);font-size:.9rem}
+.how-end{background:var(--navy);color:#fff;border-radius:28px;padding:52px 40px;text-align:center}
+.how-end h2{color:#fff;margin:0 auto 12px}.how-end h2 em{color:var(--gold-2)}
+.how-end p{color:rgba(255,255,255,.75);margin-bottom:26px}
+.how-end .free-tag{color:var(--gold-2)}
+.how-end .land-note{color:rgba(255,255,255,.65)}
+@media (max-width:900px){.how-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.how-cs{grid-template-columns:minmax(0,1fr)}.how-faq{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.how-steps{grid-template-columns:minmax(0,1fr)}.how-block{padding:44px 0}.how-end{padding:40px 20px;border-radius:22px}.how-by{grid-template-columns:64px minmax(0,1fr);gap:16px}.how-by img{width:64px;height:64px}}
+
 
 /* QUESTIONS */
 .qhead{margin-bottom:20px}
@@ -237,9 +272,66 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
     </div>
     <div class="getbox">
       <div class="t">What you get</div>
-      <div class="getrow"><i>1</i><div><b>Your resilience level</b><span>Whether your current controls appear Fragile, Exposed or Resilient.</span></div></div>
+      <div class="getrow"><i>1</i><div><b>Your Contract Score</b><span>Out of 100, and whether your controls appear Fragile, Exposed or Resilient.</span></div></div>
       <div class="getrow"><i>2</i><div><b>Your potential weak points</b><span>Which contractual practices may leave your position vulnerable, and why it matters.</span></div></div>
       <div class="getrow"><i>3</i><div><b>Your first corrective actions</b><span>Where to focus before a dispute develops. Part of your free full report.</span></div></div>
+    </div>
+  </div>
+  <div class="how">
+    <section class="how-block" aria-labelledby="how-h">
+      <div class="how-kicker"><span>How the score works</span></div>
+      <h2 id="how-h">Know where your contract may be exposed. <em>In four minutes.</em></h2>
+      <p class="lead">An indicative result based on your own answers. It points to where to look first. It is not a review of your contract, and not legal advice.</p>
+      <div class="how-steps">
+        <div class="how-step"><i>1</i><b>Your Contract Score</b><span>Out of 100, with your band: Fragile, Exposed or Resilient.</span></div>
+        <div class="how-step"><i>2</i><b>Your five-C profile</b><span>Where your contract management looks stronger or weaker, control by control.</span></div>
+        <div class="how-step"><i>3</i><b>Your weakest control</b><span>The one to look at first, and why it matters.</span></div>
+        <div class="how-step"><i>4</i><b>Your detailed report</b><span>Three first actions and a five-line checklist, with a PDF. Free with your email.</span></div>
+      </div>
+    </section>
+
+    <section class="how-block" aria-labelledby="how-cs-h">
+      <div class="how-kicker"><span>The 5Cs Framework™</span></div>
+      <h2 id="how-cs-h">What the Contract Score <em>assesses.</em></h2>
+      <p class="lead">Three Yes/No questions on each control: fifteen in all.</p>
+      <ol class="how-cs">
+        <li><small>C1</small><b>CONTAIN</b><span>Scope &amp; variations</span></li>
+        <li><small>C2</small><b>COMMAND</b><span>Programme, delay &amp; claims</span></li>
+        <li><small>C3</small><b>CLOSE</b><span>Instructions &amp; decisions</span></li>
+        <li><small>C4</small><b>CONFIRM</b><span>Payments &amp; certification</span></li>
+        <li><small>C5</small><b>CONTROL</b><span>Deadlines &amp; weekly review</span></li>
+      </ol>
+    </section>
+
+    <section class="how-block" aria-labelledby="how-faq-h">
+      <div class="how-kicker"><span>Common questions</span></div>
+      <h2 id="how-faq-h">Answers, <em>straight.</em></h2>
+      <div class="how-faq">
+        <div><h3>How long does it take?</h3><p>About 4 minutes: 15 Yes/No questions, then 5 short questions about your situation.</p></div>
+        <div><h3>Is it free?</h3><p>Yes. Your score shows straight away, with no email needed. We only ask for your email if you want the detailed report.</p></div>
+        <div><h3>What do I get?</h3><p>Your Contract Score out of 100, your band, your five C scores and your weakest control. The detailed report adds three first actions and a five-line checklist, with a PDF copy.</p></div>
+        <div><h3>What happens after?</h3><p>Use the report to strengthen how your team manages the contract, or book a free 45-minute call to go through your result. No documents needed, no obligation.</p></div>
+      </div>
+    </section>
+
+    <section class="how-block" aria-labelledby="how-by-h">
+      <div class="how-kicker"><span id="how-by-h">Who built it</span></div>
+      <div class="how-by">
+        <img src="serguei-portrait.jpeg" alt="Serguei Poppeleer" loading="lazy">
+        <div>
+          <p>Built by Serguei Poppeleer, civil engineer with more than 20 years on major construction and EPC contracts in Europe, Africa and the Gulf.</p>
+          <p class="creds">MCIArb · WorldCC · LLM Construction Law &amp; Arbitration · MSc Civil Engineering · Executive MBA</p>
+        </div>
+      </div>
+      <blockquote class="how-quote"><p>“Contracks brought structure and clarity to a procurement process that had become difficult to manage across suppliers and stakeholders. We improved alignment, reduced unnecessary costs, and kept delivery moving without constant firefighting.”</p><cite>Richard I., CEO, water project, West Africa</cite></blockquote>
+    </section>
+
+    <div class="how-end">
+      <h2>Contractors don't go bust on site. <em>They go bust on paper.</em></h2>
+      <p>Find out where your contract stands, before a claim or a payment dispute tells you.</p>
+      <div class="start-wrap"><button class="btn btn-gold" onclick="start()">Start my Contract Score</button>
+      <span class="free-tag">FREE</span></div>
+      <p class="land-note">About 4 minutes · Indicative self-assessment · General information, not legal advice</p>
     </div>
   </div>
 </div>
