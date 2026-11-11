@@ -189,6 +189,7 @@ section{padding:92px 0}
 .plan li{padding:8px 0 8px 28px;position:relative;font-size:.97rem}
 .plan li::before{content:"";position:absolute;left:0;top:13px;width:14px;height:8px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
 .plan .btn{width:100%}
+.plans-cta{text-align:center;margin-top:28px}.plan ul{margin-bottom:0}
 .plan.pop{background:var(--navy);color:#fff;border:0;position:relative;box-shadow:0 24px 60px rgba(10,22,40,.25)}
 .plan.pop h3,.plan.pop .price{color:#fff}
 .plan.pop .for,.plan.pop .price small{color:rgba(255,255,255,.7)}
@@ -366,7 +367,8 @@ form.card{scroll-margin-top:96px;padding:34px;box-shadow:0 20px 50px rgba(10,22,
 .crs-start:hover,.crs-start:focus-visible{animation:none}
 @media (prefers-reduced-motion:reduce){.crs-start{animation:none}}
 @media (max-width:480px){.crs-start{white-space:nowrap;font-size:.92rem;padding:15px 12px}}
-#pricing a.btn[href="#contract-resilience"]{width:100%;font-size:.9rem;padding:15px 12px;white-space:nowrap}
+.plans-cta .btn{white-space:nowrap;min-width:320px}
+@media (max-width:480px){.plans-cta .btn{width:100%;min-width:0;font-size:.92rem;padding:15px 12px}}
 @media (max-width:480px){nav.top .wrap{flex-wrap:nowrap;column-gap:10px}nav.top .wrap>.logo{flex:none}nav.top .nav-cta{white-space:nowrap;font-size:.74rem;padding:9px 12px}nav.top #menu{order:3;flex-basis:100%}nav.top .wrap{flex-wrap:wrap}}
 .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
 .field.full{grid-column:1/-1}
@@ -751,7 +753,6 @@ footer a:hover{color:var(--gold-2)}
           <li>Monthly priority report</li>
           <li>Questions between reviews, within agreed monthly capacity</li>
         </ul>
-        <a href="#contract-resilience" class="btn btn-gold">Get my Contract Score — free →</a>
       </div>
       <div class="card plan pop">
         <h3>Dedicated</h3>
@@ -766,7 +767,6 @@ footer a:hover{color:var(--gold-2)}
           <li>Payment applications supported and followed up</li>
           <li>Within a defined monthly capacity</li>
         </ul>
-        <a href="#contract-resilience" class="btn btn-gold">Get my Contract Score — free →</a>
       </div>
       <div class="card plan">
         <h3>Custom</h3>
@@ -780,9 +780,9 @@ footer a:hover{color:var(--gold-2)}
           <li>Contract drafting and negotiation</li>
           <li>Cross-border projects</li>
         </ul>
-        <a href="#contract-resilience" class="btn btn-gold">Get my Contract Score — free →</a>
       </div>
     </div>
+    <div class="plans-cta"><a href="#contract-resilience" class="btn btn-gold">Get my Contract Score — free →</a></div>
     <p class="scope">We agree the contracts covered, priority activities and monthly capacity before starting. If your needs grow, we agree additional support and pricing with you first.</p>
 
     <div class="offer">
