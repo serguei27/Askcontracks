@@ -356,6 +356,10 @@ form.card{scroll-margin-top:96px;padding:34px;box-shadow:0 20px 50px rgba(10,22,
 .cerr{color:var(--red);font-weight:600;margin-top:14px}
 .cok{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;color:var(--navy);line-height:1.4}
 #callform [hidden]{display:none!important}
+.sticky .btn-gold{flex:2;white-space:nowrap;font-size:.84rem;padding:13px 10px}
+.sticky .btn-line{flex:1}
+#pricing a.btn[href="#contract-resilience"]{width:100%;font-size:.9rem;padding:15px 12px;white-space:nowrap}
+@media (max-width:480px){nav.top .wrap{flex-wrap:nowrap;column-gap:10px}nav.top .wrap>.logo{flex:none}nav.top .nav-cta{white-space:nowrap;font-size:.74rem;padding:9px 12px}nav.top #menu{order:3;flex-basis:100%}nav.top .wrap{flex-wrap:wrap}}
 .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
 .field.full{grid-column:1/-1}
 label{font-weight:600;font-size:.92rem;color:var(--navy)}
@@ -462,7 +466,7 @@ footer a:hover{color:var(--gold-2)}
       <a href="#faq">FAQ</a>
       <a href="/articles/">Articles</a>
     </div>
-    <a href="/quiz" class="btn btn-navy nav-cta"><span class="lg">Contract Score</span><span class="sm">Contract Score</span></a>
+    <a href="#contract-resilience" class="btn btn-navy nav-cta"><span class="lg">Get my Contract Score</span><span class="sm">Get my Contract Score</span></a>
   </div>
 </nav>
 
@@ -474,7 +478,7 @@ footer a:hover{color:var(--gold-2)}
       <h1>Your contract team, <em>without the hiring.</em></h1>
       <p class="sub"><b style="color:var(--navy)">You keep building. We help your team keep the contract under control.</b> A named senior contract manager, backed by specialist support, helping you manage notices, variations, payments and claims — every week.</p>
       <div class="hero-ctas">
-        <a href="/quiz" class="btn btn-navy">Get my Contract Score — free →</a>
+        <a href="#contract-resilience" class="btn btn-navy">Get my Contract Score — free →</a>
         <a href="#pricing" class="btn btn-text">See pricing</a>
       </div>
       <p class="hero-note">For <b>contractors and specialist subcontractors</b> managing €500K–€50M contracts without enough senior contract-management capacity. We also support developers and owners needing additional commercial control.</p>
@@ -735,7 +739,7 @@ footer a:hover{color:var(--gold-2)}
           <li>Monthly priority report</li>
           <li>Questions between reviews, within agreed monthly capacity</li>
         </ul>
-        <a href="#book" class="btn btn-line" onclick="setPlan('Control — from €1,500/month')">Book a Free 45-Minute Call</a>
+        <a href="#contract-resilience" class="btn btn-gold">Get my Contract Score — free →</a>
       </div>
       <div class="card plan pop">
         <h3>Dedicated</h3>
@@ -750,7 +754,7 @@ footer a:hover{color:var(--gold-2)}
           <li>Payment applications supported and followed up</li>
           <li>Within a defined monthly capacity</li>
         </ul>
-        <a href="#book" class="btn btn-gold" onclick="setPlan('Dedicated — from €2,500/month')">Book a Free 45-Minute Call</a>
+        <a href="#contract-resilience" class="btn btn-gold">Get my Contract Score — free →</a>
       </div>
       <div class="card plan">
         <h3>Custom</h3>
@@ -764,7 +768,7 @@ footer a:hover{color:var(--gold-2)}
           <li>Contract drafting and negotiation</li>
           <li>Cross-border projects</li>
         </ul>
-        <a href="#book" class="btn btn-line" onclick="setPlan('Custom — quote')">Book a Free 45-Minute Call</a>
+        <a href="#contract-resilience" class="btn btn-gold">Get my Contract Score — free →</a>
       </div>
     </div>
     <p class="scope">We agree the contracts covered, priority activities and monthly capacity before starting. If your needs grow, we agree additional support and pricing with you first.</p>
@@ -813,7 +817,7 @@ footer a:hover{color:var(--gold-2)}
         <span class="pill">Free · 4 minutes</span>
         <h2>Not sure which plan fits? <em>Score your contract first.</em></h2>
         <p>Scored on the 5Cs Framework™ — scope, delay and claims, instructions, payments and deadlines. Your score on each of the 5Cs, three priority actions and the plan that may fit: Control, Dedicated or Custom.</p>
-        <a href="/quiz" class="btn btn-gold">Get my Contract Score — free →</a>
+        <a href="#contract-resilience" class="btn btn-gold">Get my Contract Score — free →</a>
       </div>
       <ol class="ladder" aria-label="Resilience levels">
         <li><b>3</b><span>Resilient</span></li>
@@ -917,7 +921,7 @@ footer a:hover{color:var(--gold-2)}
       <h2>Book your free <em>45-minute review call.</em></h2>
       <p class="slots"><span></span>We take on 4 free review calls per month.</p>
       <p class="lead">Tell us about you and your project. We read every request and contact you to book your call. The free review happens on the call — 45 minutes on one live construction or EPC contract. No documents needed.</p>
-      <p style="margin:-10px 0 22px;color:var(--muted)">Not sure which plan fits? <a href="/quiz" style="color:var(--navy);font-weight:700">Get my Contract Score — free →</a></p>
+      <p style="margin:-10px 0 22px;color:var(--muted)">Not sure which plan fits? <a href="#contract-resilience" style="color:var(--navy);font-weight:700">Get my Contract Score — free →</a></p>
       <b style="color:var(--navy)">What happens after you book</b>
       <ol class="after">
         <li>Send your details<span>Who you are, your project and what's on your mind.</span></li>
@@ -958,7 +962,7 @@ footer a:hover{color:var(--gold-2)}
           <div class="field full"><label for="m" id="mlabel">Tell us briefly about your contract <span class="opt">(Optional)</span></label><textarea id="m" name="message" maxlength="1000"></textarea></div>
         </div>
         <p class="cerr" id="cerr" role="alert" hidden></p>
-        <button type="submit" class="btn btn-navy" id="cbtn">Request My Free Call →</button>
+        <button type="submit" class="btn btn-gold" id="cbtn">Book a Free 45-Minute Call →</button>
         <p class="form-foot">* Required. No documents needed · No obligation. <a href="/privacy">Privacy</a></p>
       </div>
       <p class="cok" id="cok" role="status" hidden>Thank you. We've received your request. We'll contact you using your preferred method to arrange your free 45-minute conversation.</p>
@@ -990,7 +994,7 @@ footer a:hover{color:var(--gold-2)}
   <div class="wrap">
     <div class="fwrap">
       <div class="flogo"><b>Ask Contracks<span>.</span></b><br><span>Better contracts. Better companies. Better communities.</span></div>
-      <div class="fbtns"><a href="#book" class="btn btn-gold">Book a Free 45-Minute Call</a></div>
+      <div class="fbtns"><a href="#book" class="btn btn-gold">Book a Free 45-Minute Call →</a></div>
     </div>
     <div class="fwrap copy">
       <span>© 2026 Ask Contracks · Europe · Africa · Gulf</span>
@@ -1001,7 +1005,7 @@ footer a:hover{color:var(--gold-2)}
 
 <div class="sticky">
   <a href="#pricing" class="btn btn-line">Pricing</a>
-  <a href="#book" class="btn btn-navy">Free Call</a>
+  <a href="#book" class="btn btn-gold">Book a Free 45-Minute Call →</a>
 </div>
 
 <script>
@@ -1010,6 +1014,8 @@ function stayIn(e){e.preventDefault();var n=document.getElementById('sn').value.
 var d={'form-name':'ask-contracks-fieldnotes',source:'Stay in touch',subject:'New field-notes signup — '+(n||m),name:n,email:m};
 var er=document.getElementById('stayerr');if(er)er.hidden=true;
 fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).then(function(r){if(!r.ok)throw 0;document.getElementById('stayf').hidden=true;document.getElementById('stayok').hidden=false;}).catch(function(){b.disabled=false;if(er)er.hidden=false;});}
+// Pricing buttons pass their plan to the call form's hidden plan field.
+function setPlan(v){var p=document.getElementById('fplan');if(p)p.value=v;}
 // Call request form (v3.5 standard). Plan comes from ?plan=; Contract Score context from this browser tab's session, never the URL.
 (function(){
   var f=document.getElementById('callform');if(!f)return;
@@ -1033,7 +1039,7 @@ fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlenco
     var b=document.getElementById('cbtn');sending=true;b.disabled=true;b.textContent='Sending…';
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
      .then(function(r){if(!r.ok)throw 0;document.getElementById('cfields').hidden=true;var ok=document.getElementById('cok');ok.hidden=false;ok.focus&&ok.setAttribute('tabindex','-1');ok.focus();try{sessionStorage.removeItem('acScore');}catch(x){}window.acTrack&&acTrack('Call requested');})
-     .catch(function(){sending=false;b.disabled=false;b.textContent='Request My Free Call →';err.textContent="Sorry, your request didn't go through. Please try again, or email hello@contracks.global.";err.hidden=false;});
+     .catch(function(){sending=false;b.disabled=false;b.textContent='Book a Free 45-Minute Call →';err.textContent="Sorry, your request didn't go through. Please try again, or email hello@contracks.global.";err.hidden=false;});
   });
 })();
 </script>
