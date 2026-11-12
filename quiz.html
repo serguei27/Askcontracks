@@ -349,8 +349,27 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var
  details.bk>*{display:block}details.bk summary span{display:none}
  .options .btn{display:none}.opt-card .purl{display:block!important;font-weight:600;color:var(--navy);margin-top:4px}
 }
-footer{border-top:1px solid var(--line);padding:26px 20px;text-align:center;color:var(--muted);font-size:.86rem}
-footer a{text-decoration:none;color:var(--navy);font-weight:600}
+.stay .wrap,footer .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.stay{padding:8px 0 70px}
+.stay-box{display:grid;grid-template-columns:1fr 1.25fr;gap:24px;align-items:center;border:1px solid var(--gold-line);background:var(--gold-soft);border-radius:20px;padding:26px 28px}
+.stay-box b{display:block;font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--navy);margin-bottom:4px}
+.stay-box span{color:var(--muted);font-size:.95rem}
+.stay-f{display:grid;grid-template-columns:1fr 1.2fr auto;gap:10px}
+.stay-f input{background:#fff}
+.stay-f .btn{padding:13px 22px}
+.stay-ok{grid-column:1/-1;color:var(--green);font-weight:700}
+.stay .cerr{color:var(--red);font-weight:600;margin-top:14px}
+@media (max-width:900px){.stay-box{grid-template-columns:1fr}.stay-f{grid-template-columns:1fr}}
+footer{background:var(--navy);color:rgba(255,255,255,.65);padding:44px 0 36px;font-size:.92rem}
+.fwrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
+footer .flogo b{font-family:'Playfair Display',serif;font-weight:900;font-size:1.2rem;color:#fff}
+footer .flogo b span{color:var(--gold)}
+footer .fnav{display:flex;flex-wrap:wrap;gap:20px}
+footer a{color:rgba(255,255,255,.8);text-decoration:none}
+footer a:hover{color:var(--gold-2)}
+footer a.btn-gold{color:var(--navy)}
+.fbtns{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.copy{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:.84rem}
 @keyframes acpulse{0%,100%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 0 rgba(197,160,80,.75)}60%{box-shadow:0 8px 22px rgba(197,160,80,.28),0 0 0 14px rgba(197,160,80,0)}}
 .ac-pulse{animation:acpulse 2.2s ease-out infinite}.ac-pulse:hover,.ac-pulse:focus-visible{animation:none}
 @media (prefers-reduced-motion:reduce){.ac-pulse{animation:none}}
@@ -510,6 +529,24 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
       </div>
     </section>
   </div>
+  <section class="stay">
+    <div class="wrap">
+      <div class="stay-box">
+        <div>
+          <b>Not ready?</b>
+          <span>Stay in touch — leave your email and we'll share occasional field notes on construction and EPC contract control. No spam, unsubscribe any time.</span>
+        </div>
+        <form id="stayf" class="stay-f" name="ask-contracks-fieldnotes" method="POST" action="/thanks.html" data-netlify="true" onsubmit="stayIn(event)">
+          <input type="hidden" name="form-name" value="ask-contracks-fieldnotes"><input type="hidden" name="subject"><input type="hidden" name="source" value="Stay in touch · quiz page">
+          <input id="sn" name="name" placeholder="Your name" autocomplete="name" aria-label="Your name">
+          <input id="se" name="email" type="email" placeholder="Work email" autocomplete="email" aria-label="Work email" required>
+          <button class="btn btn-navy" id="sbtn">Stay in touch</button>
+        </form>
+        <p class="cerr" id="stayerr" role="alert" hidden>Sorry, that didn't go through. Please try again.</p>
+        <p class="stay-ok" id="stayok" hidden>Thank you — you're on the list.</p>
+      </div>
+    </div>
+  </section>
 </div>
 
 <!-- QUESTIONS -->
@@ -616,7 +653,18 @@ footer a{text-decoration:none;color:var(--navy);font-weight:600}
   </div>
 </div>
 
-<footer><a href="/">Ask Contracks</a> · You keep building. We help your team keep the contract under control. · <a href="/privacy.html">Privacy</a></footer>
+<footer>
+  <div class="wrap">
+    <div class="fwrap">
+      <div class="flogo"><b>Ask Contracks<span>.</span></b><br><span>Better contracts. Better companies. Better communities.</span></div>
+      <div class="fbtns"><a href="/#book" class="btn btn-gold">Book a Free 45-Minute Call →</a></div>
+    </div>
+    <div class="fwrap copy">
+      <span>© 2026 Ask Contracks · Europe · Africa · Gulf</span>
+      <nav class="fnav" aria-label="Footer"><a href="/">Home</a><a href="/privacy.html">Privacy</a></nav>
+    </div>
+  </div>
+</footer>
 
 <script src="/assets/5cs-engine-1.0.0.js"></script>
 <script src="/assets/contract-score-config-1.1.1.js"></script>
@@ -855,6 +903,12 @@ reset();
   var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0&modestbranding=1';
   f.title='Contractors don\'t go bust on site. They go bust on paper.';f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';
   var w=document.createElement('div');w.className='vid';w.appendChild(f);b.replaceWith(w);},{once:true});})();
+</script>
+<script>
+function stayIn(e){e.preventDefault();var n=document.getElementById('sn').value.trim(),m=document.getElementById('se').value.trim(),b=document.getElementById('sbtn');if(b.disabled)return;b.disabled=true;
+var d={'form-name':'ask-contracks-fieldnotes',source:'Stay in touch · quiz page',subject:'New field-notes signup — '+(n||m),name:n,email:m};
+var er=document.getElementById('stayerr');if(er)er.hidden=true;
+fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()}).then(function(r){if(!r.ok)throw 0;document.getElementById('stayf').hidden=true;document.getElementById('stayok').hidden=false;try{window.acTrack&&acTrack('Quiz stay in touch');}catch(x){}}).catch(function(){b.disabled=false;if(er)er.hidden=false;});}
 </script>
 </body>
 </html>
