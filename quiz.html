@@ -171,11 +171,13 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 @media (max-width:560px){.how-vid{margin-top:40px}}
 .landing .start-wrap .btn.flash{animation:acpulse .9s ease-out 3}
 .landing{scroll-margin-top:72px}
-.nav-start .sm{display:none}
 body[data-screen]:not([data-screen="landing"]) .nav-start{display:none}
-@media (max-width:480px){.nav-start .lg{display:none}.nav-start .sm{display:inline}}
+@media (max-width:480px){nav.top .wrap{gap:10px;padding:0 14px}nav.top .logo b{font-size:1rem}.nav-start{white-space:nowrap;font-size:.74rem;padding:9px 12px}}
+@media (max-width:350px){nav.top .logo b{font-size:.9rem}.nav-start{font-size:.68rem;padding:8px 10px}}
+.how .lead,.how-step span,.how-cs small,.how-cs li>span:not(.cpct),.how-stats,.how-end>div[aria-hidden]{display:none}
+.how-end{grid-template-columns:minmax(0,1fr)}
 @media (max-width:560px){
-.landing .land-note+.land-note,.getbox,.how .lead,.how-step span,.how-cs small,.how-cs li>span:not(.cpct),.how-stats,.how-end>div[aria-hidden]{display:none}
+.landing .land-note+.land-note,.getbox{display:none}
 .landing{gap:0;padding-bottom:40px}
 .how-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.how-step{padding:14px}.how-step i{width:28px;height:28px;margin-bottom:8px}
 .how-cs{gap:10px}.how-cs li{display:grid;grid-template-columns:96px minmax(0,1fr) 44px;align-items:center;gap:10px;border-top:0;padding-top:0}.how-cs .cbar{margin-top:0}.how-cs .cpct{margin-top:0;text-align:right}
@@ -382,7 +384,7 @@ footer a.btn-gold{color:var(--navy)}
 <nav class="top">
   <div class="wrap">
     <a href="/" class="logo"><b>Ask Contracks<span>.</span></b></a>
-    <button type="button" class="btn btn-navy btn-sm ac-pulse nav-start" onclick="start()"><span class="lg">Start my Contract Score</span><span class="sm">Contract Score</span></button>
+    <button type="button" class="btn btn-navy btn-sm ac-pulse nav-start" onclick="start()">Start my Contract Score</button>
   </div>
 </nav>
 
