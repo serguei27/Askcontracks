@@ -169,6 +169,8 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 .vid-bio .creds{color:var(--navy);font-weight:600;font-size:.88rem;margin-top:12px}
 @media (max-width:860px){.vid-grid{grid-template-columns:minmax(0,1fr);gap:24px}}
 @media (max-width:560px){.how-vid{margin-top:40px}}
+.landing .start-wrap .btn.flash{animation:acpulse .9s ease-out 3}
+.landing{scroll-margin-top:72px}
 .nav-start .sm{display:none}
 body[data-screen]:not([data-screen="landing"]) .nav-start{display:none}
 @media (max-width:480px){.nav-start .lg{display:none}.nav-start .sm{display:inline}}
@@ -833,7 +835,8 @@ reset();
   $('invGo').addEventListener('click',function(){
     acEntry.src='quiz-invite';
     t('Quiz invite CTA clicked: '+(acEntry.situation||'none'));
-    if(typeof start==='function')start();
+    var h=document.querySelector('.landing');if(h)h.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+    var b=document.querySelector('.landing .start-wrap .btn');if(b){b.classList.remove('flash');void b.offsetWidth;b.classList.add('flash');}
   });
   if(SHOW_REAL_STATS)$('invStats').hidden=false;
   var qs=q.get('situation');if(qs&&INV[qs])pick(qs,'url');else show('var');
