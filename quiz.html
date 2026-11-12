@@ -836,7 +836,7 @@ reset();
 (function(){var b=document.getElementById('vidBtn');if(!b)return;b.addEventListener('click',function(){
   try{window.acTrack&&acTrack('Quiz video played');}catch(e){}
   var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0&modestbranding=1';
-  f.title='Contractors don\'t go bust on site. They go bust on paper.';f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;
+  f.title='Contractors don\'t go bust on site. They go bust on paper.';f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';
   var w=document.createElement('div');w.className='vid';w.appendChild(f);b.replaceWith(w);},{once:true});})();
 </script>
 </body>
