@@ -836,7 +836,7 @@ reset();
     acEntry.src='quiz-invite';
     t('Quiz invite CTA clicked: '+(acEntry.situation||'none'));
     var h=document.querySelector('.landing');if(h)h.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
-    var b=document.querySelector('.landing .start-wrap .btn');if(b){b.classList.remove('flash');void b.offsetWidth;b.classList.add('flash');}
+    var b=document.querySelector('.landing .start-wrap .btn');if(b){b.classList.remove('flash');void b.offsetWidth;b.classList.add('flash');setTimeout(function(){b.classList.remove('flash');},2800);}
   });
   if(SHOW_REAL_STATS)$('invStats').hidden=false;
   var qs=q.get('situation');if(qs&&INV[qs])pick(qs,'url');else show('var');
