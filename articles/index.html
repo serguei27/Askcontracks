@@ -86,12 +86,14 @@ footer a span{color:var(--gold)}
     <h1>Contracts <em>under control.</em></h1>
     <p>Contractors don't go bust on site. They go bust on paper. Practical articles — read or listen — on the five controls every live contract needs: the 5Cs Framework™.</p>
   </header>
-  <div class="dateline"><span id="issueLine"></span><span>A new article every Monday</span></div>
+  <div class="dateline"><span id="issueLine">Issue 1 · 9 November 2026</span><span>A new article every Monday</span></div>
 </div>
 
 <main class="wrap">
   <div class="filters" id="filters"></div>
-  <div id="front"></div>
+  <!-- Static copy of the "All" view, so crawlers that don't run JavaScript see the articles.
+       render() replaces it on load. Update it with the ISSUES list every Monday. -->
+  <div id="front"><div class="front" style="grid-template-columns:minmax(0,1fr)"><a class="lead" href="https://askcontracks.com/articles/ac-01-bust-on-paper.html"><img src="https://askcontracks.com/assets/ac-01-cover.png" alt=""><div class="meta">9 November 2026 · 7 min read · listen</div><h2>Contractors don't go bust on site. They go bust on paper.</h2><p>The margin is made on site and lost in the paperwork.</p><div class="tags"><span>All 5Cs</span></div></a></div></div>
   <div id="earlier"></div>
 
   <div class="cta">
@@ -110,6 +112,7 @@ footer a span{color:var(--gold)}
 /* One entry per published article, newest first.
    c5 = "CONTAIN" | "COMMAND" | "CLOSE" | "CONFIRM" | "CONTROL" | "ALL"
    Optional: video:{url,thumb,title} and post:{url,quote}. Leave them out until they are real.
+   When you add an issue, also update the static copy inside #front (and "Earlier issues") above.
    SHOW_DRAFT_SLOTS marks the empty video and post spaces for review. Set it to false before publishing. */
 var SHOW_DRAFT_SLOTS = false;
 var BASE = "https://askcontracks.com/";

@@ -411,6 +411,17 @@ form .btn{width:100%;margin-top:6px}
 .slots{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:var(--navy);background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:999px;padding:8px 16px;margin-bottom:18px;font-size:.92rem}
 .slots span{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(192,57,43,.15)}
 .stay{padding:0 0 70px}
+/* LATEST ARTICLES — plain links so every crawler finds the library */
+.latest{padding-top:0}
+.latest-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:28px;align-items:center;text-decoration:none;max-width:1000px;margin:0 auto}
+.latest-card img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line)}
+.latest-card .meta{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.latest-card h3{font-size:clamp(1.4rem,3vw,1.9rem);margin:8px 0 10px}
+.latest-card:hover h3{color:#8a6d2b}
+.latest-card p{color:var(--muted)}
+.latest-all{text-align:center;margin-top:26px}
+.latest-all a{font-weight:700;color:var(--navy)}
+@media (max-width:760px){.latest-card{grid-template-columns:minmax(0,1fr);gap:16px}}
 .stay-box{display:grid;grid-template-columns:1fr 1.25fr;gap:24px;align-items:center;border:1px solid var(--gold-line);background:var(--gold-soft);border-radius:20px;padding:26px 28px}
 .stay-box b{display:block;font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--navy);margin-bottom:4px}
 .stay-box span{color:var(--muted);font-size:.95rem}
@@ -932,6 +943,26 @@ footer a:hover{color:var(--gold-2)}
         <span class="lang">FIDIC · OHADA · bespoke</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- 9B. LATEST ARTICLES -->
+<section class="latest" id="latest">
+  <div class="wrap">
+    <div class="head">
+      <span class="pill">From the article library</span>
+      <h2>Contracts <em>under control.</em></h2>
+      <p>A practical article every Monday on the five controls every live contract needs. Read or listen.</p>
+    </div>
+    <a class="latest-card" href="/articles/ac-01-bust-on-paper.html">
+      <img src="/assets/ac-01-cover.png" alt="" loading="lazy">
+      <div>
+        <div class="meta">Latest · 7 min read · listen</div>
+        <h3>Contractors don't go bust on site. They go bust on paper.</h3>
+        <p>The margin is made on site and lost in the paperwork.</p>
+      </div>
+    </a>
+    <p class="latest-all"><a href="/articles/">All articles →</a></p>
   </div>
 </section>
 
